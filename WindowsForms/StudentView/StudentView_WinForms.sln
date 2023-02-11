@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentView_WinForms", "StudentView_WinForms\StudentView_WinForms.csproj", "{FAA5401E-C52D-46CE-A363-9A3E9B4D8C4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SVFileAccess", "SVFileAccess\SVFileAccess.csproj", "{3BC9FC97-7184-4A8B-876B-DD65A18E3636}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SVDatabaseAccess", "SVDatabaseAccess\SVDatabaseAccess.csproj", "{033F7DF7-B78E-4DF8-A128-81C4C632C6D7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FAA5401E-C52D-46CE-A363-9A3E9B4D8C4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAA5401E-C52D-46CE-A363-9A3E9B4D8C4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAA5401E-C52D-46CE-A363-9A3E9B4D8C4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAA5401E-C52D-46CE-A363-9A3E9B4D8C4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BC9FC97-7184-4A8B-876B-DD65A18E3636}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BC9FC97-7184-4A8B-876B-DD65A18E3636}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BC9FC97-7184-4A8B-876B-DD65A18E3636}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BC9FC97-7184-4A8B-876B-DD65A18E3636}.Release|Any CPU.Build.0 = Release|Any CPU
+		{033F7DF7-B78E-4DF8-A128-81C4C632C6D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{033F7DF7-B78E-4DF8-A128-81C4C632C6D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{033F7DF7-B78E-4DF8-A128-81C4C632C6D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{033F7DF7-B78E-4DF8-A128-81C4C632C6D7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

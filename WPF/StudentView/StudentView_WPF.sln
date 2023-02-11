@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentView_WPF", "StudentView_WPF\StudentView_WPF.csproj", "{C86EFE96-4441-47CE-B01F-FC9E4A6BCE36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SVFileAccess", "SVFileAccess\SVFileAccess.csproj", "{C9A219D1-38D9-46F0-840D-CA92B601D9FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SVDatabaseAccess", "SVDatabaseAccess\SVDatabaseAccess.csproj", "{80551D09-2803-47E3-A5EC-7F39852923B5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C86EFE96-4441-47CE-B01F-FC9E4A6BCE36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C86EFE96-4441-47CE-B01F-FC9E4A6BCE36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C86EFE96-4441-47CE-B01F-FC9E4A6BCE36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C86EFE96-4441-47CE-B01F-FC9E4A6BCE36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9A219D1-38D9-46F0-840D-CA92B601D9FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9A219D1-38D9-46F0-840D-CA92B601D9FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9A219D1-38D9-46F0-840D-CA92B601D9FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9A219D1-38D9-46F0-840D-CA92B601D9FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80551D09-2803-47E3-A5EC-7F39852923B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80551D09-2803-47E3-A5EC-7F39852923B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80551D09-2803-47E3-A5EC-7F39852923B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80551D09-2803-47E3-A5EC-7F39852923B5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
