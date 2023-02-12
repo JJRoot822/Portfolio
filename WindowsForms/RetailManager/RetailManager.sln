@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "RetailManager_WindowsForms", "RetailManager_WindowsForms\RetailManager_WindowsForms.vbproj", "{F76F2494-FAE3-4F05-9C3B-97CCEF1BA890}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "RMDataAccess", "RMDataAccess\RMDataAccess.vbproj", "{455C011F-3500-40E7-A408-AEAC6054699F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F76F2494-FAE3-4F05-9C3B-97CCEF1BA890}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F76F2494-FAE3-4F05-9C3B-97CCEF1BA890}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F76F2494-FAE3-4F05-9C3B-97CCEF1BA890}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F76F2494-FAE3-4F05-9C3B-97CCEF1BA890}.Release|Any CPU.Build.0 = Release|Any CPU
+		{455C011F-3500-40E7-A408-AEAC6054699F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{455C011F-3500-40E7-A408-AEAC6054699F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{455C011F-3500-40E7-A408-AEAC6054699F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{455C011F-3500-40E7-A408-AEAC6054699F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
