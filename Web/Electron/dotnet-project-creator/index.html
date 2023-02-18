@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>.NET Project Creator</title>
+        <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div class="contain">
+            <div class="row">
+                <input type="text" 
+                       placeholder="File or Project Name" 
+                       class="col form-control m-3"
+                />
+
+                <input type="text" 
+                       placeholder="Project or File Location"
+                       id="proj-dir-field" 
+                       class="col form-control m-3"       
+                />
+
+                <input type="button" 
+                       value="Choose File or Project Location" 
+                       id="choose-dir-btn" 
+                       class="col btn btn-secondary m-3"
+                />
+            </div>
+            <div class="row">
+                <select id="template-select" 
+                        class="form-select col m-3"
+                        aria-label="Select a Project or File Template"
+                >
+                </select>
+                
+                <select id="language-select" 
+                        class="form-select col m-3"
+                        aria-label="Select a Language"
+                >
+                    <option value="C#">C#</option>
+                    <option value="F#">F#</option>
+                    <option value="VB">Visual Basic</option>
+                    <option value="Other">Other</option>
+                </select>
+                
+                <div class="form-check col m-3">
+                    <input class="form-check-input" 
+                           type="radio" 
+                           name="filter" 
+                           id="proj-filter-radio" 
+                    />
+                    <label class="form-check-label" 
+                           for="proj-filter-radio"
+                    >
+                        Only Projects
+                    </label>
+                </div>
+                <div class="form-check col m-3">
+                    <input class="form-check-input" 
+                           type="radio" 
+                           name="filter" 
+                           id="file-filter-radio" 
+                    />
+                    <label class="form-check-label" 
+                           for="file-filter-radio"
+                    >
+                        Only Files
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <select id="framework-select"
+                        class="form-select col m-3"
+                        aria-label="Select a Framework Version"
+                >
+                    <option value="netcoreapp3.1">.NET Core 3.1</option>
+                    <option value="net5">.NET 5</option>
+                    <option value="net6">.NET 6</option>
+                    <option value="net7">.NET 7</option>
+                </select>
+
+                
+            </div>
+        </div>
+
+        <script src="./client.js"></script>
+    </body>
+</html>

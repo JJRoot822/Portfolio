@@ -1,0 +1,354 @@
+{
+    "templates": [
+        {
+            "name": ".NET MAUI App", 
+            "shortName": "maui", 
+            "languages": [ "C#" ]
+        },
+        {
+            "name": ".NET MAUI Blazor App",
+            "shortName": "maui-blazor",
+            "languages": [ "C#"]
+        }, 
+        {
+            "name": ".NET MAUI Class Library",
+            "shortName": "mauilib",
+            "languages": [ "C#" ]
+        }, 
+        {
+            "name": ".NET MAUI ContentPage (C#)",
+            "shortName": "maui-page-csharp",
+            "languages": [ "C#" ]
+        }, 
+        {
+            "name": ".NET MAUI ContentView (XAML)",
+            "shortName": "maui-view-xaml",
+            "languages": [ "C#" ]
+        }, 
+        {
+            "name": ".NET MAUI ContentView (C#)",
+            "shortName": "maui-view-csharp",
+            "languages": [ "C#"]
+        }, 
+        {
+            "name": ".NET MAUI ContentPage (XAML)",
+            "shortName": "maui-page-xaml",
+            "languages": [ "C#" ]
+        },
+        {
+            "name": ".NET MAUI ResourceDictionary (XAML)",
+            "shortName": "maui-dict-xaml",
+            "languages": [ "C#" ]
+        }, 
+        {
+            "name": "Android Activity template",
+            "shortName": "android-activity",
+            "languages": [ "C#" ]
+        }, 
+        {
+            "name": "Android Class Library",
+            "shortName": "androidlib",
+            "languages": [ "C#" ]
+        }, 
+        {
+            "name": "Android Application",
+            "shortName": "android",
+            "languages": [ "C#" ]
+        }, 
+        {
+            "name": "Android Java Library Binding",
+            "shortName": "android-bindinglib",
+            "languages": [ "C#" ]
+        }, 
+        {
+            "name": "Android Layout template",
+            "shortName": "android-layout",
+            "languages": [ "C#" ]
+        },
+        {
+            "name": "Android Wear Application",
+            "shortName": "androidwear",
+            "languages": [ "C#" ]
+        },
+        {
+            "name": "ASP.NET Core Empty",
+            "shortName": "web",
+            "languages": [ "C#", "F#" ]
+        },
+        {
+            "name": "ASP.NET Core gRPC Service",
+            "shortName": "grpc",
+            "languages": [ "C#" ]
+        },
+        {
+            "name": "ASP.NET Core Web API",
+            "shortName": "webapi",
+            "languages": [ "C#" ]
+        },
+        {
+            "name": "ASP.NET Core Web App",
+            "shortName": "razor",
+            "languages": [ "C#" ]
+        },
+        {
+            "name": "ASP.NET Core Web App (Model-View-Controller)",
+            "shortName": "mvc",
+            "languages": [ "C#", "F#" ]
+        },
+        {
+            "name": "ASP.NET Core with Angular",
+            "shortName": "angular",
+            "languages": [ "C#" ]
+        },
+        {
+            "name": "ASP.NET Core with React.js and Redux",
+            "shortName": "reactredux",
+            "languages": [ "C#" ]
+        },
+        {
+            "name": "ASP.NET Core with React.js",
+            "shortName": "react",
+            "languages": [ "C#" ]
+        },
+        {
+            "name": "Blazor Server App",
+            "shortName": "blazorserver",
+            "languages": [ "C#" ]
+        },
+        {
+            "name": "Blazor Server App Empty",
+            "shortName": "blazorserver-empty",
+            "languages": [ "C#" ]
+        },
+        {
+            "name": "Blazor WebAssembly App",
+            "shortName": "blazorwasm",
+            "languages": [ "C#" ]
+        },
+        {
+            "name": "Blazor WebAssembly App Empty",
+            "shortName": "blazorwasm-empty",
+            "languages": [ "C#" ]
+        },
+        {
+            "name": "Class Library",
+            "shortName": "classlib",
+            "languages": [ "C#", "F#", "VB" ]
+        },
+        {
+            "name": "Console App",
+            "shortName": "console",
+            "languages": [ "CE", "F#", "VB" ]
+        },
+        {
+            "name": "Gitignore File",
+            "shortName": "gitignoe",
+            "languages": [ "Config" ]
+        },
+        {
+            "name": "Dotnet Local Tool Manifest File",
+            "shortName": "tool-manifest",
+            "languages": [ "Config" ]
+        },
+        {
+            "name": "EditorConfig File",
+            "shortName": "editorconfig",
+            "languages": [ "Config" ]
+        },
+        {
+            "name": "global.json File",
+            "shortName": "globaljson",
+            "languages": [ "Config" ]
+        },
+        {
+            "name": "iOS Application",
+            "shortName": "ios",
+            "languages": [ "C#" ]
+        },
+        {
+            "name": "iOS Binding Library",
+            "shortName": "iosbinding",
+            "languages": [ "C#" ]
+        },
+        {
+            "name": "iOS Class Library",
+            "shortName": "ioslib",
+            "languages": [ "C#" ]
+        },
+        {
+            "name": "iOS Controller",
+            "shortName": "ios-controller",
+            "languages": [ "C#" ]
+        },
+        {
+            "name": "",
+            "shortName": "",
+            "languages": []
+        },
+        {
+            "name": "",
+            "shortName": "",
+            "languages": []
+        },
+        {
+            "name": "iOS Storyboard",
+            "shortName": "ios-storyboard",
+            "languages": [ "C#" ]
+        },
+        {
+            "name": "iOS Tabbed Application",
+            "shortName": "ios-tabbed",
+            "languages": [ "C#" ]
+        },
+        {
+            "name": "iOS View",
+            "shortName": "ios-view",
+            "languages": [ "C#" ]
+        },
+        {
+            "name": "iOS View Controller",
+            "shortName": "ios-viewcontroller",
+            "languages": [ "C#" ]
+        },
+        {
+            "name": "Mac Catalyst Application",
+            "shortName": "maccatalyst",
+            "languages": [ "C#" ]
+        },
+        {
+            "name": "Mac Catalyst Binding Library",
+            "shortName": "maccatalystbinding",
+            "languages": [ "C#" ]
+        },
+        {
+            "name": "Mac Catalyst Class Library",
+            "shortName": "maccatalystlib",
+            "languages": [ "C#" ]
+        },
+        {
+            "name": "Mac Catalyst Controller",
+            "shortName": "maccatalyst-controller",
+            "languages": [ "C#" ]
+        },
+        {
+            "name": "Mac Catalyst Storyboard",
+            "shortName": "maccatalyst-storyboard",
+            "languages": [ "C#" ]
+        },
+        {
+            "name": "Mac Catalyst View",
+            "shortName": "maccatalyst-view",
+            "languages": [ "C#" ]
+        },
+        {
+            "name": "Mac Catalyst View Controller",
+            "shortName": "maccatalyst-viewcontroller",
+            "languages": [ "C#" ]
+        },
+        {
+            "name": "MSTest Test Project",
+            "shortName": "mstest",
+            "languages": [ "C#", "F#", "VB" ]
+        },
+        {
+            "name": "MVC ViewImports",
+            "shortName": "viewimports",
+            "languages": [ "C#" ]
+        },
+        {
+            "name": "MVC ViewStart",
+            "shortName": "viewstart",
+            "languages": [ "C#" ]
+        },
+        {
+            "name": "NuGet Config",
+            "shortName": "nugetconfig",
+            "languages": [ "Config" ]
+        },
+        {
+            "name": "NUnit 3 Test Item",
+            "shortName": "nunit-test",
+            "languages": [ "C#", "F#", "VB" ]
+        },
+        {
+            "name": "NUnit 3 Test Project",
+            "shortName": "nunit",
+            "languages": [ "C#", "F#", "VB" ]
+        },
+        {
+            "name": "Protocol Buffer File",
+            "shortName": "proto",
+            "languages": []
+        },
+        {
+            "name": "Razor Class Library",
+            "shortName": "razorclasslib",
+            "languages": [ "C#" ]
+        },
+        {
+            "name": "Razor Component",
+            "shortName": "razorcomponent",
+            "languages": [ "C#" ]
+        },
+        {
+            "name": "Razor Page",
+            "shortName": "page",
+            "languages": [ "C#" ]
+        },
+        {
+            "name": "Solution File",
+            "shortName": "sln",
+            "languages": [ "Solution" ]
+        },
+        {
+            "name": "Web Config",
+            "shortName": "webconfig",
+            "languages": [ "Config" ]
+        },
+        {
+            "name": "Windows Forms App",
+            "shortName": "winforms",
+            "languages": [ "C#", "VB" ]
+        },
+        {
+            "name": "Windows Forms Class Library",
+            "shortName": "winformslib",
+            "languages": [ "C#", "VB" ]
+        },
+        {
+            "name": "Windows Forms Control Library",
+            "shortName": "winformscontrollib",
+            "languages": [ "C#", "VB" ]
+        },
+        {
+            "name": "Worker Service",
+            "shortName": "worker",
+            "languages": [ "C#", "F#" ]
+        },
+        {
+            "name": "WPF Application",
+            "shortName": "wpf",
+            "languages": [ "C#", "VB" ]
+        },
+        {
+            "name": "WPF Class library",
+            "shortName": "wpflib",
+            "languages": [ "C#", "VB" ]
+        },
+        {
+            "name": "WPF Custom Control Library",
+            "shortName": "wpfcustomcontrollib",
+            "languages": [ "C#", "VB" ]
+        },
+        {
+            "name": "WPF User Control Library",
+            "shortName": "wpfusercontrollib",
+            "languages": [ "C#", "VB" ]
+        },
+        {
+            "name": "xUnit Test Project",
+            "shortName": "xunit",
+            "languages": [ "C#", "F#", "VV" ]
+        }
+    ]
+}
