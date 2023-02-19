@@ -1,12 +1,11 @@
 const { app, BrowserWindow, ipcMain, dialog, webContents } = require('electron');
-const path = require('path');
 
 let mainWindow;
 
 function createWindow () {
   mainWindow = new BrowserWindow({
     width: 800,
-    height: 600,
+    height: 800,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false
