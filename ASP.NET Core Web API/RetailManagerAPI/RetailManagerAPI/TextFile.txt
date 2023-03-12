@@ -1,0 +1,40 @@
+﻿=-=-=-= Retail Manager API Documentation =-=-=-=
+
+Endpoints:
+/api/auth
+    Supported HTTP Methods
+        POST
+    Required Body Parameters:
+        Email: String
+        Username: String
+        Password: String (Unhashed)
+    Description:
+        This endpoint is where user authentication takes place.
+        In short, when making a request to this endpoint with the required 
+        parameters in the body of the request, the database of registered 
+        users is checked for a match for the username and email, and then 
+        checks to see if the password provided, when hashed, matches the 
+        hashed password in the database.
+    Possible Returned Responses:
+        If the username and email don't match a user in the database, the 
+        following response is returned:
+            { "WasSuccessful": false, ""LoggedInUser": null }
+        If the username and the email match a user in the database, 
+        but the passwords don't match, the following response 
+        is returned:
+            { "WasSuccessful": false, ""LoggedInUser": null }
+        If the username, email and password all match, the following, 
+        response is returned:
+            {
+                "WasSuccessful": true,
+                "LoggedInUser": {
+                    "Id": <User ID>,
+                    "FirstName": "<User's First Name>",
+                    "LastName": "<User's Last Name>",
+                    "Username": "<User's username>",
+                    "Email": "<User's Email>"
+                }
+            }
+    Response Body Parameters
+        WasSuccessful: Indicates whether or not the login succeeded.
+        LoggedInUser: Null if login failed, object containing user info if succeeded.
