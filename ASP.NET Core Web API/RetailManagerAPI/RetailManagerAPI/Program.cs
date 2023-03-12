@@ -1,5 +1,6 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using RetailManagerAPI.Database;
+using RetailManagerAPI.Controllers;
 
 namespace RetailManagerAPI
 {
@@ -29,6 +30,8 @@ namespace RetailManagerAPI
 
 
             app.MapControllers();
+
+                        app.MapUserEndpoints();
 
             app.Run();
         }
