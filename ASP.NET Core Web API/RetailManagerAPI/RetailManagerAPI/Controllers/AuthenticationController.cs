@@ -22,24 +22,6 @@ public class AuthenticationController : ControllerBase
     [HttpPost]
     public AuthResponse Post([FromBody] AuthBody body)
     {
-        List<User> users = AuthContext.Users.Where(
-            u => u.Email == body.Email && u.Username == body.Username
-        ).ToList();
-
-        int userCount = users.ToArray().Length;
         
-        if (userCount > 0) 
-        {
-            User user = users.ElementAt(0);
-
-            if (SecurityUtil.DoPasswordsMatch(body.Password, user.Password))
-            {
-                return new AuthResponse { WasSuccessful = true, LoggedInUser = user }
-            }
-
-            return new AuthResponse { WasSuccessful = false, LoggedInUser = null };
-        }
-
-        return new AuthResponse { WasSuccessful = false, LoggedInUser = null };
     }
 }

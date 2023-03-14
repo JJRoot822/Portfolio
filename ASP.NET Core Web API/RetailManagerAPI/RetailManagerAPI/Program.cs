@@ -31,8 +31,7 @@ namespace RetailManagerAPI
 
             app.MapControllers();
 
-                        app.MapUserEndpoints();
-
+                        
             app.Run();
         }
     }
