@@ -13,7 +13,7 @@ class BookList {
     var id: UUID = UUID()
     var title: String
     var color: String
-    @Relationship(deleteRule: .cascade, inverse: \Book.list) var books: [Book]
+    @Relationship(inverse: \Book.bookLists) var books: [Book]
     
     init (title: String, color: String, books: [Book]) {
         self.title = title

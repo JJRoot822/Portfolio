@@ -12,7 +12,7 @@ import SwiftData
 struct BookBucketApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            Author.self, Book.self, BookList.self, Genre.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
