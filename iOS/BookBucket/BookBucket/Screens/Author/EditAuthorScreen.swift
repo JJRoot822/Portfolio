@@ -25,6 +25,7 @@ struct EditAuthorScreen: View {
                 
             }
             .navigationTitle(Text("Edit Author"))
+            .navigationBarTitleDisplayMode(.large)
         }
         .interactiveDismissDisabled()
     }

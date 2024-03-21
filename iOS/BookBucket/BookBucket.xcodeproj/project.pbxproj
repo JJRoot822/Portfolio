@@ -33,6 +33,13 @@
 		03B2ADEB2B84CBC500BB3894 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2ADE72B84CBC500BB3894 /* Book.swift */; };
 		03B2ADEC2B84CBC500BB3894 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2ADE82B84CBC500BB3894 /* Genre.swift */; };
 		03DBB33A2BAA8FF40069286D /* BookGenresPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DBB3392BAA8FF40069286D /* BookGenresPicker.swift */; };
+		03DBB33C2BAA93B90069286D /* AddBookScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DBB33B2BAA93B90069286D /* AddBookScreen.swift */; };
+		03DBB33E2BAA9ABE0069286D /* BookFormatPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DBB33D2BAA9ABE0069286D /* BookFormatPicker.swift */; };
+		03DBB3402BAB49B10069286D /* BookCoverImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DBB33F2BAB49B10069286D /* BookCoverImagePicker.swift */; };
+		03DBB3422BABE0AB0069286D /* IntegerField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DBB3412BABE0AB0069286D /* IntegerField.swift */; };
+		03DBB3442BACC2140069286D /* EditBookScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DBB3432BACC2140069286D /* EditBookScreen.swift */; };
+		03DBB3462BACE5B10069286D /* BookSortCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DBB3452BACE5B10069286D /* BookSortCriteria.swift */; };
+		03DBB3482BACE90B0069286D /* BookSortOrderPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DBB3472BACE90B0069286D /* BookSortOrderPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +70,13 @@
 		03B2ADE72B84CBC500BB3894 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		03B2ADE82B84CBC500BB3894 /* Genre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 		03DBB3392BAA8FF40069286D /* BookGenresPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookGenresPicker.swift; sourceTree = "<group>"; };
+		03DBB33B2BAA93B90069286D /* AddBookScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookScreen.swift; sourceTree = "<group>"; };
+		03DBB33D2BAA9ABE0069286D /* BookFormatPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookFormatPicker.swift; sourceTree = "<group>"; };
+		03DBB33F2BAB49B10069286D /* BookCoverImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCoverImagePicker.swift; sourceTree = "<group>"; };
+		03DBB3412BABE0AB0069286D /* IntegerField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegerField.swift; sourceTree = "<group>"; };
+		03DBB3432BACC2140069286D /* EditBookScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBookScreen.swift; sourceTree = "<group>"; };
+		03DBB3452BACE5B10069286D /* BookSortCriteria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSortCriteria.swift; sourceTree = "<group>"; };
+		03DBB3472BACE90B0069286D /* BookSortOrderPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSortOrderPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +117,10 @@
 				03074C502B9E6A4300CF8410 /* GenreSortOrderPicker.swift */,
 				034A5E6D2BAA485300D0B895 /* BookAuthorsPicker.swift */,
 				03DBB3392BAA8FF40069286D /* BookGenresPicker.swift */,
+				03DBB33D2BAA9ABE0069286D /* BookFormatPicker.swift */,
+				03DBB33F2BAB49B10069286D /* BookCoverImagePicker.swift */,
+				03DBB3412BABE0AB0069286D /* IntegerField.swift */,
+				03DBB3472BACE90B0069286D /* BookSortOrderPicker.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -112,6 +130,7 @@
 			children = (
 				03074C3C2B9B908600CF8410 /* AuthorSortCriteria.swift */,
 				03074C4E2B9E67E700CF8410 /* GenreSortCriteria.swift */,
+				03DBB3452BACE5B10069286D /* BookSortCriteria.swift */,
 			);
 			path = Enumerations;
 			sourceTree = "<group>";
@@ -119,6 +138,8 @@
 		03074C402B9DE74C00CF8410 /* Book */ = {
 			isa = PBXGroup;
 			children = (
+				03DBB33B2BAA93B90069286D /* AddBookScreen.swift */,
+				03DBB3432BACC2140069286D /* EditBookScreen.swift */,
 			);
 			path = Book;
 			sourceTree = "<group>";
@@ -280,6 +301,7 @@
 				03B2ADEA2B84CBC500BB3894 /* BookList.swift in Sources */,
 				03074C4B2B9E13A400CF8410 /* GenresList.swift in Sources */,
 				03074C362B9B331900CF8410 /* AuthorsList.swift in Sources */,
+				03DBB33C2BAA93B90069286D /* AddBookScreen.swift in Sources */,
 				03B2ADE92B84CBC500BB3894 /* Author.swift in Sources */,
 				03074C2F2B99CB1C00CF8410 /* AuthorCell.swift in Sources */,
 				03B2ADD72B84CA4500BB3894 /* ContentView.swift in Sources */,
@@ -287,11 +309,15 @@
 				03074C512B9E6A4300CF8410 /* GenreSortOrderPicker.swift in Sources */,
 				03074C472B9E10A800CF8410 /* EditGenreScreen.swift in Sources */,
 				03B2ADEC2B84CBC500BB3894 /* Genre.swift in Sources */,
+				03DBB3462BACE5B10069286D /* BookSortCriteria.swift in Sources */,
 				034A5E6E2BAA485300D0B895 /* BookAuthorsPicker.swift in Sources */,
 				03074C3D2B9B908600CF8410 /* AuthorSortCriteria.swift in Sources */,
+				03DBB3482BACE90B0069286D /* BookSortOrderPicker.swift in Sources */,
 				03074C3A2B9B8F3C00CF8410 /* AuthorSortOrderPicker.swift in Sources */,
 				03074C452B9E108100CF8410 /* AddGenreScreen.swift in Sources */,
+				03DBB33E2BAA9ABE0069286D /* BookFormatPicker.swift in Sources */,
 				03074C4F2B9E67E700CF8410 /* GenreSortCriteria.swift in Sources */,
+				03DBB3402BAB49B10069286D /* BookCoverImagePicker.swift in Sources */,
 				03074C342B9A337800CF8410 /* EditAuthorScreen.swift in Sources */,
 				03074C382B9B7F4800CF8410 /* AuthorsListScreen.swift in Sources */,
 				03074C492B9E124E00CF8410 /* GenresListScreen.swift in Sources */,
@@ -299,6 +325,8 @@
 				03074C4D2B9E5CF300CF8410 /* GenreCell.swift in Sources */,
 				03DBB33A2BAA8FF40069286D /* BookGenresPicker.swift in Sources */,
 				03B2ADD52B84CA4500BB3894 /* BookBucketApp.swift in Sources */,
+				03DBB3422BABE0AB0069286D /* IntegerField.swift in Sources */,
+				03DBB3442BACC2140069286D /* EditBookScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
