@@ -41,7 +41,9 @@ struct BookCoverImagePicker: View {
             .labelsHidden()
         }
         .alert(isPresented: $isShowingFailedPickingPhotoAlert) {
-            Alert(title: Text("Can't select photo"), message: Text("Something went wrong when selecting a photo. Please try again later."), dismissButton: .default(Text("Ok")))
+            Alert(title: Text("Can't select photo"), 
+                  message: Text("Something went wrong when selecting a photo. Please try again later."), 
+                  dismissButton: .default(Text("Ok")))
         }
         .onChange(of: selectedItem) {
             Task {

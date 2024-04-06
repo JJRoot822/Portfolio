@@ -16,6 +16,7 @@ struct GenreSortOrderPicker: View {
     ]
     
     var body: some View {
+        #if os(macOS) || os(visionOS)
         Picker(selection: $selection, content: {
             ForEach(options, id: \.rawValue.self) { option in
                 Text("\(option.rawValue)")
@@ -24,6 +25,16 @@ struct GenreSortOrderPicker: View {
         }, label: {
             Label("Sort Options", systemImage: "arrow.up.and.down")
         })
-        .labelsHidden()
+        $else
+        Menu(content: {
+            ForEach(options, id: \.rawValue.self) { option in
+                Button(option.rawValue) {
+                    selection = option
+                }
+            }
+        }, label: {
+            Label("Genre Sort Options", systemName"arrow.up.and.down")
+        })
+        #endif
     }
 }

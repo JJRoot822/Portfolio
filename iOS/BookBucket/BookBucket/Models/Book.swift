@@ -26,7 +26,11 @@ class Book {
     var authors: [Author]
     var genres: [Genre]
     
-    init (title: String, isFavorite: Bool, bookFormat: String, releaseDate: Date, numberOfPages: Int, numberOfChapters: Int, numberOfChaptersRead: Int, numberOfPagesRead: Int, isReading: Bool, isCompleted: Bool, coverImage: Data?, bookLists: [BookList], authors: [Author], genres: [Genre]) {
+    init (title: String, isFavorite: Bool, bookFormat: String, 
+          releaseDate: Date, numberOfPages: Int, numberOfChapters: Int, 
+          numberOfChaptersRead: Int, numberOfPagesRead: Int, isReading: Bool,
+          isCompleted: Bool, coverImage: Data?, bookLists: [BookList],
+          authors: [Author], genres: [Genre]) {
         self.title = title
         self.genres = genres
         self.isFavorite = isFavorite

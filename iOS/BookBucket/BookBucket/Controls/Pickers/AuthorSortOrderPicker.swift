@@ -16,14 +16,25 @@ struct AuthorSortOrderPicker: View {
     ]
     
     var body: some View {
+        #if os(macOS) || os(visionOS)
         Picker(selection: $selection, content: {
             ForEach(options, id: \.rawValue.self) { option in
                 Text("\(option.rawValue)")
                     .tag(option)
             }
         }, label: {
-            Label("Sort Options", systemImage: "arrow.up.and.down")
+            Label("Author Sort Options", systemImage: "arrow.up.and.down")
         })
-        .labelsHidden()
+        #else
+        Menu(content: {
+            ForEach(options, id: \.rawValue.self) { option in
+                Button(option.rawValue) {
+                    selection = option
+                }
+            }
+        }, label: {
+            Label("Author Sort Options", systemImage: "arrow.up.and.down")
+        })
+        #endif
     }
 }

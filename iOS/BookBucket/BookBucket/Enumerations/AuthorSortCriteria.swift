@@ -13,5 +13,3 @@ enum AuthorSortCriteria: String, Hashable {
          booksAuthoredAscending = "Books Authored (Ascending)",
          booksAuthoredDescending = "Books Authored (Descending)"
 }
-
-
