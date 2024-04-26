@@ -18,5 +18,6 @@ struct Sidebar: View {
             FavoritesNavigationLink()
         }
         .listStyle(.sidebar)
+        .navigationTitle(Text(NSLocalizedString("BookBucket", comment: "")))
     }
 }
