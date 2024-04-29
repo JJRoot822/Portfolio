@@ -60,6 +60,9 @@ struct AuthorsList: View {
         .overlay {
             if authors.count == 0 && !searchTerm.isEmpty {
                 ContentUnavailableView.search(text: searchTerm)
+            } else {
+                Text("Nothing to Show Right Now. Tap the Add Button to Insert a New Author")
+                    .foregroundStyle(Color.secondary)
             }
         }
     }

@@ -18,6 +18,7 @@ struct AuthorsScreen: View {
         NavigationStack {
             AuthorsList(sortCriteria: sortCriteria, searchTerm: searchTerm)
                 .id(id)
+                .navigationTitle(Text("Authors"))
                 .searchable(text: $searchTerm, prompt: Text("Search for an Author"))
                 .refreshable(action: refresh)
                 .sheet(isPresented: $globalState.showingAddAuthor, onDismiss: {

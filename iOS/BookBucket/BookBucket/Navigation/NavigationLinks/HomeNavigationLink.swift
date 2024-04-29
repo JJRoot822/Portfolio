@@ -12,7 +12,7 @@ struct HomeNavigationLink: View {
         NavigationLink(destination: {
             Text("Home")
         }, label: {
-            Label(NSLocalizedString(AppSection.home.rawValue, comment: ""), systemImage: "house")
+            Label(LocalizedStringKey(AppTab.home.rawValue), systemImage: "house")
         })
     }
 }

@@ -25,14 +25,26 @@ struct EditGenreScreen: View {
                     
                     Button(action: toggleRequirementsPopover) {
                         Label("Show genre name field requirements", systemImage: "info.circle")
+                            .labelStyle(.iconOnly)
                     }
                     .popover(isPresented: $isShowingRequirementsPopover) {
-                        Text("The genre name field must not be empty.")
-                            .padding()
+                        VStack {
+                            Text("The genre name field must not be empty.")
+                        
+                            HStack {
+                                Spacer()
+                                
+                                Button("Close", action: toggleRequirementsPopover)
+                            }
+                        }
+                        .padding()
                     }
                 }
+                
+                Toggle("Is Favorite Genre", isOn: $genre.isFavorite)
             }
             .navigationTitle(Text("Edit Genre"))
+            .navigationBarTitleDisplayMode(.large)
             .alert(isPresented: $isShowingError) {
                 Alert(title: Text("Failed to Save Changes"), message: Text("Something went wrong when trying to save the changes you made to the genre's information. Please try again later."), dismissButton: .cancel(Text("Ok")))
             }
@@ -47,6 +59,7 @@ struct EditGenreScreen: View {
                 }
             }
         }
+        .interactiveDismissDisabled()
     }
     
     private func toggleRequirementsPopover() {
@@ -67,6 +80,8 @@ struct EditGenreScreen: View {
         
         switch result {
         case .success(()):
+            dismiss()
+            
             return
         case .failure(_):
             if context.hasChanges {

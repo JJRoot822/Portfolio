@@ -12,7 +12,7 @@ struct BooksNavigationLink: View {
         NavigationLink(destination: {
             Text("Books")
         }, label: {
-            Label(NSLocalizedString(AppSection.books.rawValue, comment: ""), systemImage: "book.closed")
+            Label(LocalizedStringKey(AppTab.books.rawValue), systemImage: "book.closed")
         })
     }
 }

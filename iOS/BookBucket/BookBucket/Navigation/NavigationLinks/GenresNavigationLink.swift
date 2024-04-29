@@ -12,7 +12,7 @@ struct GenresNavigationLink: View {
         NavigationLink(destination: {
             
         }, label: {
-            Label(NSLocalizedString(AppSection.genres.rawValue, comment: ""), systemImage: "bookmark")
+            Label(LocalizedStringKey(AppTab.genres.rawValue), systemImage: "bookmark")
         })
     }
 }

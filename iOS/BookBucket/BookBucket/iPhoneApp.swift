@@ -7,15 +7,6 @@
 
 import SwiftUI
 
-enum AppTab: String {
-    case home = "Home"
-    case books = "Books"
-    case bookLists = "Book Lists"
-    case favorites = "Favorites"
-    case genres = "Genres"
-    case authors = "Authors"
-}
-
 struct iPhoneApp: View {
     @State private var selectedTab: AppTab = .home
     
@@ -80,8 +71,3 @@ struct BookListsScreen: View {
     }
 }
 
-struct FavoritesScreen: View {
-    var body: some View {
-        Text("")
-    }
-}

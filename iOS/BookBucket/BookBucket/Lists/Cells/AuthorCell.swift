@@ -31,28 +31,33 @@ struct AuthorCell: View {
     }
     
     var body: some View {
-        BasicListCell(title: author.name, subtitle: LocalizedStringKey(stringInterpolation: "\(author.books) Books Authored"), boldTitle: false)
-            .padding()
-            .accessibilityElement(children: .combine)
-            .confirmationDialog("Are you sure you want to delete this author?", isPresented: $isDeleteRequested) {
-                Button("Delete", role: .destructive, action: deleteAuthor)
-            }
-            .alert(isPresented: $isShowingError) {
-                Alert(title: Text("Something Went Wrong"), message: Text(errorMessage ?? LocalizedStringKey("Some unknown error occurred. Please try again later.")))
-            }
-            .sheet(isPresented: $showingEditSheet) {
-                EditAuthorScreen(author: author)
-            }
-            .contextMenu {
-                IconButton(title: favoriteButtonTitle, icon: favoriteButtonIcon, action: toggleFavorite)
-                IconButton(title: "Edit Author", icon: "pencil", action: toggleEditSheet)
-                IconButton(title: "Delete", icon: "trash", action: requestDelete)
-            }
-            .swipeActions(edge: .trailing, allowsFullSwipe: false) {
-                IconButton(title: favoriteButtonTitle, icon: favoriteButtonIcon, action: toggleFavorite)
-                IconButton(title: "Edit Author", icon: "pencil", action: toggleEditSheet)
-                IconButton(title: "Delete", icon: "trash", action: requestDelete)
-            }
+        VStack(alignment: .leading) {
+            Text(author.name)
+            
+            Text("\(author.books.count) books authored")
+                .foregroundStyle(Color.secondary)
+        }
+        .padding()
+        .accessibilityElement(children: .combine)
+        .confirmationDialog("Are you sure you want to delete this author?", isPresented: $isDeleteRequested) {
+            Button("Delete", role: .destructive, action: deleteAuthor)
+        }
+        .alert(isPresented: $isShowingError) {
+            Alert(title: Text("Something Went Wrong"), message: Text(errorMessage ?? LocalizedStringKey("Some unknown error occurred. Please try again later.")))
+        }
+        .sheet(isPresented: $showingEditSheet) {
+            EditAuthorScreen(author: author)
+        }
+        .contextMenu {
+            IconButton(title: favoriteButtonTitle, icon: favoriteButtonIcon, action: toggleFavorite)
+            IconButton(title: "Edit Author", icon: "pencil", action: toggleEditSheet)
+            IconButton(title: "Delete", icon: "trash", action: requestDelete)
+        }
+        .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+            IconButton(title: favoriteButtonTitle, icon: favoriteButtonIcon, action: toggleFavorite)
+            IconButton(title: "Edit Author", icon: "pencil", action: toggleEditSheet)
+            IconButton(title: "Delete", icon: "trash", action: requestDelete)
+        }
     }
     
     private func toggleEditSheet() {

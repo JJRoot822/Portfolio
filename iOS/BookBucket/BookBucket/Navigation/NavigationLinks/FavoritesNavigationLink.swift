@@ -12,7 +12,7 @@ struct FavoritesNavigationLink: View {
         NavigationLink(destination: {
             Text("Favorites")
         }, label: {
-            Label(NSLocalizedString(AppSection.favorites.rawValue, comment: ""), systemImage: "star")
+            Label(LocalizedStringKey(AppTab.favorites.rawValue), systemImage: "star")
         })
     }
 }

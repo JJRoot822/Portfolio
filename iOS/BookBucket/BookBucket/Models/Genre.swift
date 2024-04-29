@@ -12,10 +12,11 @@ import SwiftData
 class Genre {
     var id: UUID = UUID()
     var name: String
+    var isFavorite: Bool
     @Relationship(inverse: \Book.genres) var books: [Book]
     
-    
-    init (name: String, books: [Book]) {
+    init (name: String, isFavorite: Bool, books: [Book]) {
         self.name = name
+        self.isFavorite = isFavorite
         self.books = books
     }}

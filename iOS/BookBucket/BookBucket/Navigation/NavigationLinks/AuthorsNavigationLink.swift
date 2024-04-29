@@ -12,7 +12,7 @@ struct AuthorsNavigationLink: View {
         NavigationLink(destination: {
             Text("Authors")
         }, label: {
-            Label(NSLocalizedString(AppSection.authors.rawValue, comment: ""), systemImage: "person.3")
+            Label(LocalizedStringKey(AppTab.authors.rawValue), systemImage: "person.3")
         })
     }
 }

@@ -18,6 +18,7 @@ struct GenresScreen: View {
         NavigationStack {
             GenresList(sortCriteria: sortCriteria, searchTerm: searchTerm)
                 .id(id)
+                .navigationTitle(Text("Genres"))
                 .searchable(text: $searchTerm, prompt: Text("Search for an Author"))
                 .refreshable(action: refresh)
                 .sheet(isPresented: $globalState.showingAddGenre, onDismiss: {

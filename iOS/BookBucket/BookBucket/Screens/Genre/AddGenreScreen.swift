@@ -13,6 +13,7 @@ struct AddGenreScreen: View {
     @Environment(\.dismiss) var dismiss
     
     @State private var genreName: String = ""
+    @State private var isFavorite: Bool = false
     @State private var isShowingError: Bool = false
     @State private var isShowingRequirementsPopover: Bool = false
     
@@ -24,12 +25,23 @@ struct AddGenreScreen: View {
                 
                     Button(action: toggleRequirementsPopover) {
                         Label("Show genre name field requirements", systemImage: "info.circle")
+                            .labelStyle(.iconOnly)
                     }
                     .popover(isPresented: $isShowingRequirementsPopover) {
-                        Text("The genre name field must not be empty.")
-                            .padding()
+                        VStack {
+                            Text("The genre name field must not be empty.")
+                         
+                            HStack {
+                                Spacer()
+                                
+                                Button("Close", action: toggleRequirementsPopover)
+                            }
+                        }
+                        .padding()
                     }
                 }
+                
+                Toggle("Is Favorite Genre", isOn: $isFavorite)
             }
             .navigationTitle(Text("Add Genre"))
             .alert(isPresented: $isShowingError) {
@@ -46,6 +58,7 @@ struct AddGenreScreen: View {
                 }
             }
         }
+        .interactiveDismissDisabled()
     }
     
     private func toggleRequirementsPopover() {
@@ -63,6 +76,7 @@ struct AddGenreScreen: View {
         
         switch result {
         case .success(()):
+            dismiss()
             return
         case .failure(_):
             context.rollback()
