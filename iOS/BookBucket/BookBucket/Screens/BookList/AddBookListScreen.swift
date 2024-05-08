@@ -1,19 +1,20 @@
 //
-//  AddGenreScreen.swift
+//  AddBookListScreen.swift
 //  BookBucket
 //
-//  Created by Joshua Root on 4/26/24.
+//  Created by Joshua Root on 4/30/24.
 //
 
 import SwiftUI
 import SwiftData
 
-struct AddGenreScreen: View {
+struct AddBookListScreen: View {
     @Environment(\.modelContext) var context
     @Environment(\.dismiss) var dismiss
     
-    @State private var genreName: String = ""
+    @State private var title: String = ""
     @State private var isFavorite: Bool = false
+    @State private var color: String = "Blue"
     @State private var isShowingError: Bool = false
     @State private var isShowingRequirementsPopover: Bool = false
     
@@ -21,16 +22,15 @@ struct AddGenreScreen: View {
         NavigationStack {
             Form {
                 HStack(spacing: 10) {
-                    TextField("name of Genre", text: $genreName)
-                
+                    TextField("Title of Book List", text: $title)
+                    
                     Button(action: toggleRequirementsPopover) {
-                        Label("Show genre name field requirements", systemImage: "info.circle")
-                            .labelStyle(.iconOnly)
+                        Label("Show book list title field requirements", systemImage: "info.circle")
                     }
                     .popover(isPresented: $isShowingRequirementsPopover) {
                         VStack {
-                            Text("The genre name field must not be empty.")
-                         
+                            Text("The book list title field must not be empty.")
+                            
                             HStack {
                                 Spacer()
                                 
@@ -41,11 +41,15 @@ struct AddGenreScreen: View {
                     }
                 }
                 
-                Toggle("Is Favorite Genre", isOn: $isFavorite)
+                Toggle("Is Favorite Book List", isOn: $isFavorite)
+                
+                Section("Choose a Color") {
+                    BookListColorPicker(selection: $color)
+                }
             }
-            .navigationTitle(Text("Add Genre"))
+            .navigationTitle(Text("Add Book List"))
             .alert(isPresented: $isShowingError) {
-                Alert(title: Text("Failed to Create Genre"), message: Text("Something went wrong when trying to save the data you entered for a new genre. Please try again later."), dismissButton: .cancel(Text("Ok")))
+                Alert(title: Text("Failed to Create Book List"), message: Text("Something went wrong when trying to save the data you entered for a new book list. Please try again later."))
             }
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
@@ -54,11 +58,10 @@ struct AddGenreScreen: View {
                 
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Create", action: create)
-                        .disabled(genreName.isEmpty)
+                        .disabled(title.isEmpty)
                 }
             }
         }
-        .interactiveDismissDisabled()
     }
     
     private func toggleRequirementsPopover() {
@@ -70,16 +73,20 @@ struct AddGenreScreen: View {
     }
     
     private func create() {
-        let genre = Genre(name: genreName, isFavorite: isFavorite, books: [])
+        let bookList = BookList(title: title, color: color, isFavorite: isFavorite, books: [])
         let dataHelper = DataHelper()
-        let result = dataHelper.insert(context: context, model: genre)
+        let result = dataHelper.insert(context: context, model: bookList)
         
         switch result {
         case .success(()):
             dismiss()
+            
             return
         case .failure(_):
-            context.rollback()
+            if context.hasChanges {
+                context.rollback()
+            }
+            
             isShowingError = true
         }
     }

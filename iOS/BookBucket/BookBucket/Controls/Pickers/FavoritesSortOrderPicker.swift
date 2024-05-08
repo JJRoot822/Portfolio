@@ -16,13 +16,14 @@ struct FavoritesSortOrderPicker: View {
     
     var body: some View {
         Menu(content: {
-            ForEach(options, id: \.rawValue.self) { option in
+            ForEach(options, id: \.rawValue) { option in
                 Button(LocalizedStringKey(option.rawValue)) {
                     selection = option
                 }
             }
         }, label: {
-            Label("Favorites Sort Options", systemImage: "arrow.up.and.down")
-        }
+            Label("Favorites Sort Order", systemImage: "arrow.up.and.down")
+                .labelStyle(.iconOnly)
+        })
     }
 }

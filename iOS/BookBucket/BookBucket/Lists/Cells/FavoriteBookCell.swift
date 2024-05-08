@@ -1,14 +1,14 @@
 //
-//  GenreCell.swift
+//  FavoriteBookCell.swift
 //  BookBucket
 //
-//  Created by Joshua Root on 4/26/24.
+//  Created by Joshua Root on 4/28/24.
 //
 
 import SwiftUI
 import SwiftData
 
-struct GenreCell: View {
+struct FavoriteBookCell: View {
     @Environment(\.modelContext) var context
     
     @State private var showingEditSheet: Bool = false
@@ -16,49 +16,66 @@ struct GenreCell: View {
     @State private var isShowingError: Bool = false
     @State private var isShowingSaveError: Bool = false
     
-    @Bindable var genre: Genre
-
+    @Bindable var book: Book
+    
     var favoriteButtonTitle: LocalizedStringKey {
-        return genre.isFavorite
+        return book.isFavorite
             ? "Remove from Favorites"
             : "Add to Favorites"
     }
     
     var favoriteButtonIcon: String {
-        return genre.isFavorite
+        return book.isFavorite
             ? "star.slash"
             : "star"
     }
     
+    var bookCoverImage: Image {
+        if let imageData = book.coverImage,
+           let uiImage = UIImage(data: imageData) {
+            return Image(uiImage: uiImage)
+        }
+        
+        return Image(systemName: "book.closed")
+    }
+    
     var body: some View {
-        VStack(alignment: .leading) {
-            Text(genre.name)
+        HStack(spacing: 20) {
+            bookCoverImage
+                .resizable()
+                .scaledToFit()
+                .frame(width: 75, height: 75)
+                .cornerRadius(5)
             
-            Text("\(genre.books.count) books")
-                .foregroundStyle(Color.secondary)
+            VStack(alignment: .leading) {
+                Text(book.title)
+                
+                Text("\(book.authors.count) authors")
+                    .foregroundStyle(Color.secondary)
+            }
         }
         .padding()
         .accessibilityElement(children: .combine)
-        .confirmationDialog("Are you sure you want to delete this genre?", isPresented: $isDeleteRequested) {
-            Button("Delete", role: .destructive, action: deleteGenre)
+        .confirmationDialog("Are you sure you want to delete this book?", isPresented: $isDeleteRequested) {
+            Button("Delete", role: .destructive, action: deleteBook)
         }
         .alert(isPresented: $isShowingError) {
-            Alert(title: Text("Failed to Delete Genre"), message: Text("Something went wrong when trying to delete the genre you requested. Please try again later."))
+            Alert(title: Text("Failed to Delete Book"), message: Text("Something went wrong when trying to delete the book you requested. Please try again later."))
         }
         .alert(isPresented: $isShowingSaveError) {
-            Alert(title: Text("Failed to Save Changes"), message: Text("Something went wrong when trying to save the changes to the genre you requested. Please try again later."))
+            Alert(title: Text("Failed to Save Changes"), message: Text("Something went wrong when trying to save the changes you made to the book you requested. Please try again later."))
         }
         .sheet(isPresented: $showingEditSheet) {
-            EditGenreScreen(genre: genre)
+            EditBookScreen(book: book)
         }
         .contextMenu {
             IconButton(title: favoriteButtonTitle, icon: favoriteButtonIcon, action: toggleFavorite)
-            IconButton(title: "Edit Genre", icon: "pencil", action: toggleEditSheet)
+            IconButton(title: "Edit Book", icon: "pencil", action: toggleEditSheet)
             IconButton(title: "Delete", icon: "trash", action: requestDelete)
         }
         .swipeActions(edge: .trailing, allowsFullSwipe: false) {
             IconButton(title: favoriteButtonTitle, icon: favoriteButtonIcon, action: toggleFavorite)
-            IconButton(title: "Edit Genre", icon: "pencil", action: toggleEditSheet)
+            IconButton(title: "Edit Book", icon: "pencil", action: toggleEditSheet)
             IconButton(title: "Delete", icon: "trash", action: requestDelete)
         }
     }
@@ -67,9 +84,9 @@ struct GenreCell: View {
         self.showingEditSheet = true
     }
     
-    private func deleteGenre() {
+    private func deleteBook() {
         let dataHelper = DataHelper()
-        let result = dataHelper.delete(context: context, model: genre)
+        let result = dataHelper.delete(context: context, model: book)
         
         switch result {
         case .success(()):
@@ -84,7 +101,7 @@ struct GenreCell: View {
     }
     
     private func toggleFavorite() {
-        genre.isFavorite.toggle()
+        book.isFavorite.toggle()
         
         let dataHelper = DataHelper()
         let result = dataHelper.save(context: context)

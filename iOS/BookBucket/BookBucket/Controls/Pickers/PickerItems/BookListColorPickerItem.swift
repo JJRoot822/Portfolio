@@ -1,0 +1,32 @@
+//
+//  BookListColorPickerItem.swift
+//  BookBucket
+//
+//  Created by Joshua Root on 4/30/24.
+//
+
+import SwiftUI
+
+struct BookListColorPickerItem: View {
+    var color: Color
+    var label: LocalizedStringKey
+    var selected: Bool
+    
+    var body: some View {
+        ZStack {
+            Circle()
+                .frame(width: 50, height: 50)
+                .foregroundStyle(color)
+            
+            Image(systemName: "checkmark.circle.fill")
+                .foregroundStyle(color)
+                .background(Color(uiColor: .systemBackground))
+                .clipShape(Circle())
+                .opacity(selected ? 1 : 0)
+        }
+        .shadow(color: .black, radius: 10, x: 0, y: 0)
+        .accessibilityAddTraits(.isToggle)
+        .accessibilityValue(Text(LocalizedStringKey(selected ? "selected" : "not selected")))
+        .accessibilityLabel(Text(label))
+    }
+}

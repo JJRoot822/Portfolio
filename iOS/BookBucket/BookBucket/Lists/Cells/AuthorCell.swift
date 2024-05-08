@@ -14,7 +14,7 @@ struct AuthorCell: View {
     @State private var showingEditSheet: Bool = false
     @State private var isDeleteRequested: Bool = false
     @State private var isShowingError: Bool = false
-    @State private var errorMessage: LocalizedStringKey?
+    @State private var isShowingSaveError: Bool = false
     
     @Bindable var author: Author
     
@@ -43,7 +43,10 @@ struct AuthorCell: View {
             Button("Delete", role: .destructive, action: deleteAuthor)
         }
         .alert(isPresented: $isShowingError) {
-            Alert(title: Text("Something Went Wrong"), message: Text(errorMessage ?? LocalizedStringKey("Some unknown error occurred. Please try again later.")))
+            Alert(title: Text("Failed to Delete Author"), message: Text("Something went wrong when trying to delete the author you requested. Please try again later."))
+        }
+        .alert(isPresented: $isShowingSaveError) {
+            Alert(title: Text("Failed to Save Changes"), message: Text("Something went wrong when trying to save the changes to the book you requested. Please try again later."))
         }
         .sheet(isPresented: $showingEditSheet) {
             EditAuthorScreen(author: author)
@@ -71,8 +74,7 @@ struct AuthorCell: View {
         switch result {
         case .success(()):
             return
-        case .failure(let error):
-            self.errorMessage = LocalizedStringKey(error.localizedDescription)
+        case .failure(_):
             self.isShowingError = true
         }
     }
@@ -90,9 +92,8 @@ struct AuthorCell: View {
         switch result {
         case .success(()):
             return
-        case .failure(let error):
-            self.errorMessage = LocalizedStringKey(error.localizedDescription)
-            self.isShowingError = true
+        case .failure(_):
+            self.isShowingSaveError = true
         }
     }
 }

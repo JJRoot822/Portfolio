@@ -64,10 +64,3 @@ struct BooksScreen: View {
         Text("")
     }
 }
-
-struct BookListsScreen: View {
-    var body: some View {
-        Text("")
-    }
-}
-

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BookListsSortCriteriaPicker: View {
+struct BookListsSortOrderPicker: View {
     @Binding var selection: BookListSortCriteria
     
     let options: [BookListSortCriteria] = [
@@ -16,16 +16,6 @@ struct BookListsSortCriteriaPicker: View {
     ]
     
     var body: some View {
-        #if os(macOS) || os(visionOS)
-        Picker(selection: $selection, content: {
-            ForEach(options, id: \.rawValue.self) { option in
-                Text(option.rawValue)
-                    .tag(option)
-            }
-        }, label: {
-            Label("Book Lists Sort Options", systemImage: "arrow.up.and.down")
-        })
-        #else
         Menu(content: {
             ForEach(options, id: \.rawValue.self) { option in
                 Button(option.rawValue) {
@@ -35,6 +25,5 @@ struct BookListsSortCriteriaPicker: View {
         }, label: {
             Label("Book Lists Sort Options", systemImage: "arrow.up.and.down")
         })
-        #endif
     }
 }

@@ -27,8 +27,16 @@ struct AddAuthorScreen: View {
                         Label("Show author name field requirements", systemImage: "info.circle")
                     }
                     .popover(isPresented: $isShowingRequirementsPopover) {
-                        Text("The author name field must not be empty.")
-                            .padding()
+                        VStack {
+                            Text("The author name field must not be empty.")
+                         
+                            HStack {
+                                Spacer()
+                                
+                                Button("Close", action: toggleRequirementsPopover)
+                            }
+                        }
+                        .padding()
                     }
                 }
                 
