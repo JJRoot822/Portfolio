@@ -19,11 +19,8 @@ struct GenresScreen: View {
             GenresList(sortCriteria: sortCriteria, searchTerm: searchTerm)
                 .id(id)
                 .navigationTitle(Text("Genres"))
-                .searchable(text: $searchTerm, prompt: Text("Search for an Author"))
-                .refreshable(action: refresh)
-                .sheet(isPresented: $globalState.showingAddGenre, onDismiss: {
-                    id = id
-                }) {
+                .searchable(text: $searchTerm, prompt: Text("Search for a Genre"))
+                .sheet(isPresented: $globalState.showingAddGenre) {
                     AddGenreScreen()
                 }
                 .toolbar {
@@ -38,9 +35,5 @@ struct GenresScreen: View {
     
     private func showAddGenreScreen() {
         globalState.showingAddGenre = true
-    }
-    
-    private func refresh() async {
-        id = UUID()
     }
 }

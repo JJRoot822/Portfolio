@@ -29,7 +29,7 @@ extension Color {
         "Teal": Color.teal
     ]
     
-    static func color(forName: String) -> Color {
-        return allColors[forName] ?? Color.accentColor
+    static func color(forName: String) -> Color? {
+        return allColors[forName]
     }
 }

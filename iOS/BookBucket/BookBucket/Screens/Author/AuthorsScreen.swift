@@ -20,7 +20,6 @@ struct AuthorsScreen: View {
                 .id(id)
                 .navigationTitle(Text("Authors"))
                 .searchable(text: $searchTerm, prompt: Text("Search for an Author"))
-                .refreshable(action: refresh)
                 .sheet(isPresented: $globalState.showingAddAuthor, onDismiss: {
                     id = id
                 }) {
@@ -38,9 +37,5 @@ struct AuthorsScreen: View {
     
     private func showAddAuthorScreen() {
         globalState.showingAddAuthor = true
-    }
-    
-    private func refresh() async {
-        id = UUID()
     }
 }

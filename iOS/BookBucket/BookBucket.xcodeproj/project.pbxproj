@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		03103F822BEB42630045F79E /* EditBookScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03103F812BEB42630045F79E /* EditBookScreen.swift */; };
 		03103F842BEB4E840045F79E /* EditBookCoverScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03103F832BEB4E840045F79E /* EditBookCoverScreen.swift */; };
+		03103F862BEB8A900045F79E /* BookBucketColorExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03103F852BEB8A900045F79E /* BookBucketColorExtensionTests.swift */; };
+		03103F882BEB92DF0045F79E /* FavoritesCategoryPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03103F872BEB92DF0045F79E /* FavoritesCategoryPicker.swift */; };
 		03423B852BDC54C800544D80 /* GenresScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C870322BDB230200991CB2 /* GenresScreen.swift */; };
 		03423B862BDC54C800544D80 /* AddGenreScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C870382BDC145800991CB2 /* AddGenreScreen.swift */; };
 		03423B872BDC54C800544D80 /* EditGenreScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C8703A2BDC16DA00991CB2 /* EditGenreScreen.swift */; };
@@ -89,6 +91,8 @@
 /* Begin PBXFileReference section */
 		03103F812BEB42630045F79E /* EditBookScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBookScreen.swift; sourceTree = "<group>"; };
 		03103F832BEB4E840045F79E /* EditBookCoverScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBookCoverScreen.swift; sourceTree = "<group>"; };
+		03103F852BEB8A900045F79E /* BookBucketColorExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookBucketColorExtensionTests.swift; sourceTree = "<group>"; };
+		03103F872BEB92DF0045F79E /* FavoritesCategoryPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCategoryPicker.swift; sourceTree = "<group>"; };
 		0398180E2BDC8825001C41C6 /* AppTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTab.swift; sourceTree = "<group>"; };
 		039818122BDE948C001C41C6 /* FavoritesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesScreen.swift; sourceTree = "<group>"; };
 		039818142BDE9524001C41C6 /* FavoritesSortCriteria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesSortCriteria.swift; sourceTree = "<group>"; };
@@ -231,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				03C20C0A2BD952A3005A5B07 /* BookBucketTests.swift */,
+				03103F852BEB8A900045F79E /* BookBucketColorExtensionTests.swift */,
 			);
 			path = BookBucketTests;
 			sourceTree = "<group>";
@@ -427,6 +432,7 @@
 				03CEB67C2BDC4DA4004EC667 /* GenreSortOrderPicker.swift */,
 				039818162BDE9631001C41C6 /* FavoritesSortOrderPicker.swift */,
 				03C7C1B72BE1760A00D1E0E6 /* BookListColorPicker.swift */,
+				03103F872BEB92DF0045F79E /* FavoritesCategoryPicker.swift */,
 			);
 			path = Pickers;
 			sourceTree = "<group>";
@@ -625,6 +631,7 @@
 				03423BC32BDC54C900544D80 /* iPhoneApp.swift in Sources */,
 				039818172BDE9631001C41C6 /* FavoritesSortOrderPicker.swift in Sources */,
 				0398180F2BDC8825001C41C6 /* AppTab.swift in Sources */,
+				03103F882BEB92DF0045F79E /* FavoritesCategoryPicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,6 +639,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03103F862BEB8A900045F79E /* BookBucketColorExtensionTests.swift in Sources */,
 				03C20C0B2BD952A3005A5B07 /* BookBucketTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

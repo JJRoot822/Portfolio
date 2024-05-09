@@ -36,7 +36,7 @@ struct BookListCell: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 50, height: 50)
-                .foregroundStyle(Color.color(forName: bookList.color))
+                .foregroundStyle(Color.color(forName: bookList.color) ?? .accentColor)
             
             VStack(alignment: .leading) {
                 Text(bookList.title)

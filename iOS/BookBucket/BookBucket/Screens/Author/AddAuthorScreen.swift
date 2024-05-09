@@ -74,6 +74,8 @@ struct AddAuthorScreen: View {
         
         switch result {
         case .success(()):
+            dismiss()
+            
             return
         case .failure(_):
             context.rollback()
