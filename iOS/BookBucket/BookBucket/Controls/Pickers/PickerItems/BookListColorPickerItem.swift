@@ -25,8 +25,5 @@ struct BookListColorPickerItem: View {
                 .opacity(selected ? 1 : 0)
         }
         .shadow(color: .black, radius: 10, x: 0, y: 0)
-        .accessibilityAddTraits(.isToggle)
-        .accessibilityValue(Text(LocalizedStringKey(selected ? "selected" : "not selected")))
-        .accessibilityLabel(Text(label))
     }
 }

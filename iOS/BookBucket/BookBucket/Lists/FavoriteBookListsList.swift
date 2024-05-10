@@ -52,7 +52,9 @@ struct FavoriteBookListsList: View {
         .overlay {
             if bookLists.count == 0 && !searchTerm.isEmpty {
                 ContentUnavailableView.search(text: searchTerm)
-            } else {
+            } 
+            
+            if bookLists.count == 0 && searchTerm.isEmpty {
                 Text("Nothing to show right now. Insert a new book list marked as a favorite on the book lists screen, or mark an existing book list as a favorite to get started.")
                     .foregroundStyle(Color.secondary)
             }

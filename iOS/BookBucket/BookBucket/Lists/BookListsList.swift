@@ -60,7 +60,9 @@ struct BookListsList: View {
         .overlay {
             if bookLists.count == 0 && !searchTerm.isEmpty {
                 ContentUnavailableView.search(text: searchTerm)
-            } else {
+            } 
+            
+            if bookLists.count == 0 && searchTerm.isEmpty {
                 Text("Nothing to show right now. Tap the add button to insert a new book list.")
                     .foregroundStyle(Color.secondary)
             }

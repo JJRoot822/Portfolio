@@ -52,7 +52,9 @@ struct FavoriteAuthorsList: View {
         .overlay {
             if authors.count == 0 && !searchTerm.isEmpty {
                 ContentUnavailableView.search(text: searchTerm)
-            } else {
+            } 
+            
+            if authors.count == 0 && searchTerm.isEmpty {
                 Text("Nothing to show right now. Insert a new author marked as a favorite on the authors screen, or mark an existing author as a favorite to get started.")
                     .foregroundStyle(Color.secondary)
             }

@@ -52,7 +52,9 @@ struct FavoriteGenresList: View {
         .overlay {
             if genres.count == 0 && !searchTerm.isEmpty {
                 ContentUnavailableView.search(text: searchTerm)
-            } else {
+            } 
+            
+            if genres.count == 0 && searchTerm.isEmpty {
                 Text("Nothing to show right now. Insert a new genre marked as a favorite on the genres screen, or mark an existing genre as a favorite to get started.")
                     .foregroundStyle(Color.secondary)
             }
