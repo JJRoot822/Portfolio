@@ -34,21 +34,10 @@ struct AddBookScreen: View {
                     HStack(spacing: 10) {
                         TextField("Title of Book", text: $bookTitle)
                         
-                        Button(action: toggleRequirementsPopover) {
-                            Label("Show book title field requirements", systemImage: "info.circle")
-                        }
-                        .popover(isPresented: $isShowingRequirementsPopover) {
-                            VStack {
-                                Text("The book title field must not be empty.")
-                                
-                                HStack {
-                                    Spacer()
-                                    
-                                    Button("Close", action: toggleRequirementsPopover)
-                                }
+                        FieldInfoPopoverToggleButton(label: "Show book title field requirments", action: toggleRequirementsPopover)
+                            .popover(isPresented: $isShowingRequirementsPopover) {
+                                FieldInfoPopover(infoText: "The book title field must not be empty.")
                             }
-                            .padding()
-                        }
                     }
                     
                     BookFormatPicker(selection: $bookFormat)

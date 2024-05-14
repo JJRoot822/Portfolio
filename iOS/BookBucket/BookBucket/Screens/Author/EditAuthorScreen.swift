@@ -23,13 +23,10 @@ struct EditAuthorScreen: View {
                 HStack(spacing: 10) {
                     TextField("name of Author", text: $author.name)
                     
-                    Button(action: toggleRequirementsPopover) {
-                        Label("Show author name field requirements", systemImage: "info.circle")
-                    }
-                    .popover(isPresented: $isShowingRequirementsPopover) {
-                        Text("The author name field must not be empty.")
-                            .padding()
-                    }
+                    FieldInfoPopoverToggleButton(label: "Show author name field requirements", action: toggleRequirementsPopover)
+                        .popover(isPresented: $isShowingRequirementsPopover) {
+                            FieldInfoPopover(infoText: "The author name field must not be empty.")
+                        }
                 }
                 
                 Toggle("Is Favorite Author", isOn: $author.isFavorited)

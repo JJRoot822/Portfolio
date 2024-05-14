@@ -11,6 +11,8 @@
 		03103F842BEB4E840045F79E /* EditBookCoverScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03103F832BEB4E840045F79E /* EditBookCoverScreen.swift */; };
 		03103F862BEB8A900045F79E /* BookBucketColorExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03103F852BEB8A900045F79E /* BookBucketColorExtensionTests.swift */; };
 		03103F882BEB92DF0045F79E /* FavoritesCategoryPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03103F872BEB92DF0045F79E /* FavoritesCategoryPicker.swift */; };
+		03103F8A2BEE1C260045F79E /* FieldInfoPopoverToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03103F892BEE1C260045F79E /* FieldInfoPopoverToggleButton.swift */; };
+		03103F8F2BEE215F0045F79E /* FieldInfoPopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03103F8E2BEE215F0045F79E /* FieldInfoPopover.swift */; };
 		03423B852BDC54C800544D80 /* GenresScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C870322BDB230200991CB2 /* GenresScreen.swift */; };
 		03423B862BDC54C800544D80 /* AddGenreScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C870382BDC145800991CB2 /* AddGenreScreen.swift */; };
 		03423B872BDC54C800544D80 /* EditGenreScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C8703A2BDC16DA00991CB2 /* EditGenreScreen.swift */; };
@@ -93,6 +95,8 @@
 		03103F832BEB4E840045F79E /* EditBookCoverScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBookCoverScreen.swift; sourceTree = "<group>"; };
 		03103F852BEB8A900045F79E /* BookBucketColorExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookBucketColorExtensionTests.swift; sourceTree = "<group>"; };
 		03103F872BEB92DF0045F79E /* FavoritesCategoryPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCategoryPicker.swift; sourceTree = "<group>"; };
+		03103F892BEE1C260045F79E /* FieldInfoPopoverToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldInfoPopoverToggleButton.swift; sourceTree = "<group>"; };
+		03103F8E2BEE215F0045F79E /* FieldInfoPopover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldInfoPopover.swift; sourceTree = "<group>"; };
 		0398180E2BDC8825001C41C6 /* AppTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTab.swift; sourceTree = "<group>"; };
 		039818122BDE948C001C41C6 /* FavoritesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesScreen.swift; sourceTree = "<group>"; };
 		039818142BDE9524001C41C6 /* FavoritesSortCriteria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesSortCriteria.swift; sourceTree = "<group>"; };
@@ -182,6 +186,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03103F8B2BEE20FF0045F79E /* Popovers */ = {
+			isa = PBXGroup;
+			children = (
+				03103F8E2BEE215F0045F79E /* FieldInfoPopover.swift */,
+			);
+			path = Popovers;
+			sourceTree = "<group>";
+		};
 		03C20BEB2BD952A2005A5B07 = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +217,7 @@
 		03C20BF62BD952A2005A5B07 /* BookBucket */ = {
 			isa = PBXGroup;
 			children = (
+				03103F8B2BEE20FF0045F79E /* Popovers */,
 				03C7C1AB2BE0730000D1E0E6 /* Extensions */,
 				03C870292BD9EDD200991CB2 /* Screens */,
 				03C20C2B2BD95413005A5B07 /* Data */,
@@ -416,6 +429,7 @@
 			isa = PBXGroup;
 			children = (
 				03CEB6752BDC4DA4004EC667 /* IconButton.swift */,
+				03103F892BEE1C260045F79E /* FieldInfoPopoverToggleButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -620,6 +634,7 @@
 				03C7C1B32BE14FF700D1E0E6 /* BookListsList.swift in Sources */,
 				03C7C1BC2BE24CE700D1E0E6 /* EditBookListScreen.swift in Sources */,
 				03C7C1BF2BE3167800D1E0E6 /* AddBookScreen.swift in Sources */,
+				03103F8F2BEE215F0045F79E /* FieldInfoPopover.swift in Sources */,
 				0398181F2BDF3BE6001C41C6 /* Category.swift in Sources */,
 				03103F842BEB4E840045F79E /* EditBookCoverScreen.swift in Sources */,
 				0398181D2BDF3655001C41C6 /* FavoriteGenresList.swift in Sources */,
@@ -629,6 +644,7 @@
 				03423BBB2BDC54C900544D80 /* AuthorSortOrderPicker.swift in Sources */,
 				03103F822BEB42630045F79E /* EditBookScreen.swift in Sources */,
 				03423BC32BDC54C900544D80 /* iPhoneApp.swift in Sources */,
+				03103F8A2BEE1C260045F79E /* FieldInfoPopoverToggleButton.swift in Sources */,
 				039818172BDE9631001C41C6 /* FavoritesSortOrderPicker.swift in Sources */,
 				0398180F2BDC8825001C41C6 /* AppTab.swift in Sources */,
 				03103F882BEB92DF0045F79E /* FavoritesCategoryPicker.swift in Sources */,

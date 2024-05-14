@@ -23,21 +23,10 @@ struct EditBookListScreen: View {
                 HStack(spacing: 10) {
                     TextField("Title of Book List", text: $bookList.title)
                     
-                    Button(action: toggleRequirementsPopover) {
-                        Label("Show book list title field requirements", systemImage: "info.circle")
-                    }
-                    .popover(isPresented: $isShowingRequirementsPopover) {
-                        VStack {
-                            Text("The book list title field must not be empty.")
-                            
-                            HStack {
-                                Spacer()
-                                
-                                Button("Close", action: toggleRequirementsPopover)
-                            }
+                    FieldInfoPopoverToggleButton(label: "Show book list title field requirements", action: toggleRequirementsPopover)
+                        .popover(isPresented: $isShowingRequirementsPopover) {
+                            FieldInfoPopover(infoText: "The book list title field must not be empty.")
                         }
-                        .padding()
-                    }
                 }
                 
                 Toggle("Is Favorite Book List", isOn: $bookList.isFavorite)

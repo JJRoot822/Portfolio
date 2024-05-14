@@ -23,22 +23,10 @@ struct AddGenreScreen: View {
                 HStack(spacing: 10) {
                     TextField("name of Genre", text: $genreName)
                 
-                    Button(action: toggleRequirementsPopover) {
-                        Label("Show genre name field requirements", systemImage: "info.circle")
-                            .labelStyle(.iconOnly)
-                    }
-                    .popover(isPresented: $isShowingRequirementsPopover) {
-                        VStack {
-                            Text("The genre name field must not be empty.")
-                         
-                            HStack {
-                                Spacer()
-                                
-                                Button("Close", action: toggleRequirementsPopover)
-                            }
+                    FieldInfoPopoverToggleButton(label: "Show genre name field requirements", action: toggleRequirementsPopover)
+                        .popover(isPresented: $isShowingRequirementsPopover) {
+                            FieldInfoPopover(infoText: "The genre name field must not be empty.")
                         }
-                        .padding()
-                    }
                 }
                 
                 Toggle("Is Favorite Genre", isOn: $isFavorite)
