@@ -36,14 +36,3 @@ struct FavoritesScreen: View {
         }
     }
 }
-
-struct FavoriteBooksList: View {
-    var sortCriteria: FavoritesSortCriteria
-    var searchTerm: String
-    
-    @Query private var books: [Book]
-    
-    var body: some View {
-        Text("")
-    }
-}
