@@ -46,7 +46,7 @@ struct FavoriteBooksList: View {
     var body: some View {
         List {
             ForEach(books) { book in
-//                FavoriteBookCell(bookList: bookList)
+                FavoriteBookCell(book: book)
             }
         }
         .overlay {

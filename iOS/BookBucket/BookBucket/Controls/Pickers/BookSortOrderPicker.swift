@@ -20,15 +20,6 @@ struct BookSortOrderPicker: View {
     ]
     
     var body: some View {
-        #if os(macOS) || os(visionOS)
-        Picker(selection: $selection, content: {
-            ForEach(options, id: \.rawValue.self) { option in
-                Text("\(option.rawValue)").tag(option)
-            }
-        }, label: {
-            Label("Books Sort Options", systemImage: "arrow.up.and.down")
-        })
-        #else
         Menu(content: {
             ForEach(options, id: \.rawValue.self) { option in
                 Button(option.rawValue) {
@@ -38,6 +29,5 @@ struct BookSortOrderPicker: View {
         }, label: {
             Label("Books Sort Options", systemImage: "arrow.up.and.down")
         })
-        #endif
     }
 }

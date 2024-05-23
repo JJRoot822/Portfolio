@@ -9,26 +9,27 @@ import SwiftUI
 import SwiftData
 
 struct EditGenreScreen: View {
-    @Environment(\.modelContext) var context
     @Environment(\.dismiss) var dismiss
+    @Environment(\.modelContext) var context
     
     @Bindable var genre: Genre
     
-    @State private var isShowingError: Bool = false
     @State private var isShowingRequirementsPopover: Bool = false
+    @State private var isShowingError: Bool = false
     
     var body: some View {
         NavigationStack {
             Form {
                 HStack(spacing: 10) {
-                    TextField("name of Genre", text: $genre.name)
+                    TextField("Genre Name", text: $genre.name)
                     
                     FieldInfoPopoverToggleButton(label: "Show genre name field requirements", action: toggleRequirementsPopover)
-                        .popover(isPresented: $isShowingRequirementsPopover) {
-                            FieldInfoPopover(infoText: "The genre name field must not be empty.")
-                        }
+                }
+                .popover(isPresented: $isShowingRequirementsPopover) {
+                    FieldInfoPopover(infoText: "The genre name field must not be empty")
+                }
                 
-                Toggle("Is Favorite Genre", isOn: $genre.isFavorite)
+                Toggle("Favorite Genre", isOn: $genre.isFavorite)
             }
             .navigationTitle(Text("Edit Genre"))
             .navigationBarTitleDisplayMode(.large)
@@ -39,7 +40,7 @@ struct EditGenreScreen: View {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel", role: .cancel, action: cancel)
                 }
-                
+                        
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Save", action: saveChanges)
                         .disabled(genre.name.isEmpty)
@@ -49,16 +50,16 @@ struct EditGenreScreen: View {
         .interactiveDismissDisabled()
     }
     
-    private func toggleRequirementsPopover() {
-        isShowingRequirementsPopover.toggle()
-    }
-    
     private func cancel() {
         if context.hasChanges {
             context.rollback()
         }
         
         dismiss()
+    }
+    
+    private func toggleRequirementsPopover() {
+        isShowingRequirementsPopover.toggle()
     }
     
     private func saveChanges() {
@@ -74,8 +75,8 @@ struct EditGenreScreen: View {
             if context.hasChanges {
                 context.rollback()
             }
-            
-            isShowingError = true
         }
+        
+        self.isShowingError = true
     }
 }

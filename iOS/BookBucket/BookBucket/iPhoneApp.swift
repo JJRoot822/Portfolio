@@ -59,8 +59,3 @@ struct HomeScreen: View {
     }
 }
 
-struct BooksScreen: View {
-    var body: some View {
-        Text("")
-    }
-}

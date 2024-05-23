@@ -44,8 +44,8 @@ struct FavoriteBookCell: View {
             bookCoverImage
                 .resizable()
                 .scaledToFit()
-                .frame(width: 75, height: 75)
-                .cornerRadius(5)
+                .frame(width: 50, height: 50)
+                .clipShape(RoundedRectangle(cornerRadius: 5))
             
             VStack(alignment: .leading) {
                 Text(book.title)

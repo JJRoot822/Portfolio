@@ -1,0 +1,384 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "" : {
+
+    },
+    "%@" : {
+
+    },
+    "%lld authors" : {
+
+    },
+    "%lld books" : {
+
+    },
+    "%lld books authored" : {
+
+    },
+    "Add a new author" : {
+
+    },
+    "Add a new Book" : {
+
+    },
+    "Add a new book list" : {
+
+    },
+    "Add a new genre" : {
+
+    },
+    "Add Author" : {
+
+    },
+    "Add Book" : {
+
+    },
+    "Add Book List" : {
+
+    },
+    "Add Genre" : {
+
+    },
+    "Add New Author" : {
+
+    },
+    "Add New Book" : {
+
+    },
+    "Add New Book List" : {
+
+    },
+    "Add New Genre" : {
+
+    },
+    "Add to Favorites" : {
+
+    },
+    "Are you sure you want to delete this author?" : {
+
+    },
+    "Are you sure you want to delete this book list?" : {
+
+    },
+    "Are you sure you want to delete this book?" : {
+
+    },
+    "Are you sure you want to delete this genre?" : {
+
+    },
+    "Author Sort Options" : {
+
+    },
+    "Authors" : {
+
+    },
+    "Basic Information" : {
+
+    },
+    "Book Format" : {
+
+    },
+    "Book Lists" : {
+
+    },
+    "Book Lists Sort Options" : {
+
+    },
+    "Book ReleaseDate" : {
+
+    },
+    "BookBucket" : {
+
+    },
+    "BookLists" : {
+
+    },
+    "Books" : {
+
+    },
+    "Books Sort Options" : {
+
+    },
+    "Cancel" : {
+
+    },
+    "Change Book Cover" : {
+
+    },
+    "Chapters Read: %lld" : {
+
+    },
+    "Chapters: %lld" : {
+
+    },
+    "Choose a Color" : {
+
+    },
+    "Choose a Picture" : {
+
+    },
+    "Clear Selection" : {
+
+    },
+    "Close" : {
+
+    },
+    "Create" : {
+
+    },
+    "Delete" : {
+
+    },
+    "Delete Book" : {
+
+    },
+    "Edit Author" : {
+
+    },
+    "Edit Book" : {
+
+    },
+    "Edit Book List" : {
+
+    },
+    "Edit Genre" : {
+
+    },
+    "Failed to Create Author" : {
+
+    },
+    "Failed to Create Book" : {
+
+    },
+    "Failed to Create Book List" : {
+
+    },
+    "Failed to Create Genre" : {
+
+    },
+    "Failed to Delete Author" : {
+
+    },
+    "Failed to Delete Book" : {
+
+    },
+    "Failed to Delete Book List" : {
+
+    },
+    "Failed to Delete Genre" : {
+
+    },
+    "Failed to Load Image" : {
+
+    },
+    "Failed to Save Changes" : {
+
+    },
+    "Favorite Genre" : {
+
+    },
+    "Favorites" : {
+
+    },
+    "Favorites Category" : {
+
+    },
+    "Favorites Sort Order" : {
+
+    },
+    "Genre Name" : {
+
+    },
+    "Genre Sort Options" : {
+
+    },
+    "Genres" : {
+
+    },
+    "Has Completed Book" : {
+
+    },
+    "Home" : {
+
+    },
+    "Is Currently Reading" : {
+
+    },
+    "Is Favorite Author" : {
+
+    },
+    "Is Favorite Book" : {
+
+    },
+    "Is Favorite Book List" : {
+
+    },
+    "Is Favorite Genre" : {
+
+    },
+    "name of Author" : {
+
+    },
+    "name of Genre" : {
+
+    },
+    "No Author" : {
+
+    },
+    "No cover image for this book was selected." : {
+
+    },
+    "Nothing to show right now. Insert a new author marked as a favorite on the authors screen, or mark an existing author as a favorite to get started." : {
+
+    },
+    "Nothing to show right now. Insert a new book list marked as a favorite on the book lists screen, or mark an existing book list as a favorite to get started." : {
+
+    },
+    "Nothing to show right now. Insert a new book marked as a favorite on the books screen, or mark an existing book as a favorite to get started." : {
+
+    },
+    "Nothing to show right now. Insert a new genre marked as a favorite on the genres screen, or mark an existing genre as a favorite to get started." : {
+
+    },
+    "Nothing to Show Right Now. Tap the Add Button to Insert a New Author" : {
+
+    },
+    "Nothing to Show Right Now. Tap the Add Button to Insert a New Book" : {
+
+    },
+    "Nothing to show right now. Tap the add button to insert a new book list." : {
+
+    },
+    "Nothing to Show Right Now. Tap the Add Button to Insert a New Genre" : {
+
+    },
+    "Ok" : {
+
+    },
+    "Pages Read: %lld" : {
+
+    },
+    "Pages: %lld" : {
+
+    },
+    "Reading Status Information" : {
+
+    },
+    "Remove from Favorites" : {
+
+    },
+    "Save" : {
+
+    },
+    "Search for a Book" : {
+
+    },
+    "Search for a Book List" : {
+
+    },
+    "Search for a Genre" : {
+
+    },
+    "Search for an Author" : {
+
+    },
+    "Select a color for your book list" : {
+
+    },
+    "Show author name field requirements" : {
+
+    },
+    "Show book list title field requirements" : {
+
+    },
+    "Show book title field requirments" : {
+
+    },
+    "Show genre name field requirements" : {
+
+    },
+    "Show requirements for the book cover image field" : {
+
+    },
+    "Something went wrong when trying to delete the author you requested. Please try again later." : {
+
+    },
+    "Something went wrong when trying to delete the book list you requested. Please try again later." : {
+
+    },
+    "Something went wrong when trying to delete the book you requested. Please try again later." : {
+
+    },
+    "Something went wrong when trying to delete the genre you requested. Please try again later." : {
+
+    },
+    "Something went wrong when trying to delete this book. Please try again later." : {
+
+    },
+    "Something went wrong when trying to load the photo you selected. Either it's in an unsupported format, or there is some unknown issue. Please try again later." : {
+
+    },
+    "Something went wrong when trying to save the changes to the book list you requested. Please try again later." : {
+
+    },
+    "Something went wrong when trying to save the changes to the book you requested. Please try again later." : {
+
+    },
+    "Something went wrong when trying to save the changes to the genre you requested. Please try again later." : {
+
+    },
+    "Something went wrong when trying to save the changes you made to the author's information. Please try again later." : {
+
+    },
+    "Something went wrong when trying to save the changes you made to the book you requested. Please try again later." : {
+
+    },
+    "Something went wrong when trying to save the changes you made to the genre's information. Please try again later." : {
+
+    },
+    "Something went wrong when trying to save the changes you made to this book. Please try again later." : {
+
+    },
+    "Something went wrong when trying to save the data you entered for a new author. Please try again later." : {
+
+    },
+    "Something went wrong when trying to save the data you entered for a new book list. Please try again later." : {
+
+    },
+    "Something went wrong when trying to save the data you entered for a new book. Please try again later." : {
+
+    },
+    "Something went wrong when trying to save the data you entered for a new genre. Please try again later." : {
+
+    },
+    "Something whent wrong when trying to save the changes you made to the book list. Please try again later." : {
+
+    },
+    "The author name field must not be empty." : {
+
+    },
+    "The book cover image is optional." : {
+
+    },
+    "The book list title field must not be empty." : {
+
+    },
+    "The book title field must not be empty." : {
+
+    },
+    "The genre name field must not be empty" : {
+
+    },
+    "The genre name field must not be empty." : {
+
+    },
+    "Title of Book" : {
+
+    },
+    "Title of Book List" : {
+
+    }
+  },
+  "version" : "1.0"
+}
