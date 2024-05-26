@@ -43,29 +43,15 @@ struct BookCoverImagePicker: View {
                              matching: filters) {
                     Label("Choose a Picture", systemImage: "camera.fill")
                 }
-                
-                Button(action: toggleRequirementsPopover) {
-                    Label("Show requirements for the book cover image field", systemImage: "info.circle")
-                        .labelStyle(.iconOnly)
-                }
+            
+                FieldInfoPopoverToggleButton(label: "Show requirements for the book cover image field", action: toggleRequirementsPopover)
             }
             
             Button("Clear Selection", action: clearCoverImage)
-                .frame(width: .infinity)
                 .buttonStyle(BorderedButtonStyle())
         }
         .popover(isPresented: $isShowingRequirementsPopover) {
-            VStack {
-                
-                Text("The book cover image is optional.")
-                
-                HStack {
-                    Spacer()
-                    
-                    Button("Close", action: toggleRequirementsPopover)
-                }
-            }
-            .padding()
+            FieldInfoPopover(infoText: "The book cover image is optional.")
         }
         .alert(isPresented: $isShowingError) {
             Alert(title: Text("Failed to Load Image"), message: Text("Something went wrong when trying to load the photo you selected. Either it's in an unsupported format, or there is some unknown issue. Please try again later."))

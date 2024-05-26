@@ -17,8 +17,18 @@ struct FavoritesSortOrderPicker: View {
     var body: some View {
         Menu(content: {
             ForEach(options, id: \.rawValue) { option in
-                Button(LocalizedStringKey(option.rawValue)) {
-                    selection = option
+                if selection == option {
+                    Button(action: {
+                        selection = option
+                    }, label : {
+                        Label(option.rawValue, systemImage: "checkmark")
+                    })
+                    .accessibilityLabel(Text("\(option.rawValue), selected"))
+                } else {
+                    Button(option.rawValue) {
+                        selection = option
+                    }
+                    .accessibilityLabel(Text(option.rawValue))
                 }
             }
         }, label: {

@@ -7,6 +7,12 @@
     "%@" : {
 
     },
+    "%@, selected" : {
+
+    },
+    "%lld" : {
+
+    },
     "%lld authors" : {
 
     },
@@ -14,6 +20,9 @@
 
     },
     "%lld books authored" : {
+
+    },
+    "Add" : {
 
     },
     "Add a new author" : {
@@ -31,13 +40,22 @@
     "Add Author" : {
 
     },
+    "Add Authors" : {
+
+    },
     "Add Book" : {
 
     },
     "Add Book List" : {
 
     },
+    "Add Books" : {
+
+    },
     "Add Genre" : {
+
+    },
+    "Add Genres" : {
 
     },
     "Add New Author" : {
@@ -67,6 +85,12 @@
     "Are you sure you want to delete this genre?" : {
 
     },
+    "Are you sure you want to remove this book from %@?" : {
+
+    },
+    "Author name" : {
+
+    },
     "Author Sort Options" : {
 
     },
@@ -88,6 +112,15 @@
     "Book ReleaseDate" : {
 
     },
+    "Book Title" : {
+
+    },
+    "Book's Authors" : {
+
+    },
+    "Book's Genres" : {
+
+    },
     "BookBucket" : {
 
     },
@@ -95,6 +128,9 @@
 
     },
     "Books" : {
+
+    },
+    "Books in %@" : {
 
     },
     "Books Sort Options" : {
@@ -124,7 +160,13 @@
     "Close" : {
 
     },
+    "Completed)" : {
+
+    },
     "Create" : {
+
+    },
+    "Currently Reading" : {
 
     },
     "Delete" : {
@@ -172,7 +214,13 @@
     "Failed to Load Image" : {
 
     },
+    "Failed to Remove Book" : {
+
+    },
     "Failed to Save Changes" : {
+
+    },
+    "Favorite" : {
 
     },
     "Favorite Genre" : {
@@ -185,6 +233,12 @@
 
     },
     "Favorites Sort Order" : {
+
+    },
+    "Format" : {
+
+    },
+    "Genre name" : {
 
     },
     "Genre Name" : {
@@ -223,6 +277,9 @@
     "name of Genre" : {
 
     },
+    "No" : {
+
+    },
     "No Author" : {
 
     },
@@ -241,6 +298,9 @@
     "Nothing to show right now. Insert a new genre marked as a favorite on the genres screen, or mark an existing genre as a favorite to get started." : {
 
     },
+    "Nothing to Show Right Now. Tap the Add Button to Add a Book to This Book List" : {
+
+    },
     "Nothing to Show Right Now. Tap the Add Button to Insert a New Author" : {
 
     },
@@ -253,7 +313,34 @@
     "Nothing to Show Right Now. Tap the Add Button to Insert a New Genre" : {
 
     },
+    "Number of Authors" : {
+
+    },
+    "Number of Books Authored" : {
+
+    },
+    "Number of Books in Genre" : {
+
+    },
+    "Number of Chapters" : {
+
+    },
+    "Number of Chapters Read" : {
+
+    },
+    "Number of Genres" : {
+
+    },
+    "Number of Pages" : {
+
+    },
+    "Number of Pages Read" : {
+
+    },
     "Ok" : {
+
+    },
+    "Options" : {
 
     },
     "Pages Read: %lld" : {
@@ -265,7 +352,16 @@
     "Reading Status Information" : {
 
     },
+    "Release Date" : {
+
+    },
+    "Remove from %@" : {
+
+    },
     "Remove from Favorites" : {
+
+    },
+    "Remove from List" : {
 
     },
     "Save" : {
@@ -319,6 +415,9 @@
     "Something went wrong when trying to load the photo you selected. Either it's in an unsupported format, or there is some unknown issue. Please try again later." : {
 
     },
+    "Something went wrong when trying to remove this book from %@. Please try again later." : {
+
+    },
     "Something went wrong when trying to save the changes to the book list you requested. Please try again later." : {
 
     },
@@ -352,6 +451,15 @@
     "Something went wrong when trying to save the data you entered for a new genre. Please try again later." : {
 
     },
+    "Something went wrong when you tried to add authors to %@. Please try again later." : {
+
+    },
+    "Something went wrong when you tried to add books to the list %@. Please try again later." : {
+
+    },
+    "Something went wrong when you tried to add genres to %@. Please try again later." : {
+
+    },
     "Something whent wrong when trying to save the changes you made to the book list. Please try again later." : {
 
     },
@@ -377,6 +485,9 @@
 
     },
     "Title of Book List" : {
+
+    },
+    "Yes" : {
 
     }
   },

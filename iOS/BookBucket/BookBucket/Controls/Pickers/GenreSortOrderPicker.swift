@@ -16,25 +16,24 @@ struct GenreSortOrderPicker: View {
     ]
     
     var body: some View {
-        #if os(macOS) || os(visionOS)
-        Picker(selection: $selection, content: {
-            ForEach(options, id: \.rawValue.self) { option in
-                Text("\(option.rawValue)")
-                    .tag(option)
-            }
-        }, label: {
-            Label("Genre Sort Options", systemImage: "arrow.up.and.down")
-        })
-#else
         Menu(content: {
             ForEach(options, id: \.rawValue.self) { option in
-                Button(option.rawValue) {
-                    selection = option
+                if selection == option {
+                    Button(action: {
+                        selection = option
+                    }, label : {
+                        Label(option.rawValue, systemImage: "checkmark")
+                    })
+                    .accessibilityLabel(Text("\(option.rawValue), selected"))
+                } else {
+                    Button(option.rawValue) {
+                        selection = option
+                    }
+                    .accessibilityLabel(Text(option.rawValue))
                 }
             }
         }, label: {
             Label("Genre Sort Options", systemImage: "arrow.up.and.down")
         })
-        #endif
     }
 }
