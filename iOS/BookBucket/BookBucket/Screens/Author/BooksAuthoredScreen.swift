@@ -12,11 +12,18 @@ struct BooksAuthoredScreen: View {
     
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(author.books) { book in
-                    Text(book.title)
-                        .padding()
+            if author.books.isEmpty {
+                Text("Nothing to show right now. Add an author to this book to see it listed here.")
+                    .foregroundStyle(Color.secondary)
+                    .navigationTitle(Text("Books Authored"))
+            } else {
+                List {
+                    ForEach(author.books) { book in
+                        Text(book.title)
+                            .padding()
+                    }
                 }
+                .navigationTitle(Text("Books Authored"))
             }
         }
     }

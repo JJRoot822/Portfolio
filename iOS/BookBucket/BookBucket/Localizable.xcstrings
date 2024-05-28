@@ -7,19 +7,7 @@
     "%@" : {
 
     },
-    "%@, selected" : {
-
-    },
     "%lld" : {
-
-    },
-    "%lld authors" : {
-
-    },
-    "%lld books" : {
-
-    },
-    "%lld books authored" : {
 
     },
     "Add" : {
@@ -88,13 +76,13 @@
     "Are you sure you want to remove this book from %@?" : {
 
     },
-    "Author name" : {
-
-    },
     "Author Sort Options" : {
 
     },
     "Authors" : {
+
+    },
+    "Authors: %lld" : {
 
     },
     "Basic Information" : {
@@ -112,9 +100,6 @@
     "Book ReleaseDate" : {
 
     },
-    "Book Title" : {
-
-    },
     "Book's Authors" : {
 
     },
@@ -130,10 +115,16 @@
     "Books" : {
 
     },
-    "Books in %@" : {
+    "Books Authored" : {
+
+    },
+    "Books Authored: %lld" : {
 
     },
     "Books Sort Options" : {
+
+    },
+    "Books: %lld" : {
 
     },
     "Cancel" : {
@@ -160,13 +151,7 @@
     "Close" : {
 
     },
-    "Completed)" : {
-
-    },
     "Create" : {
-
-    },
-    "Currently Reading" : {
 
     },
     "Delete" : {
@@ -179,6 +164,9 @@
 
     },
     "Edit Book" : {
+
+    },
+    "Edit Book Cover" : {
 
     },
     "Edit Book List" : {
@@ -235,9 +223,6 @@
     "Favorites Sort Order" : {
 
     },
-    "Format" : {
-
-    },
     "Genre name" : {
 
     },
@@ -286,6 +271,12 @@
     "No cover image for this book was selected." : {
 
     },
+    "Nothing to show right now. Add a genre to this book to see it here." : {
+
+    },
+    "Nothing to show right now. Add an author to this book to see it listed here." : {
+
+    },
     "Nothing to show right now. Insert a new author marked as a favorite on the authors screen, or mark an existing author as a favorite to get started." : {
 
     },
@@ -313,28 +304,7 @@
     "Nothing to Show Right Now. Tap the Add Button to Insert a New Genre" : {
 
     },
-    "Number of Authors" : {
-
-    },
-    "Number of Books Authored" : {
-
-    },
     "Number of Books in Genre" : {
-
-    },
-    "Number of Chapters" : {
-
-    },
-    "Number of Chapters Read" : {
-
-    },
-    "Number of Genres" : {
-
-    },
-    "Number of Pages" : {
-
-    },
-    "Number of Pages Read" : {
 
     },
     "Ok" : {
@@ -350,9 +320,6 @@
 
     },
     "Reading Status Information" : {
-
-    },
-    "Release Date" : {
 
     },
     "Remove from %@" : {
@@ -388,7 +355,7 @@
     "Show book list title field requirements" : {
 
     },
-    "Show book title field requirments" : {
+    "Show book title field requirements" : {
 
     },
     "Show genre name field requirements" : {

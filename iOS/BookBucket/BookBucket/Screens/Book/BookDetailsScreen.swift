@@ -30,114 +30,32 @@ struct BookDetailsScreen: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: 250, height: 250)
+                        .accessibilityHidden(true)
                 }
                 
                 Form {
-                    HStack {
-                        Text("Book Title")
-                        
-                        Spacer()
-                        
-                        Text("\(book.title)")
-                    }
+                    InfoCell(label: "Book Title", value: "\(book.title)")
+                    InfoCell(label: "Format", value: "\(book.bookFormat)")
+                    InfoCell(label: "Currently Reading", value: book.isReading ? "Yes" : "No")
+                    InfoCell(label: "Completed", value: book.isCompleted ? "Yes" : "No")
+                    InfoCell(label: "Favorite", value: book.isFavorite ? "Yes" : "No")
+                    InfoCell(label: "Number of Pages", value: "\(book.numberOfPages)")
+                    InfoCell(label: "Number of Chapters", value: "\(book.numberOfChapters)")
+                    InfoCell(label: "Number of Pages Read", value: "\(book.numberOfPagesRead)")
+                    InfoCell(label: "Number of Chapters Read", value: "\(book.numberOfChaptersRead)")
+                InfoCell(label: "Release Date", value: dateFormatter.string(from: book.releaseDate))
                     
-                    HStack {
-                        Text("Format")
-                        
-                        Spacer()
-                        
-                        Text("\(book.bookFormat)")
-                    }
+                    NavigationLink(destination: {
+                        BookAuthorsScreen(authors: book.authors)
+                    }, label: {
+                        InfoCell(label: "Number of Authors", value: "\(book.authors.count)")
+                    })
                     
-                    HStack {
-                        Text("Currently Reading")
-                        
-                        Spacer()
-                        
-                        Text(book.isReading ? "Yes" : "No")
-                    }
-                    
-                    HStack {
-                        Text("Completed)")
-                        
-                        Spacer()
-                        
-                        Text(book.isCompleted ? "Yes" : "No")
-                    }
-                    
-                    HStack {
-                        Text("Favorite")
-                        
-                        Spacer()
-                        
-                        Text(book.isFavorite ? "Yes" : "No")
-                    }
-                    
-                    HStack {
-                        Text("Number of Pages")
-                        
-                        Spacer()
-                        
-                        Text("\(book.numberOfPages)")
-                    }
-                    
-                    HStack {
-                        Text("Number of Chapters")
-                        
-                        Spacer()
-                        
-                        Text("\(book.numberOfChapters)")
-                    }
-                    
-                    HStack {
-                        Text("Number of Pages Read")
-                        
-                        Spacer()
-                        
-                        Text("\(book.numberOfPagesRead)")
-                    }
-                    
-                    HStack {
-                        Text("Number of Chapters Read")
-                        
-                        Spacer()
-                        
-                        Text("\(book.numberOfChaptersRead)")
-                    }
-                    
-                    HStack {
-                        Text("Release Date")
-                        
-                        Spacer()
-                        
-                        Text(book.releaseDate, formatter: dateFormatter)
-                    }
-                    
-                    HStack {
-                        NavigationLink(destination: {
-                            BookAuthorsScreen(authors: book.authors)
-                        }, label: {
-                            HStack {
-                                Text("Number of Authors")
-                                
-                                Spacer()
-                                
-                                Text("\(book.authors.count)")
-                            }
-                        })
-                        
-                        NavigationLink(destination: {
-                            BookGenresScreen(genres: book.genres)
-                        }, label: {
-                            HStack {
-                                Text("Number of Genres")
-                                
-                                Spacer()
-                                
-                                Text("\(book.genres.count)")
-                            }
-                        })
-                    }
+                    NavigationLink(destination: {
+                        BookGenresScreen(genres: book.genres)
+                    }, label: {
+                        InfoCell(label: "Number of Genres", value: "\(book.genres.count)")
+                    })
                 }
                 .toolbar {
                     Menu(content: {

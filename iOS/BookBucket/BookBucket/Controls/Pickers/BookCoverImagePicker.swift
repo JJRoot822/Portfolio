@@ -38,6 +38,7 @@ struct BookCoverImagePicker: View {
                     .scaledToFit()
                     .frame(width: 50, height: 50)
                     .clipShape(Circle())
+                    .accessibilityHidden(true)
                 
                 PhotosPicker(selection: $selectedItem, 
                              matching: filters) {

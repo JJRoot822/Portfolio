@@ -10,6 +10,7 @@ import SwiftData
 
 struct AddAuthorsToBookScreen: View {
     @Environment(\.modelContext) var context
+    @Environment(\.dismiss) var dismiss
     
     var book: Book
     
@@ -27,13 +28,23 @@ struct AddAuthorsToBookScreen: View {
                 }
             }
             .toolbar {
-                Button("Add", action: addAuthorsToBook)
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel", role: .cancel, action: cancel)
+                }
+                
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Add", action: addAuthorsToBook)
+                }
             }
             .navigationTitle(Text("Add Authors"))
         }
         .alert(isPresented: $isShowingSaveError) {
             Alert(title: Text("Failed to Save Changes"), message: Text("Something went wrong when you tried to add authors to \(book.title). Please try again later."), dismissButton: .default(Text("Ok")))
         }
+    }
+    
+    private func cancel() {
+        dismiss()
     }
     
     private func addAuthorsToBook() {
@@ -43,6 +54,7 @@ struct AddAuthorsToBookScreen: View {
         
         do {
             try context.save()
+            dismiss()
         } catch {
             isShowingSaveError = true
         }

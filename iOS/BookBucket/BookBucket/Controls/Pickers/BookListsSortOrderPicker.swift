@@ -24,12 +24,10 @@ struct BookListsSortOrderPicker: View {
                     }, label : {
                         Label(option.rawValue, systemImage: "checkmark")
                     })
-                    .accessibilityLabel(Text("\(option.rawValue), selected"))
                 } else {
                     Button(option.rawValue) {
                         selection = option
                     }
-                    .accessibilityLabel(Text(option.rawValue))
                 }
             }
         }, label: {

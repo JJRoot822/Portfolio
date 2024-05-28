@@ -40,21 +40,27 @@ struct FavoriteBookCell: View {
     }
     
     var body: some View {
-        HStack(spacing: 20) {
-            bookCoverImage
-                .resizable()
-                .scaledToFit()
-                .frame(width: 50, height: 50)
-                .clipShape(RoundedRectangle(cornerRadius: 5))
-            
-            VStack(alignment: .leading) {
-                Text(book.title)
+        NavigationLink(destination: {
+            BookDetailsScreen(book: book)
+        }, label: {
+            HStack(spacing: 20) {
+                bookCoverImage
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 50, height: 50)
+                    .clipShape(RoundedRectangle(cornerRadius: 5))
+                    .accessibilityHidden(true)
                 
-                Text("\(book.authors.count) authors")
-                    .foregroundStyle(Color.secondary)
+                VStack(alignment: .leading) {
+                    Text(book.title)
+                    
+                    Text("Authors: \(book.authors.count)")
+                        .foregroundStyle(Color.secondary)
+                }
             }
-        }
-        .padding()
+            .padding()
+            
+        })
         .accessibilityElement(children: .combine)
         .confirmationDialog("Are you sure you want to delete this book?", isPresented: $isDeleteRequested) {
             Button("Delete", role: .destructive, action: deleteBook)

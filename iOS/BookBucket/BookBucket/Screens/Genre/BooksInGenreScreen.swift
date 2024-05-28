@@ -12,13 +12,19 @@ struct BooksInGenreScreen: View {
     
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(genre.books) { book in
-                    Text(book.title)
-                        .padding()
+            if genre.books.isEmpty {
+                Text("Nothing to show right now. Add a genre to this book to see it here.")
+                    .foregroundStyle(Color.secondary)
+                    .navigationTitle(Text("Genres"))
+            } else {
+                List {
+                    ForEach(genre.books) { book in
+                        Text(book.title)
+                            .padding()
+                    }
                 }
+                .navigationTitle(Text("Genres"))
             }
-            .navigationTitle(Text("Books in \(genre.name)"))
         }
     }
 }

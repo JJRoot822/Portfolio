@@ -29,23 +29,42 @@ struct BookListCell: View {
             ? "star.slash"
             : "star"
     }
+
+    var favoriteIndicatorIcon: String {
+        return bookList.isFavorite ? "star.fill" : "star"
+    }
     
+    var favoriteIndicatorLabel: String {
+        return bookList.isFavorite ? "Favorited" : "Not Favorited"
+    }
+
     var body: some View {
-        HStack(spacing: 20) {
-            Image(systemName: "books.vertical")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 50, height: 50)
-                .foregroundStyle(Color.color(forName: bookList.color) ?? .accentColor)
-            
-            VStack(alignment: .leading) {
-                Text(bookList.title)
+        NavigationLink(destination: {
+            BookListDetailsScreen(bookList: bookList)
+        }, label: {
+            HStack(spacing: 20) {
+                Image(systemName: favoriteIndicatorIcon)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 50, height: 50)
+                    .foregroundStyle(bookList.isFavorite ? Color.yellow : Color.secondary)
+                    .accessibilityLabel(Text(favoriteIndicatorLabel))
+
+                Image(systemName: "books.vertical")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 50, height: 50)
+                    .foregroundStyle(Color.color(forName: bookList.color) ?? .accentColor)
                 
-                Text("\(bookList.books.count) books")
-                    .foregroundStyle(Color.secondary)
+                VStack(alignment: .leading) {
+                    Text(bookList.title)
+                    
+                    Text("Books: \(bookList.books.count)")
+                        .foregroundStyle(Color.secondary)
+                }
             }
-        }
-        .padding()
+            .padding()
+        })
         .accessibilityElement(children: .combine)
         .confirmationDialog("Are you sure you want to delete this book list?", isPresented: $isDeleteRequested) {
             Button("Delete", role: .destructive, action: deleteBookList)

@@ -15,8 +15,7 @@ struct BookSortOrderPicker: View {
         .formatAscending, .formatDescending,
         .numberOfChaptersAscending, .numberOfChaptersDescending,
         .numberOfPagesAscending, .numberOfPagesDescending,
-        .releaseDateAscending, .releaseDateDescending,
-        .titleAscending, .titleDescending
+        .releaseDateAscending, .releaseDateDescending
     ]
     
     var body: some View {
@@ -28,12 +27,10 @@ struct BookSortOrderPicker: View {
                     }, label : {
                         Label(option.rawValue, systemImage: "checkmark")
                     })
-                    .accessibilityLabel(Text("\(option.rawValue), selected"))
                 } else {
                     Button(option.rawValue) {
                         selection = option
                     }
-                    .accessibilityLabel(Text(option.rawValue))
                 }
             }
         }, label: {

@@ -30,14 +30,35 @@ struct AuthorCell: View {
             : "star"
     }
     
+    var favoriteIndicatorIcon: String {
+        return author.isFavorited ? "star.fill" : "star"
+    }
+    
+    var favoriteIndicatorLabel: String {
+        return author.isFavorited ? "Favorited" : "Not Favorited"
+    }
+    
     var body: some View {
-        VStack(alignment: .leading) {
-            Text(author.name)
+        NavigationLink(destination: {
+            AuthorDetailsScreen(author: author)
+        }, label: {
+            HStack(spacing: 20) {
+                Image(systemName: favoriteIndicatorIcon)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 50, height: 50)
+                    .foregroundStyle(author.isFavorited ? Color.yellow : Color.secondary)
+                    .accessibilityLabel(Text(favoriteIndicatorLabel))
+                VStack(alignment: .leading) {
+                    Text(author.name)
+                    
+                    Text("Books Authored: \(author.books.count)")
+                        .foregroundStyle(Color.secondary)
+                }
+            }
+            .padding()
             
-            Text("\(author.books.count) books authored")
-                .foregroundStyle(Color.secondary)
-        }
-        .padding()
+        })
         .accessibilityElement(children: .combine)
         .confirmationDialog("Are you sure you want to delete this author?", isPresented: $isDeleteRequested) {
             Button("Delete", role: .destructive, action: deleteAuthor)

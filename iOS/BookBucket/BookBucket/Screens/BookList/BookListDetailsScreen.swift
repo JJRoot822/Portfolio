@@ -22,6 +22,9 @@ struct BookListDetailsScreen: View {
             .sheet(isPresented: $isShowingAddBooksToListScreen) {
                 AddBooksToBookListScreen(bookList: bookList)
             }
+            .sheet(isPresented: $isShowingAddBooksToListScreen) {
+                AddBooksToBookListScreen(bookList: bookList)
+            }
             .toolbar {
                 BookSortOrderPicker(selection: $sortCriteria)
                 

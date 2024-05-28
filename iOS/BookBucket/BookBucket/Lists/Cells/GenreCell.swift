@@ -30,14 +30,35 @@ struct GenreCell: View {
             : "star"
     }
     
+    var favoriteIndicatorIcon: String {
+        return genre.isFavorite ? "star.fill" : "star"
+    }
+    
+    var favoriteIndicatorLabel: String {
+        return genre.isFavorite ? "Favorited" : "Not Favorited"
+    }
+    
     var body: some View {
-        VStack(alignment: .leading) {
-            Text(genre.name)
-            
-            Text("\(genre.books.count) books")
-                .foregroundStyle(Color.secondary)
-        }
-        .padding()
+        NavigationLink(destination: {
+            GenreDetailsScreen(genre: genre)
+        }, label: {
+            HStack(spacing: 20) {
+                Image(systemName: favoriteIndicatorIcon)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 50, height: 50)
+                    .foregroundStyle(genre.isFavorite ? Color.yellow : Color.secondary)
+                    .accessibilityLabel(Text(favoriteIndicatorLabel))
+                
+                VStack(alignment: .leading) {
+                    Text(genre.name)
+                    
+                    Text("Books: \(genre.books.count)")
+                        .foregroundStyle(Color.secondary)
+                }
+            }
+            .padding()
+        })
         .accessibilityElement(children: .combine)
         .confirmationDialog("Are you sure you want to delete this genre?", isPresented: $isDeleteRequested) {
             Button("Delete", role: .destructive, action: deleteGenre)

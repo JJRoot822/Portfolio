@@ -35,7 +35,7 @@ struct EditBookListScreen: View {
                     BookListColorPicker(selection: $bookList.color)
                 }
             }
-            .navigationTitle(Text("Add Book List"))
+            .navigationTitle(Text("Edit Book List"))
             .alert(isPresented: $isShowingError) {
                 Alert(title: Text("Failed to Save Changes"), message: Text("Something whent wrong when trying to save the changes you made to the book list. Please try again later."))
             }
