@@ -14,15 +14,16 @@ struct BookListDetailsScreen: View {
     @State private var isShowingAddBooksToListScreen: Bool = false
     @State private var sortCriteria: BookSortCriteria = .titleAscending
     @State private var searchTerm: String = ""
+    @State private var id: UUID = UUID()
     
     var body: some View {
         BookListBooksGrid(bookList: bookList, sortCriteria: sortCriteria, searchTerm: searchTerm)
             .navigationTitle(Text("\(bookList.title)"))
             .searchable(text: $searchTerm, prompt: Text("Search for a Book"))
-            .sheet(isPresented: $isShowingAddBooksToListScreen) {
-                AddBooksToBookListScreen(bookList: bookList)
-            }
-            .sheet(isPresented: $isShowingAddBooksToListScreen) {
+            .id(id)
+            .sheet(isPresented: $isShowingAddBooksToListScreen, onDismiss: {
+                id = UUID()
+            }) {
                 AddBooksToBookListScreen(bookList: bookList)
             }
             .toolbar {
@@ -35,6 +36,6 @@ struct BookListDetailsScreen: View {
     }
     
     private func showAddBookToListScreen() {
-        self.isShowingAddBooksToListScreen
+        self.isShowingAddBooksToListScreen = true
     }
 }

@@ -22,12 +22,23 @@ struct AddAuthorsToBookScreen: View {
     var body: some View {
         NavigationStack {
             List(selection: $selectedAuthors) {
-                ForEach(authors) { author in
-                    Text(author.name)
-                        .tag(author)
+                Section(footer: Text("Tap the \"Edit\" button to select multiple books")) {
+                    ForEach(authors) { author in
+                        if !book.authors.contains(author) {
+                            Text(author.name)
+                                .tag(author)
+                        }
+                    }
                 }
             }
             .toolbar {
+                ToolbarItem(placement: .bottomBar) {
+                    HStack {
+                        EditButton()
+                        
+                        Spacer()
+                    }
+                }
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel", role: .cancel, action: cancel)
                 }

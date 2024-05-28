@@ -5,4 +5,10 @@
 //  Created by Joshua Root on 5/26/24.
 //
 
-import Foundation
+import CoreData
+
+extension GTWeight {
+    var weightUnit: String {
+        return unit ?? "Unknown"
+    }
+}

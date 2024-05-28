@@ -10,6 +10,7 @@ import SwiftData
 
 struct AddBooksToBookListScreen: View {
     @Environment(\.modelContext) var context
+    @Environment(\.dismiss) var dismiss
     
     var bookList: BookList
     
@@ -21,19 +22,41 @@ struct AddBooksToBookListScreen: View {
     var body: some View {
         NavigationStack {
             List(selection: $selectedBooks) {
-                ForEach(books) { book in
-                    Text(book.title)
-                        .tag(book)
+                Section(footer: Text("Tap the \"Edit\" button to select multiple books")) {
+                    ForEach(books) { book in
+                        if !bookList.books.contains(book) {
+                            Text(book.title)
+                                .tag(book)
+                        }
+                    }
                 }
             }
             .toolbar {
-                Button("Add", action: addBooksToBookList)
+                ToolbarItem(placement: .bottomBar) {
+                    HStack {
+                        EditButton()
+                    
+                        Spacer()
+                    }
+                }
+                
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel", role: .cancel, action: cancel)
+                }
+                
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Add", action: addBooksToBookList)
+                }
             }
             .navigationTitle(Text("Add Books"))
         }
         .alert(isPresented: $isShowingSaveError) {
             Alert(title: Text("Failed to Save Changes"), message: Text("Something went wrong when you tried to add books to the list \(bookList.title). Please try again later."), dismissButton: .default(Text("Ok")))
         }
+    }
+    
+    private func cancel() {
+        dismiss()
     }
     
     private func addBooksToBookList() {
@@ -43,6 +66,7 @@ struct AddBooksToBookListScreen: View {
         
         do {
             try context.save()
+            dismiss()
         } catch {
             isShowingSaveError = true
         }

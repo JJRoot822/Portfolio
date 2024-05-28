@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		039903062C03CEDC00267D02 /* GTMedicationRecord+CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039903052C03CEDC00267D02 /* GTMedicationRecord+CoreDataHelper.swift */; };
+		03B758842C03BF57000E9F27 /* GTMedication+CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B758832C03BF57000E9F27 /* GTMedication+CoreDataHelper.swift */; };
+		03B76A432C038A500043A03B /* GTDataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B76A422C038A500043A03B /* GTDataServices.swift */; };
+		03B76A462C039A9B0043A03B /* GTGlucoseMeasurement+CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B76A452C039A9B0043A03B /* GTGlucoseMeasurement+CoreDataHelper.swift */; };
 		03D987A32C03886B002A75A6 /* GlucoTrackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D987A22C03886B002A75A6 /* GlucoTrackApp.swift */; };
 		03D987A52C03886B002A75A6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D987A42C03886B002A75A6 /* ContentView.swift */; };
 		03D987A72C03886C002A75A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03D987A62C03886C002A75A6 /* Assets.xcassets */; };
@@ -16,6 +20,7 @@
 		03D987BA2C03886C002A75A6 /* GlucoTrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D987B92C03886C002A75A6 /* GlucoTrackTests.swift */; };
 		03D987C42C03886C002A75A6 /* GlucoTrackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D987C32C03886C002A75A6 /* GlucoTrackUITests.swift */; };
 		03D987C62C03886C002A75A6 /* GlucoTrackUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D987C52C03886C002A75A6 /* GlucoTrackUITestsLaunchTests.swift */; };
+		03FE87712C03CD13006D7A0F /* GTWeight+CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FE87702C03CD13006D7A0F /* GTWeight+CoreDataHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		039903052C03CEDC00267D02 /* GTMedicationRecord+CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GTMedicationRecord+CoreDataHelper.swift"; sourceTree = "<group>"; };
+		03B758832C03BF57000E9F27 /* GTMedication+CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GTMedication+CoreDataHelper.swift"; sourceTree = "<group>"; };
+		03B76A422C038A500043A03B /* GTDataServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTDataServices.swift; sourceTree = "<group>"; };
+		03B76A452C039A9B0043A03B /* GTGlucoseMeasurement+CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GTGlucoseMeasurement+CoreDataHelper.swift"; sourceTree = "<group>"; };
 		03D9879F2C03886B002A75A6 /* GlucoTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GlucoTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03D987A22C03886B002A75A6 /* GlucoTrackApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoTrackApp.swift; sourceTree = "<group>"; };
 		03D987A42C03886B002A75A6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -49,6 +58,7 @@
 		03D987BF2C03886C002A75A6 /* GlucoTrackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GlucoTrackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03D987C32C03886C002A75A6 /* GlucoTrackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoTrackUITests.swift; sourceTree = "<group>"; };
 		03D987C52C03886C002A75A6 /* GlucoTrackUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoTrackUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		03FE87702C03CD13006D7A0F /* GTWeight+CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GTWeight+CoreDataHelper.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +86,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03B76A412C0389B90043A03B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				03B76A422C038A500043A03B /* GTDataServices.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		03B76A442C039A5F0043A03B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				03B76A452C039A9B0043A03B /* GTGlucoseMeasurement+CoreDataHelper.swift */,
+				03B758832C03BF57000E9F27 /* GTMedication+CoreDataHelper.swift */,
+				03FE87702C03CD13006D7A0F /* GTWeight+CoreDataHelper.swift */,
+				039903052C03CEDC00267D02 /* GTMedicationRecord+CoreDataHelper.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		03D987962C03886B002A75A6 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +128,8 @@
 		03D987A12C03886B002A75A6 /* GlucoTrack */ = {
 			isa = PBXGroup;
 			children = (
+				03B76A442C039A5F0043A03B /* Extensions */,
+				03B76A412C0389B90043A03B /* Services */,
 				03D987A22C03886B002A75A6 /* GlucoTrackApp.swift */,
 				03D987A42C03886B002A75A6 /* ContentView.swift */,
 				03D987A62C03886C002A75A6 /* Assets.xcassets */,
@@ -266,7 +297,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				03D987AC2C03886C002A75A6 /* Persistence.swift in Sources */,
+				03FE87712C03CD13006D7A0F /* GTWeight+CoreDataHelper.swift in Sources */,
+				03B76A462C039A9B0043A03B /* GTGlucoseMeasurement+CoreDataHelper.swift in Sources */,
 				03D987A52C03886B002A75A6 /* ContentView.swift in Sources */,
+				03B76A432C038A500043A03B /* GTDataServices.swift in Sources */,
+				039903062C03CEDC00267D02 /* GTMedicationRecord+CoreDataHelper.swift in Sources */,
+				03B758842C03BF57000E9F27 /* GTMedication+CoreDataHelper.swift in Sources */,
 				03D987AF2C03886C002A75A6 /* GlucoTrack.xcdatamodeld in Sources */,
 				03D987A32C03886B002A75A6 /* GlucoTrackApp.swift in Sources */,
 			);

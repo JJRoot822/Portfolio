@@ -8,5 +8,7 @@
 import CoreData
 
 extension GTGlucoseMeasurement {
-    
+    var  measurementUnit: String {
+        return unit ?? "Unknown"
+    }
 }

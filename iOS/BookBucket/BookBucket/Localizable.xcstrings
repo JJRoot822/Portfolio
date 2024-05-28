@@ -430,6 +430,9 @@
     "Something whent wrong when trying to save the changes you made to the book list. Please try again later." : {
 
     },
+    "Tap the \"Edit\" button to select multiple books" : {
+
+    },
     "The author name field must not be empty." : {
 
     },

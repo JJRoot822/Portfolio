@@ -23,11 +23,20 @@ struct AddGenresToBookScreen: View {
         NavigationStack {
             List(selection: $selectedGenres) {
                 ForEach(genres) { genre in
-                    Text(genre.name)
-                        .tag(genre)
+                    if !book.genres.contains(genre) {
+                        Text(genre.name)
+                            .tag(genre)
+                    }
                 }
             }
             .toolbar {
+                ToolbarItem(placement: .bottomBar) {
+                    HStack {
+                        EditButton()
+                        
+                        Spacer()
+                    }
+                }
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel", role: .cancel, action: cancel)
                 }

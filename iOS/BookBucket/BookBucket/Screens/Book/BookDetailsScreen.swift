@@ -20,6 +20,7 @@ struct BookDetailsScreen: View {
 
     @State private var showAddAuthorsToBook = false
     @State private var showAddGenresToBook = false
+    @State private var id: UUID = UUID()
     
     var body: some View {
         NavigationStack {
@@ -66,13 +67,18 @@ struct BookDetailsScreen: View {
                     })
                 }
             }
-            .sheet(isPresented: $showAddAuthorsToBook) {
+            .sheet(isPresented: $showAddAuthorsToBook, onDismiss: {
+                id = UUID()
+            }) {
                 AddAuthorsToBookScreen(book: book)
             }
-            .sheet(isPresented: $showAddGenresToBook) {
+            .sheet(isPresented: $showAddGenresToBook, onDismiss: {
+                id = UUID()
+            }) {
                 AddGenresToBookScreen(book: book)
             }
         }
+        .id(id)
     }
     
     private func showAddAuthorsToBookScreen() {

@@ -202,7 +202,7 @@ struct BookListBookCell: View {
             return
         }
         
-        self.isShowingRemoveError
+        self.isShowingRemoveError = true
     }
     
     private func delete() {
