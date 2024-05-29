@@ -55,13 +55,15 @@ struct BookCell: View {
                         .accessibilityHidden(true)
                 }
                 
-                HStack(spacing: 10) {
+                HStack(alignment: .top, spacing: 10) {
                     Image(systemName: favoriteIndicatorIcon)
                         .resizable()
                         .scaledToFit()
                         .frame(width: 25, height: 25)
                         .foregroundStyle(book.isFavorite ? Color.yellow : Color.secondary)
                         .accessibilityLabel(Text(bookFavoritedStatus))
+                    
+                    ProgressView(value: Float(book.numberOfPagesRead) / Float(book.numberOfPages))
                     
                     Text(book.title)
                 }

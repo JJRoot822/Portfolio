@@ -26,6 +26,15 @@ struct AddBookScreen: View {
     
     @State private var isShowingError: Bool = false
     @State private var isShowingRequirementsPopover: Bool = false
+
+    var integerFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.minimumFractionDigits = 0
+        formatter.maximumFractionDigits = 0
+        
+        return formatter
+    }()
     
     var body: some View {
         NavigationStack {
@@ -46,13 +55,8 @@ struct AddBookScreen: View {
                     
                     BookCoverImagePicker(selection: $bookCoverImageData)
                     
-                    Stepper(label: {
-                        Text("Pages: \(numberOfPages)")
-                    }, onIncrement: incrementPages, onDecrement: decrementPages)
-                    
-                    Stepper(label: {
-                        Text("Chapters: \(numberOfChapters)")
-                    }, onIncrement: incrementChapters, onDecrement: decrementChapters)
+                    TextField("Number of Pages", value: $numberOfPages, formatter: integerFormatter)
+                    TextField("Number of Chapters", value: $numberOfChapters, formatter: integerFormatter)
                     
                     Toggle("Is Favorite Book", isOn: $isFavoriteBook)
                 }
@@ -60,21 +64,25 @@ struct AddBookScreen: View {
                 Section("Reading Status Information") {
                     Toggle("Is Currently Reading", isOn: $isCurrentlyReadingBook)
                     Toggle("Has Completed Book", isOn: $hasCompletedBook)
+                        
+                    TextField("Number of Pages Read", value: $numberOfPagesRead, formatter: integerFormatter)
+                        .disabled(!isCurrentlyReadingBook || hasCompletedBook)
                     
-                    Stepper(label: {
-                        Text("Pages Read: \(numberOfPagesRead)")
-                    }, onIncrement: incrementPagesRead, onDecrement: decrementPagesRead)
-                    .disabled(!isCurrentlyReadingBook || hasCompletedBook)
-                    
-                    Stepper(label: {
-                        Text("Chapters Read: \(numberOfChaptersRead)")
-                    }, onIncrement: incrementChaptersRead, onDecrement: decrementChaptersRead)
-                    .disabled(!isCurrentlyReadingBook || hasCompletedBook)
+                    TextField("Number of Chapters Read", value: $numberOfChaptersRead, formatter: integerFormatter).disabled(!isCurrentlyReadingBook || hasCompletedBook)
                 }
             }
             .navigationTitle(Text("Add Book"))
             .alert(isPresented: $isShowingError) {
                 Alert(title: Text("Failed to Create Book"), message: Text("Something went wrong when trying to save the data you entered for a new book. Please try again later."))
+            }
+            .onChange(of: hasCompletedBook) {
+                if hasCompletedBook {
+                    numberOfPagesRead = numberOfPages
+                    numberOfChaptersRead = numberOfChapters
+                } else {
+                    numberOfPagesRead = 0
+                    numberOfChaptersRead = 0
+                }
             }
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {

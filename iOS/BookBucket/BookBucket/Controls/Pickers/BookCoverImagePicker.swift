@@ -22,9 +22,7 @@ struct BookCoverImagePicker: View {
             .not(.cinematicVideos), 
             .not(.depthEffectPhotos), 
             .not(.livePhotos), 
-            .not(.panoramas),
             .not(.screenRecordings),
-            .not(.screenshots),
             .not(.slomoVideos),
             .not(.timelapseVideos),
             .not(.videos)

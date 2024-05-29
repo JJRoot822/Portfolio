@@ -133,12 +133,6 @@
     "Change Book Cover" : {
 
     },
-    "Chapters Read: %lld" : {
-
-    },
-    "Chapters: %lld" : {
-
-    },
     "Choose a Color" : {
 
     },
@@ -307,16 +301,22 @@
     "Number of Books in Genre" : {
 
     },
+    "Number of Chapters" : {
+
+    },
+    "Number of Chapters Read" : {
+
+    },
+    "Number of Pages" : {
+
+    },
+    "Number of Pages Read" : {
+
+    },
     "Ok" : {
 
     },
     "Options" : {
-
-    },
-    "Pages Read: %lld" : {
-
-    },
-    "Pages: %lld" : {
 
     },
     "Reading Status Information" : {

@@ -56,6 +56,8 @@ struct FavoriteBookCell: View {
                     
                     Text("Authors: \(book.authors.count)")
                         .foregroundStyle(Color.secondary)
+                    
+                    ProgressView(value: Float(book.numberOfPagesRead) / Float(book.numberOfPages))
                 }
             }
             .padding()

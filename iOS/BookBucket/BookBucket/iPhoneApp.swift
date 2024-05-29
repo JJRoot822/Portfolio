@@ -12,12 +12,6 @@ struct iPhoneApp: View {
     
     var body: some View {
         TabView {
-            HomeScreen()
-                .tag(AppTab.home)
-                .tabItem {
-                    Label(NSLocalizedString(AppTab.home.rawValue, comment: ""), systemImage: "house.fill")
-                }
-            
             BooksScreen()
                 .tag(AppTab.books)
                 .tabItem {
@@ -52,10 +46,3 @@ struct iPhoneApp: View {
         }
     }
 }
-
-struct HomeScreen: View {
-    var body: some View {
-        Text("")
-    }
-}
-
