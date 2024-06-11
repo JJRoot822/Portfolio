@@ -8,7 +8,6 @@
 import Foundation
 
 enum AppTab: String {
-    case home = "Home"
     case books = "Books"
     case bookLists = "Book Lists"
     case favorites = "Favorites"

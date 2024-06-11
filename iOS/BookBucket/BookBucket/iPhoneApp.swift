@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct iPhoneApp: View {
-    @State private var selectedTab: AppTab = .home
+    @State private var selectedTab: AppTab = .books
     
     var body: some View {
-        TabView {
+        TabView(selection: $selectedTab) {
             BooksScreen()
                 .tag(AppTab.books)
                 .tabItem {
