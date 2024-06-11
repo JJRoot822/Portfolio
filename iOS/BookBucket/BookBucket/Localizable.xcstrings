@@ -31,6 +31,9 @@
     "Add Authors" : {
 
     },
+    "Add Authors to %@" : {
+
+    },
     "Add Book" : {
 
     },
@@ -83,9 +86,6 @@
 
     },
     "Authors: %lld" : {
-
-    },
-    "Basic Information" : {
 
     },
     "Book Format" : {
@@ -143,6 +143,9 @@
 
     },
     "Close" : {
+
+    },
+    "Completed" : {
 
     },
     "Create" : {
@@ -268,7 +271,7 @@
     "Nothing to show right now. Add a genre to this book to see it here." : {
 
     },
-    "Nothing to show right now. Add an author to this book to see it listed here." : {
+    "Nothing to show right now. Add this author to a book to see it here" : {
 
     },
     "Nothing to show right now. Insert a new author marked as a favorite on the authors screen, or mark an existing author as a favorite to get started." : {
@@ -317,9 +320,6 @@
 
     },
     "Options" : {
-
-    },
-    "Reading Status Information" : {
 
     },
     "Remove from %@" : {

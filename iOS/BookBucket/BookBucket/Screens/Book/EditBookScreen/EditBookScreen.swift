@@ -13,9 +13,8 @@ struct EditBookScreen: View {
     @Environment(\.dismiss) var dismiss
     
     @Bindable var book: Book
-    
-    @State private var isShowingError: Bool = false
-    @State private var isShowingRequirementsPopover: Bool = false
+
+    @State private var viewModel = ViewModel()
     
     let integerFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
@@ -29,12 +28,12 @@ struct EditBookScreen: View {
     var body: some View {
         NavigationStack {
             Form {
-                Section("Basic Information") {
+                Section {
                     HStack(spacing: 10) {
                         TextField("Title of Book", text: $book.title)
                         
-                        FieldInfoPopoverToggleButton(label: "Show book title field requirements", action: toggleRequirementsPopover)
-                        .popover(isPresented: $isShowingRequirementsPopover) {
+                        FieldInfoPopoverToggleButton(label: "Show book title field requirements", action: viewModel.toggleRequirementsPopover)
+                            .popover(isPresented: $viewModel.isShowingRequirementsPopover) {
                             FieldInfoPopover(infoText: "The book title field must not be empty.")
                         }
                     }
@@ -49,7 +48,7 @@ struct EditBookScreen: View {
                     Toggle("Is Favorite Book", isOn: $book.isFavorite)
                 }
                 
-                Section("Reading Status Information") {
+                Section {
                     Toggle("Is Currently Reading", isOn: $book.isReading)
                     Toggle("Has Completed Book", isOn: $book.isCompleted)
                         
@@ -59,8 +58,13 @@ struct EditBookScreen: View {
                     TextField("Number of Chapters Read", value: $book.numberOfChaptersRead, formatter: integerFormatter).disabled(!book.isReading || book.isCompleted)
                 }
             }
+            .onChange(of: viewModel.shouldDismiss) {
+                if viewModel.shouldDismiss {
+                    dismiss()
+                }
+            }
             .navigationTitle(Text("Add Book"))
-            .alert(isPresented: $isShowingError) {
+            .alert(isPresented: $viewModel.isShowingError) {
                 Alert(title: Text("Failed to Save Changes"), message: Text("Something went wrong when trying to save the changes you made to this book. Please try again later."))
             }
             .onChange(of: book.isCompleted) {
@@ -74,83 +78,18 @@ struct EditBookScreen: View {
             }
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel", role: .cancel, action: cancel)
+                    Button("Cancel", role: .cancel) {
+                        viewModel.cancel(context: context)
+                    }
                 }
                 
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Save", action: saveChanges)
+                    Button("Save") {
+                        viewModel.saveChanges(context: context)
+                    }
                         .disabled(book.title.isEmpty || book.numberOfPages == 0 || book.numberOfChapters == 0)
                 }
             }
-        }
-    }
-    
-    private func incrementPages() {
-        book.numberOfPages += 1
-    }
-    
-    private func incrementChapters() {
-        book.numberOfChapters += 1
-    }
-    
-    private func incrementPagesRead() {
-        if book.numberOfPagesRead < book.numberOfPages {
-            book.numberOfPagesRead += 1
-        }
-    }
-    
-    private func incrementChaptersRead() {
-        if book.numberOfChaptersRead < book.numberOfChapters {
-            book.numberOfChaptersRead += 1
-        }
-    }
-    
-    private func decrementPages() {
-        if book.numberOfPages > 0 {
-            book.numberOfPages -= 1
-        }
-    }
-    
-    private func decrementChapters() {
-        if book.numberOfChapters > 0 {
-            book.numberOfChapters -= 1
-        }
-    }
-    
-    private func decrementPagesRead() {
-        if book.numberOfPagesRead > 0 {
-            book.numberOfPagesRead -= 1
-        }
-    }
-    
-    private func decrementChaptersRead() {
-        if book.numberOfChaptersRead > 0 {
-            book.numberOfChaptersRead -= 1
-        }
-    }
-    
-    private func toggleRequirementsPopover() {
-        isShowingRequirementsPopover.toggle()
-    }
-    
-    private func cancel() {
-        dismiss()
-    }
-    
-    private func saveChanges() {
-        let dataHelper = DataHelper()
-        let result = dataHelper.save(context: context)
-        
-        switch result {
-        case .success(()):
-            dismiss()
-            return
-        case .failure(_):
-            if context.hasChanges {
-                context.rollback()
-            }
-            
-            isShowingError = true
         }
     }
 }

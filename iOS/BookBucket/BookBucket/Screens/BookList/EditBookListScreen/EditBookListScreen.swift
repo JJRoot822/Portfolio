@@ -14,8 +14,7 @@ struct EditBookListScreen: View {
     
     @Bindable var bookList: BookList
     
-    @State private var isShowingError: Bool = false
-    @State private var isShowingRequirementsPopover: Bool = false
+    @State private var viewModel = ViewModel()
     
     var body: some View {
         NavigationStack {
@@ -23,8 +22,8 @@ struct EditBookListScreen: View {
                 HStack(spacing: 10) {
                     TextField("Title of Book List", text: $bookList.title)
                     
-                    FieldInfoPopoverToggleButton(label: "Show book list title field requirements", action: toggleRequirementsPopover)
-                        .popover(isPresented: $isShowingRequirementsPopover) {
+                    FieldInfoPopoverToggleButton(label: "Show book list title field requirements", action: viewModel.toggleRequirementsPopover)
+                        .popover(isPresented: $viewModel.isShowingRequirementsPopover) {
                             FieldInfoPopover(infoText: "The book list title field must not be empty.")
                         }
                 }
@@ -36,47 +35,28 @@ struct EditBookListScreen: View {
                 }
             }
             .navigationTitle(Text("Edit Book List"))
-            .alert(isPresented: $isShowingError) {
+            .alert(isPresented: $viewModel.isShowingError) {
                 Alert(title: Text("Failed to Save Changes"), message: Text("Something whent wrong when trying to save the changes you made to the book list. Please try again later."))
             }
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel", role: .cancel, action: cancel)
+                    Button("Cancel", role: .cancel) {
+                        viewModel.cancel(context: context)
+                    }
                 }
                 
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Save", action: saveChanges)
-                        .disabled(bookList.title.isEmpty)
+                    Button("Save") {
+                        viewModel.saveChanges(context: context)
+                    }
+                    .disabled(bookList.title.isEmpty)
                 }
             }
-        }
-    }
-    
-    private func toggleRequirementsPopover() {
-        isShowingRequirementsPopover.toggle()
-    }
-    
-    private func cancel() {
-        if context.hasChanges {
-            context.rollback()
-        }
-        
-        dismiss()
-    }
-    
-    private func saveChanges() {
-        let dataHelper = DataHelper()
-        let result = dataHelper.save(context: context)
-        
-        switch result {
-        case .success(()):
-            return
-        case .failure(_):
-            if context.hasChanges {
-                context.rollback()
+            .onChange(of: viewModel.shouldDismiss) {
+                if viewModel.shouldDismiss {
+                    dismiss()
+                }
             }
-            
-            isShowingError = true
         }
     }
 }

@@ -9,18 +9,8 @@ import SwiftUI
 
 struct BookDetailsScreen: View {
     var book: Book
-    
-    private let dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .short
-        formatter.timeStyle = .none
-        
-        return formatter
-    }()
 
-    @State private var showAddAuthorsToBook = false
-    @State private var showAddGenresToBook = false
-    @State private var id: UUID = UUID()
+    @State private var viewModel = ViewModel()
     
     var body: some View {
         NavigationStack {
@@ -44,7 +34,7 @@ struct BookDetailsScreen: View {
                     InfoCell(label: "Number of Chapters", value: "\(book.numberOfChapters)")
                     InfoCell(label: "Number of Pages Read", value: "\(book.numberOfPagesRead)")
                     InfoCell(label: "Number of Chapters Read", value: "\(book.numberOfChaptersRead)")
-                InfoCell(label: "Release Date", value: dateFormatter.string(from: book.releaseDate))
+                    InfoCell(label: "Release Date", value: viewModel.dateFormatter.string(from: book.releaseDate))
                     
                     NavigationLink(destination: {
                         BookAuthorsScreen(authors: book.authors)
@@ -60,32 +50,24 @@ struct BookDetailsScreen: View {
                 }
                 .toolbar {
                     Menu(content: {
-                        Button("Add Authors", action: showAddAuthorsToBookScreen)
-                        Button("Add Genres", action: showAddGenresToBookScreen)
+                        Button("Add Authors", action: viewModel.showAddAuthorsToBookScreen)
+                        Button("Add Genres", action: viewModel.showAddGenresToBookScreen)
                     }, label: {
                         Label("Options", systemImage: "plus")
                     })
                 }
             }
-            .sheet(isPresented: $showAddAuthorsToBook, onDismiss: {
-                id = UUID()
+            .sheet(isPresented: $viewModel.showAddAuthorsToBook, onDismiss: {
+                viewModel.id = UUID()
             }) {
                 AddAuthorsToBookScreen(book: book)
             }
-            .sheet(isPresented: $showAddGenresToBook, onDismiss: {
-                id = UUID()
+            .sheet(isPresented: $viewModel.showAddGenresToBook, onDismiss: {
+                viewModel.id = UUID()
             }) {
                 AddGenresToBookScreen(book: book)
             }
         }
-        .id(id)
-    }
-    
-    private func showAddAuthorsToBookScreen() {
-        self.showAddAuthorsToBook = true
-    }
-    
-    private func showAddGenresToBookScreen() {
-        self.showAddGenresToBook = true
+        .id(viewModel.id)
     }
 }

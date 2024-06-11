@@ -11,4 +11,8 @@ extension GTWeight {
     var weightUnit: String {
         return unit ?? "Unknown"
     }
+    
+    var dateMeasured: Date {
+        return dateWeighed ?? Date()
+    }
 }

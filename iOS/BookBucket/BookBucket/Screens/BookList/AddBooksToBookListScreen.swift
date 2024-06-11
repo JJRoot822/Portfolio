@@ -16,12 +16,11 @@ struct AddBooksToBookListScreen: View {
     
     @Query private var books: [Book]
     
-    @State private var selectedBooks = Set<Book>()
-    @State private var isShowingSaveError = false
+    @State private var viewModel = ViewModel()
     
     var body: some View {
         NavigationStack {
-            List(selection: $selectedBooks) {
+            List(selection: $viewModel.selectedBooks) {
                 Section(footer: Text("Tap the \"Edit\" button to select multiple books")) {
                     ForEach(books) { book in
                         if !bookList.books.contains(book) {
@@ -32,43 +31,20 @@ struct AddBooksToBookListScreen: View {
                 }
             }
             .toolbar {
-                ToolbarItem(placement: .bottomBar) {
-                    HStack {
-                        EditButton()
-                    
-                        Spacer()
-                    }
-                }
+                EditButton()
+            }
+            
+            Form {
+                Button("Cancel", role: .cancel, action: viewModel.cancel)
                 
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel", role: .cancel, action: cancel)
-                }
-                
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("Add", action: addBooksToBookList)
+                Button("Add") {
+                    viewModel.addBooksToBookList(context: context, bookList: bookList)
                 }
             }
             .navigationTitle(Text("Add Books"))
         }
-        .alert(isPresented: $isShowingSaveError) {
+        .alert(isPresented: $viewModel.isShowingSaveError) {
             Alert(title: Text("Failed to Save Changes"), message: Text("Something went wrong when you tried to add books to the list \(bookList.title). Please try again later."), dismissButton: .default(Text("Ok")))
-        }
-    }
-    
-    private func cancel() {
-        dismiss()
-    }
-    
-    private func addBooksToBookList() {
-        selectedBooks.forEach {
-            bookList.books.append($0)
-        }
-        
-        do {
-            try context.save()
-            dismiss()
-        } catch {
-            isShowingSaveError = true
         }
     }
 }

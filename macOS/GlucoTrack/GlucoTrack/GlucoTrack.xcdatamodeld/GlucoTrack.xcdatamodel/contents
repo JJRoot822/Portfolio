@@ -5,7 +5,7 @@
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="notes" optional="YES" attributeType="String"/>
         <attribute name="unit" optional="YES" attributeType="String"/>
-        <attribute name="value" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="value" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <entity name="GTMedication" representedClassName="GTMedication" syncable="YES" codeGenerationType="class">
         <attribute name="datePrescribed" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -24,6 +24,7 @@
         <relationship name="medication" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GTMedication" inverseName="records" inverseEntity="GTMedication"/>
     </entity>
     <entity name="GTWeight" representedClassName="GTWeight" syncable="YES" codeGenerationType="class">
+        <attribute name="dateWeighed" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="unit" optional="YES" attributeType="String"/>
         <attribute name="value" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>

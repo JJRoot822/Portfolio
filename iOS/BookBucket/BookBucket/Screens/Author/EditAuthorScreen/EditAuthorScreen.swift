@@ -14,8 +14,7 @@ struct EditAuthorScreen: View {
     
     @Bindable var author: Author
     
-    @State private var isShowingError: Bool = false
-    @State private var isShowingRequirementsPopover: Bool = false
+    @State private var viewModel = ViewModel()
     
     var body: some View {
         NavigationStack {
@@ -23,8 +22,8 @@ struct EditAuthorScreen: View {
                 HStack(spacing: 10) {
                     TextField("name of Author", text: $author.name)
                     
-                    FieldInfoPopoverToggleButton(label: "Show author name field requirements", action: toggleRequirementsPopover)
-                        .popover(isPresented: $isShowingRequirementsPopover) {
+                    FieldInfoPopoverToggleButton(label: "Show author name field requirements", action: viewModel.toggleRequirementsPopover)
+                        .popover(isPresented: $viewModel.isShowingRequirementsPopover) {
                             FieldInfoPopover(infoText: "The author name field must not be empty.")
                         }
                 }
@@ -32,47 +31,28 @@ struct EditAuthorScreen: View {
                 Toggle("Is Favorite Author", isOn: $author.isFavorited)
             }
             .navigationTitle(Text("Edit Author"))
-            .alert(isPresented: $isShowingError) {
+            .onChange(of: viewModel.shouldDismiss) {
+                if viewModel.shouldDismiss {
+                    dismiss()
+                }
+            }
+            .alert(isPresented: $viewModel.isShowingError) {
                 Alert(title: Text("Failed to Save Changes"), message: Text("Something went wrong when trying to save the changes you made to the author's information. Please try again later."), dismissButton: .cancel(Text("Ok")))
             }
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel", role: .cancel, action: cancel)
+                    Button("Cancel", role: .cancel) {
+                        viewModel.cancel(context: context)
+                    }
                 }
                 
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Save", action: saveChanges)
-                        .disabled(author.name.isEmpty)
+                    Button("Save") {
+                        viewModel.saveChanges(context: context )
+                    }
+                    .disabled(author.name.isEmpty)
                 }
             }
-        }
-    }
-    
-    private func toggleRequirementsPopover() {
-        isShowingRequirementsPopover.toggle()
-    }
-    
-    private func cancel() {
-        if context.hasChanges {
-            context.rollback()
-        }
-        
-        dismiss()
-    }
-    
-    private func saveChanges() {
-        let dataHelper = DataHelper()
-        let result = dataHelper.save(context: context)
-        
-        switch result {
-        case .success(()):
-            return
-        case .failure(_):
-            if context.hasChanges {
-                context.rollback()
-            }
-            
-            isShowingError = true
         }
     }
 }

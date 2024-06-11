@@ -14,7 +14,7 @@ struct EditBookCoverScreen: View {
     
     @Bindable var book: Book
     
-    @State private var isShowingError: Bool = false
+    @State private var viewModel = ViewModel()
     
     var body: some View {
         NavigationStack {
@@ -36,44 +36,28 @@ struct EditBookCoverScreen: View {
                 BookCoverImagePicker(selection: $book.coverImage)
             }
             .navigationTitle(Text("Change Book Cover"))
-            .alert(isPresented: $isShowingError) {
+            .alert(isPresented: $viewModel.isShowingError) {
                 Alert(title: Text("Failed to Save Changes"), message: Text("Something went wrong when trying to save the changes you made to this book. Please try again later."))
             }
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel", role: .cancel, action: cancel)
+                    Button("Cancel", role: .cancel) {
+                        viewModel.cancel(context: context)
+                    }
                 }
                 
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Save", action: saveChanges)
-                        .disabled(book.title.isEmpty || book.numberOfPages == 0 || book.numberOfChapters == 0)
+                    Button("Save") {
+                        viewModel.saveChanges(context: context)
+                    }
+                    .disabled(book.title.isEmpty || book.numberOfPages == 0 || book.numberOfChapters == 0)
                 }
             }
         }
-    }
-    
-    private func cancel() {
-        if context.hasChanges {
-            context.rollback()
-        }
-        
-        dismiss()
-    }
-    
-    private func saveChanges() {
-        let dataHelper = DataHelper()
-        let result = dataHelper.save(context: context)
-        
-        switch result {
-        case .success(()):
-            dismiss()
-            return
-        case .failure(_):
-            if context.hasChanges {
-                context.rollback()
+        .onChange(of: viewModel.shouldDismiss) {
+            if viewModel.shouldDismiss {
+                dismiss()
             }
-            
-            isShowingError = true
         }
     }
 }

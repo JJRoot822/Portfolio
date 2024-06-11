@@ -16,5 +16,9 @@ struct GlucoTrackApp: App {
             ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
+        
+        Settings {
+            SettingsScreen()
+        }
     }
 }

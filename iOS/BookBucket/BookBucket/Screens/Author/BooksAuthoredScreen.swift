@@ -13,7 +13,7 @@ struct BooksAuthoredScreen: View {
     var body: some View {
         NavigationStack {
             if author.books.isEmpty {
-                Text("Nothing to show right now. Add an author to this book to see it listed here.")
+                Text("Nothing to show right now. Add this author to a book to see it here")
                     .foregroundStyle(Color.secondary)
                     .navigationTitle(Text("Books Authored"))
             } else {
