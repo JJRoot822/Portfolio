@@ -1,9 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "" : {
-
-    },
     "%@" : {
 
     },
@@ -49,21 +46,6 @@
     "Add Genres" : {
 
     },
-    "Add New Author" : {
-
-    },
-    "Add New Book" : {
-
-    },
-    "Add New Book List" : {
-
-    },
-    "Add New Genre" : {
-
-    },
-    "Add to Favorites" : {
-
-    },
     "Are you sure you want to delete this author?" : {
 
     },
@@ -91,9 +73,6 @@
     "Book Format" : {
 
     },
-    "Book Lists" : {
-
-    },
     "Book Lists Sort Options" : {
 
     },
@@ -104,9 +83,6 @@
 
     },
     "Book's Genres" : {
-
-    },
-    "BookBucket" : {
 
     },
     "BookLists" : {
@@ -235,9 +211,6 @@
     "Has Completed Book" : {
 
     },
-    "Home" : {
-
-    },
     "Is Currently Reading" : {
 
     },
@@ -323,9 +296,6 @@
 
     },
     "Remove from %@" : {
-
-    },
-    "Remove from Favorites" : {
 
     },
     "Remove from List" : {

@@ -14,15 +14,6 @@ struct AddBookScreen: View {
     
     @State private var viewModel = ViewModel()
     
-    let integerFormatter: NumberFormatter = {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        formatter.minimumFractionDigits = 0
-        formatter.maximumFractionDigits = 0
-        
-        return formatter
-    }()
-    
     var body: some View {
         NavigationStack {
             Form {
@@ -42,9 +33,11 @@ struct AddBookScreen: View {
                     
                     BookCoverImagePicker(selection: $viewModel.bookCoverImageData)
                     
-                    TextField("Number of Pages", value: $viewModel.numberOfPages, formatter: integerFormatter)
-
-                    TextField("Number of Chapters", value: $viewModel.numberOfChapters, formatter: integerFormatter)
+                    TextField("Number of Pages", value: $viewModel.numberOfPages, formatter: viewModel.integerFormatter)
+                        .accessibilityLabel(Text("Number of Pages"))
+                    
+                    TextField("Number of Chapters", value: $viewModel.numberOfChapters, formatter: viewModel.integerFormatter)
+                        .accessibilityLabel(Text("Number of Chapters"))
                     
                     Toggle("Is Favorite Book", isOn: $viewModel.isFavoriteBook)
                 }
@@ -52,10 +45,12 @@ struct AddBookScreen: View {
                 Section {
                     Toggle("Is Currently Reading", isOn: $viewModel.isCurrentlyReadingBook)
                     Toggle("Completed", isOn: $viewModel.hasCompletedBook)
-                    TextField("Number of Pages Read", value: $viewModel.numberOfPagesRead, formatter: integerFormatter)
+                    TextField("Number of Pages Read", value: $viewModel.numberOfPagesRead, formatter: viewModel.integerFormatter)
+                        .accessibilityLabel(Text("Number of Pages Read"))
                         .disabled(!viewModel.isCurrentlyReadingBook || viewModel.hasCompletedBook)
                     
-                    TextField("Number of Chapters Read", value: $viewModel.numberOfChaptersRead, formatter: integerFormatter)
+                    TextField("Number of Chapters Read", value: $viewModel.numberOfChaptersRead, formatter: viewModel.integerFormatter)
+                        .accessibilityLabel(Text("Number of Chapters Read"))
                         .disabled(!viewModel.isCurrentlyReadingBook || viewModel.hasCompletedBook)
                 }
             }
@@ -90,5 +85,6 @@ struct AddBookScreen: View {
                 viewModel.numberOfChaptersRead = 0
             }
         }
+        .interactiveDismissDisabled()
     }
 }

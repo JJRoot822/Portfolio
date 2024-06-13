@@ -11,6 +11,8 @@ import SwiftData
 struct BooksGrid: View {
     @Query private var books: [Book]
     
+    @State private var viewModel = ViewModel()
+    
     var sortCriteria: BookSortCriteria
     var searchTerm: String
     
@@ -87,13 +89,9 @@ struct BooksGrid: View {
         }
     }
     
-    let columns = [
-        GridItem(.adaptive(minimum: 125, maximum: 150))
-    ]
-    
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: columns, spacing: 20) {
+            LazyVGrid(columns: viewModel.columns, spacing: 20) {
                 ForEach(books) { book in
                     BookCell(book: book)
                 }

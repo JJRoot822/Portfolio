@@ -26,6 +26,15 @@ extension AddBookScreen {
         var isShowingRequirementsPopover: Bool = false
         var shouldDismiss: Bool = false
         
+        var integerFormatter: NumberFormatter {
+            let formatter = NumberFormatter()
+            formatter.numberStyle = .decimal
+            formatter.minimumFractionDigits = 0
+            formatter.maximumFractionDigits = 0
+            
+            return formatter
+        }
+        
         func toggleRequirementsPopover() {
             isShowingRequirementsPopover.toggle()
         }

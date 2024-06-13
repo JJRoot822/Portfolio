@@ -32,19 +32,25 @@ struct AddBooksToBookListScreen: View {
             }
             .toolbar {
                 EditButton()
-            }
-            
-            Form {
-                Button("Cancel", role: .cancel, action: viewModel.cancel)
                 
                 Button("Add") {
                     viewModel.addBooksToBookList(context: context, bookList: bookList)
                 }
             }
+            
+            Form {
+                Button("Cancel", role: .cancel, action: viewModel.cancel)
+            }
             .navigationTitle(Text("Add Books"))
+            .onChange(of: viewModel.shouldDismiss) {
+                if viewModel.shouldDismiss {
+                    dismiss()
+                }
+            }
         }
         .alert(isPresented: $viewModel.isShowingSaveError) {
             Alert(title: Text("Failed to Save Changes"), message: Text("Something went wrong when you tried to add books to the list \(bookList.title). Please try again later."), dismissButton: .default(Text("Ok")))
         }
+        .interactiveDismissDisabled()
     }
 }

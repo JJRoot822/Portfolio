@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct IconButton: View {
-    var title: LocalizedStringKey
+    var title: String
     var icon: String
     var backgroundColor: Color?
     var foregroundColor: Color?
