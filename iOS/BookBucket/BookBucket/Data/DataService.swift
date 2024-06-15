@@ -22,8 +22,14 @@ enum BookBucketDataError: Error {
     }
 }
 
-class DataHelper {
-    func save(context: ModelContext) -> Result<Void, BookBucketDataError> {
+class DataService {
+    private var context: ModelContext
+    
+    init(context: ModelContext) {
+        self.context = context
+    }
+    
+    func save() -> Result<Void, BookBucketDataError> {
         do {
             try context.save()
             
@@ -33,7 +39,7 @@ class DataHelper {
         }
     }
     
-    func insert<T: PersistentModel>(context: ModelContext, model: T) -> Result<Void, BookBucketDataError> {
+    func insert<T: PersistentModel>(model: T) -> Result<Void, BookBucketDataError> {
         context.insert(model)
         
         do {
@@ -45,7 +51,7 @@ class DataHelper {
         }
     }
     
-    func delete<T: PersistentModel>(context: ModelContext, model: T) -> Result<Void, BookBucketDataError> {
+    func delete<T: PersistentModel>(model: T) -> Result<Void, BookBucketDataError> {
         context.delete(model)
         
         do {

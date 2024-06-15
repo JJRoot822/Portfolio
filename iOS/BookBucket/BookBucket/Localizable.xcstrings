@@ -319,21 +319,6 @@
     "Select a color for your book list" : {
 
     },
-    "Show author name field requirements" : {
-
-    },
-    "Show book list title field requirements" : {
-
-    },
-    "Show book title field requirements" : {
-
-    },
-    "Show genre name field requirements" : {
-
-    },
-    "Show requirements for the book cover image field" : {
-
-    },
     "Something went wrong when trying to delete the author you requested. Please try again later." : {
 
     },
@@ -401,24 +386,6 @@
 
     },
     "Tap the \"Edit\" button to select multiple books" : {
-
-    },
-    "The author name field must not be empty." : {
-
-    },
-    "The book cover image is optional." : {
-
-    },
-    "The book list title field must not be empty." : {
-
-    },
-    "The book title field must not be empty." : {
-
-    },
-    "The genre name field must not be empty" : {
-
-    },
-    "The genre name field must not be empty." : {
 
     },
     "Title of Book" : {

@@ -45,8 +45,8 @@ extension AddBookScreen {
         
         func create(context: ModelContext) {
             let book = Book(title: bookTitle, isFavorite: isFavoriteBook, bookFormat: bookFormat, releaseDate: bookReleaseDate, numberOfPages: numberOfPages, numberOfChapters: numberOfChapters, numberOfChaptersRead: numberOfChaptersRead, numberOfPagesRead: numberOfPagesRead, isReading: isCurrentlyReadingBook, isCompleted: hasCompletedBook, coverImage: bookCoverImageData, bookLists: [], authors: [], genres: [])
-            let dataHelper = DataHelper()
-            let result = dataHelper.insert(context: context, model: book)
+            let dataService = DataService(context: context)
+            let result = dataService.insert(model: book)
             
             switch result {
             case .success(()):

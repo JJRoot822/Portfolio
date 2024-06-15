@@ -1,23 +1,20 @@
 //
-//  BookListsSortCriteriaPicker.swift
+//  GenreSortOrderPicker.swift
 //  BookBucket
 //
-//  Created by Joshua Root on 4/6/24.
+//  Created by Joshua Root on 3/10/24.
 //
 
 import SwiftUI
 
-struct BookListsSortOrderPicker: View {
-    @Binding var selection: BookListSortCriteria
+struct GenreSortOrderPicker: View {
+    @Binding var selection: GenreSortCriteria
     
-    let options: [BookListSortCriteria] = [
-        .nameAscending, .nameDescending,
-        .numberOfBooksAscending, .numberOfBooksDescending
-    ]
+    let viewModel = ViewModel()
     
     var body: some View {
         Menu(content: {
-            ForEach(options, id: \.rawValue.self) { option in
+            ForEach(viewModel.options, id: \.rawValue.self) { option in
                 if selection == option {
                     Button(action: {
                         selection = option
@@ -31,7 +28,7 @@ struct BookListsSortOrderPicker: View {
                 }
             }
         }, label: {
-            Label("Book Lists Sort Options", systemImage: "arrow.up.and.down")
+            Label("Genre Sort Options", systemImage: "arrow.up.and.down")
         })
     }
 }

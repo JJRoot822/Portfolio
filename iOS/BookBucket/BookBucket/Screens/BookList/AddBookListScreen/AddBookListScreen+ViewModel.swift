@@ -27,12 +27,12 @@ extension AddBookListScreen {
         
         func create(context: ModelContext) {
             let bookList = BookList(title: title, color: color, isFavorite: isFavorite, books: [])
-            let dataHelper = DataHelper()
-            let result = dataHelper.insert(context: context, model: bookList)
+            let dataService = DataService(context: context)
+            let result = dataService.insert(model: bookList)
             
             switch result {
             case .success(()):
-                cancel()
+                shouldDismiss = true
                 
                 return
             case .failure(_):

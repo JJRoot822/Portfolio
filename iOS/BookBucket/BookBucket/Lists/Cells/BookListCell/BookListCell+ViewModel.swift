@@ -41,8 +41,8 @@ extension BookListCell {
         }
         
         func delete(context: ModelContext, bookList: BookList) {
-            let dataHelper = DataHelper()
-            let result = dataHelper.delete(context: context, model: bookList)
+            let dataService = DataService(context: context)
+            let result = dataService.delete(model: bookList)
             
             switch result {
             case .success(()):
@@ -57,8 +57,8 @@ extension BookListCell {
         }
         
         func saveChanges(context: ModelContext) {
-            let dataHelper = DataHelper()
-            let result = dataHelper.save(context: context)
+            let dataService = DataService(context: context)
+            let result = dataService.save()
             
             switch result {
             case .success(()):

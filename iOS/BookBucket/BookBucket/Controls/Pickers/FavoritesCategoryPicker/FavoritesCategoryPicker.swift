@@ -10,11 +10,11 @@ import SwiftUI
 struct FavoritesCategoryPicker: View {
     @Binding var selection: Category
     
-    private let options: [Category] = [ .authors, .genres, .books, .bookLists ]
+    let viewModel = ViewModel()
     
     var body: some View {
         Picker("Favorites Category", selection: $selection) {
-            ForEach(options, id: \.rawValue.self) { option in
+            ForEach(viewModel.options, id: \.rawValue.self) { option in
                 Text(LocalizedStringKey(option.rawValue))
                     .tag(option)
             }

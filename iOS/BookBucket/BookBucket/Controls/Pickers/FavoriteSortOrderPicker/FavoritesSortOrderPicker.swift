@@ -1,23 +1,20 @@
 //
-//  AuthorSortOrderPicker.swift
+//  FavoritesSortOrderPicker.swift
 //  BookBucket
 //
-//  Created by Joshua Root on 3/8/24.
+//  Created by Joshua Root on 4/28/24.
 //
 
 import SwiftUI
 
-struct AuthorSortOrderPicker: View {
-    @Binding var selection: AuthorSortCriteria
+struct FavoritesSortOrderPicker: View {
+    @Binding var selection: FavoritesSortCriteria
     
-    private let options: [AuthorSortCriteria] = [
-        .nameAscending, .nameDescending,
-        .booksAuthoredAscending, .booksAuthoredDescending
-    ]
+    let viewModel = ViewModel()
     
     var body: some View {
         Menu(content: {
-            ForEach(options, id: \.rawValue.self) { option in
+            ForEach(viewModel.options, id: \.rawValue) { option in
                 if selection == option {
                     Button(action: {
                         selection = option
@@ -31,7 +28,8 @@ struct AuthorSortOrderPicker: View {
                 }
             }
         }, label: {
-            Label("Author Sort Options", systemImage: "arrow.up.and.down")
+            Label("Favorites Sort Order", systemImage: "arrow.up.and.down")
+                .labelStyle(.iconOnly)
         })
     }
 }

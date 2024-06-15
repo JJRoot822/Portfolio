@@ -27,8 +27,8 @@ extension AddAuthorScreen {
         
         func create(context: ModelContext) {
             let author = Author(name: authorName, isFavorited: isFavorite, books: [])
-            let dataHelper = DataHelper()
-            let result = dataHelper.insert(context: context, model: author)
+            let dataService = DataService(context: context)
+            let result = dataService.insert(model: author)
             
             switch result {
             case .success(()):

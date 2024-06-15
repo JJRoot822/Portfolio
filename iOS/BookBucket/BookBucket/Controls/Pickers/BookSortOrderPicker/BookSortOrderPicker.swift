@@ -10,17 +10,11 @@ import SwiftUI
 struct BookSortOrderPicker: View {
     @Binding var selection: BookSortCriteria
     
-    private let options: [BookSortCriteria] = [
-        .titleAscending, .titleDescending,
-        .formatAscending, .formatDescending,
-        .numberOfChaptersAscending, .numberOfChaptersDescending,
-        .numberOfPagesAscending, .numberOfPagesDescending,
-        .releaseDateAscending, .releaseDateDescending
-    ]
+    let viewModel = ViewModel()
     
     var body: some View {
         Menu(content: {
-            ForEach(options, id: \.rawValue.self) { option in
+            ForEach(viewModel.options, id: \.rawValue.self) { option in
                 if selection == option {
                     Button(action: {
                         selection = option

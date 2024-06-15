@@ -19,11 +19,6 @@ struct AddBookListScreen: View {
             Form {
                 HStack(spacing: 10) {
                     TextField("Title of Book List", text: $viewModel.title)
-                    
-                    FieldInfoPopoverToggleButton(label: "Show book list title field requirements", action: viewModel.toggleRequirementsPopover)
-                        .popover(isPresented: $viewModel.isShowingRequirementsPopover) {
-                            FieldInfoPopover(infoText: "The book list title field must not be empty.")
-                        }
                 }
                 
                 Toggle("Is Favorite Book List", isOn: $viewModel.isFavorite)

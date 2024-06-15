@@ -41,8 +41,8 @@ extension GenreCell {
         }
         
         func delete(context: ModelContext, genre: Genre) {
-            let dataHelper = DataHelper()
-            let result = dataHelper.delete(context: context, model: genre)
+            let dataService = DataService(context: context)
+            let result = dataService.delete(model: genre)
             
             switch result {
             case .success(()):
@@ -57,8 +57,8 @@ extension GenreCell {
         }
         
         func saveChanges(context: ModelContext) {
-            let dataHelper = DataHelper()
-            let result = dataHelper.save(context: context)
+            let dataService = DataService(context: context)
+            let result = dataService.save()
             
             switch result {
             case .success(()):

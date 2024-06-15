@@ -31,11 +31,6 @@ struct EditBookScreen: View {
                 Section {
                     HStack(spacing: 10) {
                         TextField("Title of Book", text: $book.title)
-                        
-                        FieldInfoPopoverToggleButton(label: "Show book title field requirements", action: viewModel.toggleRequirementsPopover)
-                            .popover(isPresented: $viewModel.isShowingRequirementsPopover) {
-                            FieldInfoPopover(infoText: "The book title field must not be empty.")
-                        }
                     }
                     
                     BookFormatPicker(selection: $book.bookFormat)

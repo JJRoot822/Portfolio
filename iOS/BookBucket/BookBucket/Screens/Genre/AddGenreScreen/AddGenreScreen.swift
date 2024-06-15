@@ -19,11 +19,6 @@ struct AddGenreScreen: View {
             Form {
                 HStack(spacing: 10) {
                     TextField("name of Genre", text: $viewModel.genreName)
-                
-                    FieldInfoPopoverToggleButton(label: "Show genre name field requirements", action: viewModel.toggleRequirementsPopover)
-                        .popover(isPresented: $viewModel.isShowingRequirementsPopover) {
-                            FieldInfoPopover(infoText: "The genre name field must not be empty.")
-                        }
                 }
                 
                 Toggle("Is Favorite Genre", isOn: $viewModel.isFavorite)

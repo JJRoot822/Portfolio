@@ -9,17 +9,17 @@ import SwiftUI
 
 struct BookListColorPickerItem: View {
     var color: Color
-    var label: LocalizedStringKey
+    var label: String
     var selected: Bool
     
     var body: some View {
         ZStack {
             Circle()
                 .frame(width: 50, height: 50)
-                .foregroundStyle(color)
+                .foregroundStyle(color.gradient)
             
             Image(systemName: "checkmark.circle.fill")
-                .foregroundStyle(color)
+                .foregroundStyle(color.gradient)
                 .background(Color(uiColor: .systemBackground))
                 .clipShape(Circle())
                 .opacity(selected ? 1 : 0)

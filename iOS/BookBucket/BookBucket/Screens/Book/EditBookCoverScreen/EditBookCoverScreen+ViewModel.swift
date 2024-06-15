@@ -23,8 +23,8 @@ extension EditBookCoverScreen {
         }
         
         func saveChanges(context: ModelContext) {
-            let dataHelper = DataHelper()
-            let result = dataHelper.save(context: context)
+            let dataService = DataService(context: context)
+            let result = dataService.save()
             
             switch result {
             case .success(()):

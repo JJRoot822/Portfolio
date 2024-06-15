@@ -26,8 +26,8 @@ extension AddGenreScreen {
         
         func create(context: ModelContext) {
             let genre = Genre(name: genreName, isFavorite: isFavorite, books: [])
-            let dataHelper = DataHelper()
-            let result = dataHelper.insert(context: context, model: genre)
+            let dataService = DataService(context: context)
+            let result = dataService.insert(model: genre)
             
             switch result {
             case .success(()):
