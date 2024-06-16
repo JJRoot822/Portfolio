@@ -33,14 +33,14 @@ struct AddAuthorsToBookScreen: View {
                     Button("Cancel", role: .cancel) {
                         viewModel.cancel()
                     }
-                    
-                    Button("Add Authors to \(book.title)") {
-                        viewModel.addAuthorsToBook(context: context, book: book)
-                    }
                 }
             }
             .toolbar {
                 EditButton()
+                
+                Button("Add Authors to \(book.title)") {
+                    viewModel.addAuthorsToBook(context: context, book: book)
+                }
             }
             .navigationTitle(Text("Add Authors"))
         }

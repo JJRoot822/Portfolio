@@ -70,6 +70,9 @@
     "Authors: %lld" : {
 
     },
+    "Book Details" : {
+
+    },
     "Book Format" : {
 
     },
@@ -112,13 +115,7 @@
     "Choose a Color" : {
 
     },
-    "Choose a Picture" : {
-
-    },
-    "Clear Selection" : {
-
-    },
-    "Close" : {
+    "Clear Book Cover Selection" : {
 
     },
     "Completed" : {
@@ -170,9 +167,6 @@
 
     },
     "Failed to Delete Genre" : {
-
-    },
-    "Failed to Load Image" : {
 
     },
     "Failed to Remove Book" : {
@@ -316,6 +310,9 @@
     "Search for an Author" : {
 
     },
+    "Select a Book Cover" : {
+
+    },
     "Select a color for your book list" : {
 
     },
@@ -332,9 +329,6 @@
 
     },
     "Something went wrong when trying to delete this book. Please try again later." : {
-
-    },
-    "Something went wrong when trying to load the photo you selected. Either it's in an unsupported format, or there is some unknown issue. Please try again later." : {
 
     },
     "Something went wrong when trying to remove this book from %@. Please try again later." : {

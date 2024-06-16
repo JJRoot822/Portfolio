@@ -28,14 +28,43 @@ struct EditBookCoverScreen: View {
                     ZStack {
                         Rectangle()
                             .frame(width: 200, height: 300)
+                            .foregroundStyle(Color(uiColor: .systemGray6))
                     
                         Text("No cover image for this book was selected.")
                     }
                 }
                 
-                BookCoverImagePicker(selection: $book.coverImage)
+                HStack {
+                    if let coverImageData = book.coverImage,
+                       let coverImage = UIImage(data: coverImageData) {
+                        Image(uiImage: coverImage)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 50, height: 50)
+                            .clipShape(Circle())
+                            .accessibilityHidden(true)
+                    } else {
+                        Image(systemName: "camera.circle")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 50, height: 50)
+                            .accessibilityHidden(true)
+                    }
+                    
+                    Button("Select a Book Cover", action: viewModel.toggleImagePicker)
+                    
+                    Button(action: {
+                        viewModel.clearCoverImage(context: context, book: book)
+                    }) {
+                        Image(systemName: "multiply")
+                    }
+                    .accessibilityLabel(Text("Clear Book Cover Selection"))
+                }
             }
             .navigationTitle(Text("Change Book Cover"))
+            .sheet(isPresented: $viewModel.isShowingImagePicker) {
+                BookCoverImagePicker(selection: $book.coverImage)
+            }
             .alert(isPresented: $viewModel.isShowingError) {
                 Alert(title: Text("Failed to Save Changes"), message: Text("Something went wrong when trying to save the changes you made to this book. Please try again later."))
             }

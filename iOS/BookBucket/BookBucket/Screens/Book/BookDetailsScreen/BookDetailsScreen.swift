@@ -57,6 +57,7 @@ struct BookDetailsScreen: View {
                     })
                 }
             }
+            .navigationTitle(Text("Book Details"))
             .sheet(isPresented: $viewModel.showAddAuthorsToBook, onDismiss: {
                 viewModel.id = UUID()
             }) {

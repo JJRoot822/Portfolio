@@ -15,6 +15,7 @@ extension AddBookScreen {
         var bookFormat: String = "Print"
         var bookReleaseDate: Date = Date()
         var bookCoverImageData: Data? = nil
+        var isShowingImagePicker: Bool = false
         var isFavoriteBook: Bool = false
         var numberOfPages: Int = 0
         var numberOfChapters: Int = 0
@@ -35,8 +36,12 @@ extension AddBookScreen {
             return formatter
         }
         
-        func toggleRequirementsPopover() {
-            isShowingRequirementsPopover.toggle()
+        func toggleImagePicker() {
+            isShowingImagePicker.toggle()
+        }
+        
+        func clearCoverImage() {
+            bookCoverImageData = nil
         }
         
         func cancel() {

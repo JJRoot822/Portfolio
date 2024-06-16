@@ -32,6 +32,7 @@ struct BookCell: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: 125, height: 125)
+                        .foregroundStyle(Color.secondary)
                         .accessibilityHidden(true)
                 }
                 
@@ -46,12 +47,15 @@ struct BookCell: View {
                     ProgressView(value: viewModel.getReadingProgress(book: book))
                     
                     Text(book.title)
+                        .foregroundStyle(Color(uiColor: .label))
                 }
                 
                 if let firstAuthor = book.authors.first {
                     Text(firstAuthor.name)
+                        .foregroundStyle(Color.secondary)
                 } else {
                     Text("No Author")
+                        .foregroundStyle(Color.secondary)
                 }
             }
         })
