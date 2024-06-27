@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct iPhoneApp: View {
+    @Environment(\.modelContext) var context
+    
     @State private var selectedTab: AppTab = .books
     
     var body: some View {

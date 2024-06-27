@@ -14,25 +14,48 @@ enum ChartType {
 }
 
 struct BloodGlucoseMeasurementsScreen: View {
-    @Environment(\.managedObjectContext) private var viewContext
-
-    @FetchRequest(
-        sortDescriptors: [
-            NSSortDescriptor(keyPath: \GTGlucoseMeasurement.dateMeasured, ascending: false)
-        ],
-        animation: .default
-    ) private var measurements: FetchedResults<GTGlucoseMeasurement>
-
-
-    @AppStorage("gt-in-range-lower-bound") var inRangeLowValue: Double = 70.0
-    @AppStorage("gt-in-range-upper-bound") var inRangeHighValue: Double = 120.0
-    @AppStorage("gt-too-low-upper-bound") var tooLowHighValue: Double = 69.9
-    @AppStorage("gt-too-high-lower-bound") var tooHighLowValue: Double = 160.0
-    
+    @State private var searchTerm: String = ""
+    @State private var isSearchPresented: Bool = false
     @State private var selection: ChartType = .line
+    @State private var monthFilter: String = "January"
+    @State private var yearFilter: String = String(Calendar.current.dateComponents([ .year ], from: Date()).year!)
+    
+    let monthOptions = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ]
+    
+    var yearIntervalPickerOptions: [String] {
+        let currentYear = Calendar.current.dateComponents([ .year ], from: Date()).year!
+        var years: [String] = []
+    
+        for i in 0..<11 {
+            years.append(String(currentYear - i))
+        }
+        
+        return years
+    }
     
     var body: some View {
         VStack(spacing: 20) {
+            HStack(spacing: 20) {
+                Picker("Chart Type", selection: $selection) {
+                    Text("Bar Chart").tag(ChartType.bar)
+                    Text("Line Chart").tag(ChartType.line)
+                }
+                .pickerStyle(.radioGroup)
+                .horizontalRadioGroupLayout()
+                
+                Picker("Month Filter", selection: $monthFilter) {
+                    ForEach(monthOptions, id: \.self) { option in
+                        Text(option)
+                    }
+                }
+                
+                Picker("Year filter", selection: $yearFilter) {
+                    ForEach(yearIntervalPickerOptions, id: \.self) { option in
+                        Text(option)
+                    }
+                }
+            }
+            
             Table(measurements) {
                 TableColumn("Glucose Level", value: \.formattedMeasurement)
                 TableColumn("Unit", value: \.measurementUnit)
@@ -40,46 +63,10 @@ struct BloodGlucoseMeasurementsScreen: View {
                 TableColumn("Notes", value: \.userNotes)
             }
             
-            VStack(spacing: 10) {
-                Picker("Chart Type", selection: $selection) {
-                    Text("Bar Chart").tag(ChartType.bar)
-                    Text("Line Chart").tag(ChartType.line)
-                }
-                .pickerStyle(.segmented)
-                
-                Chart {
-                    ForEach(measurements) { level in
-                        if selection == .bar {
-                            BarMark(
-                                x: .value("Date Measured", level.formattedMeasurementDate),
-                                y: .value("Blood Sugar Level", level.value)
-                            )
-                            .foregroundStyle(getColorBy(value: level.value))
-                        } else {
-                            LineMark(
-                                x: .value("Date Measured", level.formattedMeasurementDate),
-                                y: .value("Blood Sugar Level", level.value)
-                            )
-                        }
-                    }
-                }
-            }
-            
+            FilterableChart(type: selection, monthFilter: monthFilter, yearFilter: yearFilter, numberOfRecords: numberOfRecords)
         }
         .padding()
-    }
-    
-    private func getColorBy(value: Double) -> Color {
-        if value <= tooLowHighValue {
-            return .red
-        } else if value > tooLowHighValue && value < inRangeLowValue {
-            return .yellow
-        } else if value >= inRangeLowValue && value <= inRangeHighValue {
-            return .green
-        } else if value > inRangeHighValue && value < tooHighLowValue {
-            return .yellow
-        }
-        
-        return .red
+        .searchable(text: $searchTerm, isPresented: $isSearchPresented)
     }
 }
+

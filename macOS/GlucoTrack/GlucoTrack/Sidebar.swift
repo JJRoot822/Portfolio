@@ -25,6 +25,10 @@ struct Sidebar: View {
             NavigationLink(value: 3) {
                 Label("Reminders", systemImage: "alarm")
             }
+            
+            NavigationLink(value: 4) {
+                Label("Settings", systemImage: "gearshape")
+            }
         }
         .listStyle(.sidebar)
         .navigationDestination(for: Int.self) { value in
