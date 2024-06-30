@@ -28,6 +28,8 @@ struct EditBookScreen: View {
                     
                     DatePicker("Book ReleaseDate", selection: $book.releaseDate, displayedComponents: .date)
                     
+                    BookCoverImagePicker(selection: $book.coverImage)
+                    
                     TextField("Number of Pages", value: $book.numberOfPages, formatter: viewModel.integerFormatter)
                     TextField("Number of Chapters", value: $book.numberOfChapters, formatter: viewModel.integerFormatter)
                     

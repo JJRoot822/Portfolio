@@ -70,6 +70,9 @@
     "Authors: %lld" : {
 
     },
+    "Book Cover Image Selected" : {
+
+    },
     "Book Details" : {
 
     },
@@ -112,10 +115,13 @@
     "Change Book Cover" : {
 
     },
+    "Choose a Book Cover" : {
+
+    },
     "Choose a Color" : {
 
     },
-    "Clear Book Cover Selection" : {
+    "Clear Selection" : {
 
     },
     "Completed" : {
@@ -232,6 +238,9 @@
     "No Author" : {
 
     },
+    "No Book Cover Image Selected" : {
+
+    },
     "No cover image for this book was selected." : {
 
     },
@@ -308,9 +317,6 @@
 
     },
     "Search for an Author" : {
-
-    },
-    "Select a Book Cover" : {
 
     },
     "Select a color for your book list" : {

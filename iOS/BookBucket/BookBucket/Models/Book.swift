@@ -21,7 +21,7 @@ class Book {
     var numberOfPagesRead: Int
     var isReading: Bool
     var isCompleted: Bool
-    var coverImage: Data?
+    @Attribute(.externalStorage) var coverImage: Data?
     var bookLists: [BookList]
     var authors: [Author]
     var genres: [Genre]

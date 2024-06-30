@@ -26,30 +26,7 @@ struct AddBookScreen: View {
                     
                     DatePicker("Book ReleaseDate", selection: $viewModel.bookReleaseDate, displayedComponents: .date)
                     
-                    HStack {
-                        if let coverImageData = viewModel.bookCoverImageData,
-                           let coverImage = UIImage(data: coverImageData) {
-                            Image(uiImage: coverImage)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 50, height: 50)
-                                .clipShape(Circle())
-                                .accessibilityHidden(true)
-                        } else {
-                            Image(systemName: "camera.circle")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 50, height: 50)
-                                .accessibilityHidden(true)
-                        }
-                        
-                        Button("Select a Book Cover", action: viewModel.toggleImagePicker)
-                        
-                        Button(action: viewModel.clearCoverImage) {
-                            Image(systemName: "multiply")
-                        }
-                        .accessibilityLabel(Text("Clear Book Cover Selection"))
-                    }
+                    BookCoverImagePicker(selection: $viewModel.bookCoverImageData)
                     
                     TextField("Number of Pages", value: $viewModel.numberOfPages, formatter: viewModel.integerFormatter)
                         .accessibilityLabel(Text("Number of Pages"))
@@ -73,9 +50,6 @@ struct AddBookScreen: View {
                 }
             }
             .navigationTitle(Text("Add Book"))
-            .sheet(isPresented: $viewModel.isShowingImagePicker) {
-                BookCoverImagePicker(selection: $viewModel.bookCoverImageData)
-            }
             .alert(isPresented: $viewModel.isShowingError) {
                 Alert(title: Text("Failed to Create Book"), message: Text("Something went wrong when trying to save the data you entered for a new book. Please try again later."))
             }

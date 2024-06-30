@@ -16,11 +16,12 @@ struct EditBookCoverScreen: View {
     
     @State private var viewModel = ViewModel()
     
+    
     var body: some View {
         NavigationStack {
             Form {
-                if let imageData = book.coverImage, let coverImage = UIImage(data: imageData) {
-                    Image(uiImage: coverImage)
+                if let imageData = book.coverImage, let image = UIImage(data: imageData) {
+                    Image(uiImage: image)
                         .resizable()
                         .scaledToFit()
                         .frame(height: 250)
@@ -34,37 +35,15 @@ struct EditBookCoverScreen: View {
                     }
                 }
                 
-                HStack {
-                    if let coverImageData = book.coverImage,
-                       let coverImage = UIImage(data: coverImageData) {
-                        Image(uiImage: coverImage)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 50, height: 50)
-                            .clipShape(Circle())
-                            .accessibilityHidden(true)
-                    } else {
-                        Image(systemName: "camera.circle")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 50, height: 50)
-                            .accessibilityHidden(true)
-                    }
+                VStack {
+                    BookCoverImagePicker(selection: $book.coverImage)
                     
-                    Button("Select a Book Cover", action: viewModel.toggleImagePicker)
-                    
-                    Button(action: {
+                    Button("Clear Selection") {
                         viewModel.clearCoverImage(context: context, book: book)
-                    }) {
-                        Image(systemName: "multiply")
                     }
-                    .accessibilityLabel(Text("Clear Book Cover Selection"))
                 }
             }
             .navigationTitle(Text("Change Book Cover"))
-            .sheet(isPresented: $viewModel.isShowingImagePicker) {
-                BookCoverImagePicker(selection: $book.coverImage)
-            }
             .alert(isPresented: $viewModel.isShowingError) {
                 Alert(title: Text("Failed to Save Changes"), message: Text("Something went wrong when trying to save the changes you made to this book. Please try again later."))
             }

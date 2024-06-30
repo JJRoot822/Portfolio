@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct Sidebar: View {
+    @State private var value: Int = 0
+    
     var body: some View {
-        List {
+        List(selection: $value) {
             NavigationLink(value: 0) {
                 Label("Blood Sugar", systemImage: "drop")
             }
@@ -24,10 +26,6 @@ struct Sidebar: View {
             
             NavigationLink(value: 3) {
                 Label("Reminders", systemImage: "alarm")
-            }
-            
-            NavigationLink(value: 4) {
-                Label("Settings", systemImage: "gearshape")
             }
         }
         .listStyle(.sidebar)

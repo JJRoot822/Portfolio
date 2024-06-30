@@ -27,32 +27,29 @@ struct RemindersScreen: View {
 }
 
 struct ContentView: View {
+    @EnvironmentObject var globalState: GlobalState
+    
+    @State private var id: UUID = UUID()
+    
     var body: some View {
         NavigationSplitView(sidebar: {
             Sidebar()
         },detail: {
-            Text("Nothing to Show Right Now. Select an Option in the Sidebar to Get Started")
+            BloodGlucoseMeasurementsScreen()
         })
-        .toolbar {
-            Menu(content: {
-                Button("Add Blood Glucose Measurement") {
-                    
-                }
-                
-                Button("Add Medication") {
-                    
-                }
-                
-                Button("Add Medication Consumption Record") {
-                    
-                }
-                
-                Button("Add a Weight Record") {
-                    
-                }
-            }) {
-                Label("Add", systemImage: "plus")
+        .sheet(isPresented: $globalState.showAddBloodSugarReading, onDismiss: {
+            id = UUID()
+        }) {
+            AddBloodSugarReadingScreen()
+        }
+        .touchBar {
+            CreateActionsMenu()
+            SettingsLink {
+                Label("Settings", systemImage: "gear")
             }
+        }
+        .toolbar {
+            CreateActionsMenu()
             
             SettingsLink {
                 Label("Settings", systemImage: "gear")

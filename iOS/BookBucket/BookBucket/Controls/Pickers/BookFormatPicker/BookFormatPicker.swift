@@ -16,7 +16,7 @@ struct BookFormatPicker: View {
         Picker("Book Format", selection: $selection) {
             ForEach(viewModel.options, id: \.self) { option in
                 Text(option)
-                    .tag(option.lowercased())
+                    .tag(option)
             }
         }
     }

@@ -35,29 +35,5 @@ struct BookBucketApp: App {
             }
         }
         .modelContainer(sharedModelContainer)
-//        .commands {
-//            CommandGroup(replacing: .appSettings) {
-//                EmptyView()
-//            }
-//            
-//            CommandGroup(replacing: .systemServices) {
-//                EmptyView()
-//            }
-//            
-//            CommandGroup(replacing: .newItem) {
-//                Button("Add New Author") { globalState.showingAddAuthor = true }
-//                    .keyboardShortcut("N", modifiers: [ .command ])
-//                
-//            
-//                Button("Add New Genre") { globalState.showingAddGenre = true }
-//                    .keyboardShortcut("N", modifiers: [ .command, .option ])
-//                
-//                Button("Add New Book") { globalState.showingAddBook = true }
-//                    .keyboardShortcut("N", modifiers: [ .command, .shift ])
-//                
-//                Button("Add New Book List") { globalState.showingAddBookList = true }
-//                    .keyboardShortcut("N", modifiers: [ .command, .shift, .control, .option ])
-//            }
-//        }
     }
 }

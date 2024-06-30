@@ -8,43 +8,47 @@
 import SwiftUI
 import PhotosUI
 
-struct BookCoverImagePicker: UIViewControllerRepresentable {
+struct BookCoverImagePicker: View {
     @Binding var selection: Data?
     
-    class Coordinator: NSObject, PHPickerViewControllerDelegate {
-        var parent: BookCoverImagePicker
-        
-        init(_ parent: BookCoverImagePicker) {
-            self.parent = parent
-        }
-        
-        func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
-            picker.dismiss(animated: true)
+    @State private var selectedItem: PhotosPickerItem? = nil
+    
+    let filter: PHPickerFilter = .any(of: [
+        .not(.bursts), .not(.cinematicVideos), .not(.livePhotos),
+        .not(.depthEffectPhotos), .not(.panoramas), .not(.screenRecordings),
+        .not(.slomoVideos), .not(.videos), .not(.timelapseVideos),
+            .images, .screenshots
+    ])
+    
+    var body: some View {
+        HStack {
+            ZStack {
+                if let selection = selection {
+                    Image(uiImage: UIImage(data: selection)!)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 50, height: 50)
+                        .clipShape(Circle())
+                        .accessibilityHidden(true)
+                }
+                
+                PhotosPicker(selection: $selectedItem, matching: filter, preferredItemEncoding: .compatible) {
+                    Label("Choose a Book Cover", systemImage: "camera.fill")
+                        .labelStyle(.iconOnly)
+                }
+                .frame(width: 50, height: 50)
+            }
             
-            guard let provider = results.first?.itemProvider else { return }
-
-            if provider.canLoadObject(ofClass: UIImage.self) {
-                provider.loadObject(ofClass: UIImage.self) { image, _ in
-                    let img = image as? UIImage
-                    self.parent.selection = img?.pngData()
+            Text(selection == nil ? "No Book Cover Image Selected" : "Book Cover Image Selected")
+        }
+        .onChange(of: selectedItem) {
+            Task {
+                if let loaded = try? await selectedItem?.loadTransferable(type: Data.self) {
+                    selection = loaded
+                } else {
+                    print("Failed")
                 }
             }
         }
     }
-    
-    func makeCoordinator() -> Coordinator {
-        return Coordinator(self)
-    }
-    
-    func makeUIViewController(context: Context) -> PHPickerViewController {
-        var configuration = PHPickerConfiguration()
-        configuration.filter = .images
-        
-        let picker = PHPickerViewController(configuration: configuration)
-        picker.delegate = context.coordinator
-        
-        return picker
-    }
-    
-    func updateUIViewController(_ uiViewController: PHPickerViewController, context: Context) {}
 }

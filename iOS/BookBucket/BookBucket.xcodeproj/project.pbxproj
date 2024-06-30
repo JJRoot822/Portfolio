@@ -117,6 +117,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0304EEC62C315C9500BE91C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		03103F812BEB42630045F79E /* EditBookScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBookScreen.swift; sourceTree = "<group>"; };
 		03103F832BEB4E840045F79E /* EditBookCoverScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBookCoverScreen.swift; sourceTree = "<group>"; };
 		03103F872BEB92DF0045F79E /* FavoritesCategoryPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCategoryPicker.swift; sourceTree = "<group>"; };
@@ -411,6 +412,7 @@
 		03C20BF62BD952A2005A5B07 /* BookBucket */ = {
 			isa = PBXGroup;
 			children = (
+				0304EEC62C315C9500BE91C9 /* Info.plist */,
 				03C20BFD2BD952A3005A5B07 /* Assets.xcassets */,
 				03CEB67F2BDC4DA4004EC667 /* BookBucketApp.swift */,
 				03B1A6F82C06449C000A118F /* Cells */,
@@ -1135,6 +1137,7 @@
 				DEVELOPMENT_TEAM = B3NH98QL9A;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BookBucket/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = BookBucket;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -1170,6 +1173,7 @@
 				DEVELOPMENT_TEAM = B3NH98QL9A;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BookBucket/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = BookBucket;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

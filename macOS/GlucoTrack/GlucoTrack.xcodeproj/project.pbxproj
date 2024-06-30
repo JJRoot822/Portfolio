@@ -7,13 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0321F93C2C311A8F00DA5A8D /* AddBloodSugarReadingScreen+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0321F93B2C311A8F00DA5A8D /* AddBloodSugarReadingScreen+ViewModel.swift */; };
+		034C6DD92C2E174300E2BE89 /* CreateActionsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C6DD82C2E174300E2BE89 /* CreateActionsMenu.swift */; };
 		0384D7D62C096805009C419F /* Sidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0384D7D52C096805009C419F /* Sidebar.swift */; };
 		0384D7D82C09F73B009C419F /* BloodGlucoseMeasurementsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0384D7D72C09F73B009C419F /* BloodGlucoseMeasurementsScreen.swift */; };
 		0384D7DB2C0A8BE3009C419F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0384D7DA2C0A8BE3009C419F /* Constants.swift */; };
 		0384D7DD2C0A93DB009C419F /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0384D7DC2C0A93DB009C419F /* SettingsScreen.swift */; };
 		03894F522C2CC3CF008BB475 /* FilterableChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03894F512C2CC3CF008BB475 /* FilterableChart.swift */; };
 		03894F542C2CD32A008BB475 /* StartAndEndOfMonth+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03894F532C2CD32A008BB475 /* StartAndEndOfMonth+Date.swift */; };
+		03894F582C2D4C62008BB475 /* BloodSugarDataFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03894F572C2D4C62008BB475 /* BloodSugarDataFilters.swift */; };
+		03894F5C2C2D6376008BB475 /* FilterableTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03894F5B2C2D6376008BB475 /* FilterableTable.swift */; };
+		03894F5F2C2D7F9E008BB475 /* ChartType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03894F5E2C2D7F9E008BB475 /* ChartType.swift */; };
 		039903062C03CEDC00267D02 /* GTMedicationRecord+CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039903052C03CEDC00267D02 /* GTMedicationRecord+CoreDataHelper.swift */; };
+		03A1AC362C2FADA2008B20DC /* GlobalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1AC352C2FADA2008B20DC /* GlobalState.swift */; };
+		03A1AC392C2FDE9C008B20DC /* AddBloodSugarReadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1AC382C2FDE9C008B20DC /* AddBloodSugarReadingScreen.swift */; };
+		03A1AC3C2C2FE186008B20DC /* CalculationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1AC3B2C2FE186008B20DC /* CalculationHelper.swift */; };
+		03A1AC3E2C30428B008B20DC /* UnitOfMeasure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1AC3D2C30428B008B20DC /* UnitOfMeasure.swift */; };
+		03A1AC432C304349008B20DC /* CalculationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1AC422C304349008B20DC /* CalculationError.swift */; };
 		03B758842C03BF57000E9F27 /* GTMedication+CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B758832C03BF57000E9F27 /* GTMedication+CoreDataHelper.swift */; };
 		03B76A462C039A9B0043A03B /* GTGlucoseMeasurement+CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B76A452C039A9B0043A03B /* GTGlucoseMeasurement+CoreDataHelper.swift */; };
 		03D987A32C03886B002A75A6 /* GlucoTrackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D987A22C03886B002A75A6 /* GlucoTrackApp.swift */; };
@@ -46,13 +56,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0321F93B2C311A8F00DA5A8D /* AddBloodSugarReadingScreen+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddBloodSugarReadingScreen+ViewModel.swift"; sourceTree = "<group>"; };
+		034C6DD82C2E174300E2BE89 /* CreateActionsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateActionsMenu.swift; sourceTree = "<group>"; };
 		0384D7D52C096805009C419F /* Sidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sidebar.swift; sourceTree = "<group>"; };
 		0384D7D72C09F73B009C419F /* BloodGlucoseMeasurementsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodGlucoseMeasurementsScreen.swift; sourceTree = "<group>"; };
 		0384D7DA2C0A8BE3009C419F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0384D7DC2C0A93DB009C419F /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 		03894F512C2CC3CF008BB475 /* FilterableChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterableChart.swift; sourceTree = "<group>"; };
 		03894F532C2CD32A008BB475 /* StartAndEndOfMonth+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StartAndEndOfMonth+Date.swift"; sourceTree = "<group>"; };
+		03894F572C2D4C62008BB475 /* BloodSugarDataFilters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodSugarDataFilters.swift; sourceTree = "<group>"; };
+		03894F5B2C2D6376008BB475 /* FilterableTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterableTable.swift; sourceTree = "<group>"; };
+		03894F5E2C2D7F9E008BB475 /* ChartType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartType.swift; sourceTree = "<group>"; };
 		039903052C03CEDC00267D02 /* GTMedicationRecord+CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GTMedicationRecord+CoreDataHelper.swift"; sourceTree = "<group>"; };
+		03A1AC352C2FADA2008B20DC /* GlobalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalState.swift; sourceTree = "<group>"; };
+		03A1AC382C2FDE9C008B20DC /* AddBloodSugarReadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBloodSugarReadingScreen.swift; sourceTree = "<group>"; };
+		03A1AC3B2C2FE186008B20DC /* CalculationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationHelper.swift; sourceTree = "<group>"; };
+		03A1AC3D2C30428B008B20DC /* UnitOfMeasure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitOfMeasure.swift; sourceTree = "<group>"; };
+		03A1AC422C304349008B20DC /* CalculationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationError.swift; sourceTree = "<group>"; };
 		03B758832C03BF57000E9F27 /* GTMedication+CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GTMedication+CoreDataHelper.swift"; sourceTree = "<group>"; };
 		03B76A452C039A9B0043A03B /* GTGlucoseMeasurement+CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GTGlucoseMeasurement+CoreDataHelper.swift"; sourceTree = "<group>"; };
 		03D9879F2C03886B002A75A6 /* GlucoTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GlucoTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +116,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03894F5D2C2D7F7D008BB475 /* Enumerations */ = {
+			isa = PBXGroup;
+			children = (
+				03894F5E2C2D7F9E008BB475 /* ChartType.swift */,
+				03A1AC3D2C30428B008B20DC /* UnitOfMeasure.swift */,
+			);
+			path = Enumerations;
+			sourceTree = "<group>";
+		};
+		03A1AC372C2FDE79008B20DC /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				03A1AC3A2C2FDF61008B20DC /* BloodSugar */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		03A1AC3A2C2FDF61008B20DC /* BloodSugar */ = {
+			isa = PBXGroup;
+			children = (
+				0384D7D72C09F73B009C419F /* BloodGlucoseMeasurementsScreen.swift */,
+				03A1AC382C2FDE9C008B20DC /* AddBloodSugarReadingScreen.swift */,
+				0321F93B2C311A8F00DA5A8D /* AddBloodSugarReadingScreen+ViewModel.swift */,
+			);
+			path = BloodSugar;
+			sourceTree = "<group>";
+		};
+		03A1AC412C30431C008B20DC /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				03A1AC422C304349008B20DC /* CalculationError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
 		03B76A442C039A5F0043A03B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,8 +186,11 @@
 		03D987A12C03886B002A75A6 /* GlucoTrack */ = {
 			isa = PBXGroup;
 			children = (
+				03A1AC412C30431C008B20DC /* Errors */,
+				03894F5D2C2D7F7D008BB475 /* Enumerations */,
 				03B76A442C039A5F0043A03B /* Extensions */,
 				03D987A22C03886B002A75A6 /* GlucoTrackApp.swift */,
+				034C6DD82C2E174300E2BE89 /* CreateActionsMenu.swift */,
 				03D987A42C03886B002A75A6 /* ContentView.swift */,
 				03D987A62C03886C002A75A6 /* Assets.xcassets */,
 				03D987AB2C03886C002A75A6 /* Persistence.swift */,
@@ -140,10 +198,14 @@
 				03D987AD2C03886C002A75A6 /* GlucoTrack.xcdatamodeld */,
 				03D987A82C03886C002A75A6 /* Preview Content */,
 				0384D7D52C096805009C419F /* Sidebar.swift */,
-				0384D7D72C09F73B009C419F /* BloodGlucoseMeasurementsScreen.swift */,
+				03A1AC372C2FDE79008B20DC /* Screens */,
 				0384D7DA2C0A8BE3009C419F /* Constants.swift */,
 				0384D7DC2C0A93DB009C419F /* SettingsScreen.swift */,
 				03894F512C2CC3CF008BB475 /* FilterableChart.swift */,
+				03894F572C2D4C62008BB475 /* BloodSugarDataFilters.swift */,
+				03894F5B2C2D6376008BB475 /* FilterableTable.swift */,
+				03A1AC352C2FADA2008B20DC /* GlobalState.swift */,
+				03A1AC3B2C2FE186008B20DC /* CalculationHelper.swift */,
 			);
 			path = GlucoTrack;
 			sourceTree = "<group>";
@@ -237,7 +299,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					03D9879E2C03886B002A75A6 = {
 						CreatedOnToolsVersion = 15.4;
@@ -304,8 +366,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				03D987AC2C03886C002A75A6 /* Persistence.swift in Sources */,
+				03A1AC392C2FDE9C008B20DC /* AddBloodSugarReadingScreen.swift in Sources */,
+				03894F5F2C2D7F9E008BB475 /* ChartType.swift in Sources */,
+				03A1AC362C2FADA2008B20DC /* GlobalState.swift in Sources */,
 				0384D7DB2C0A8BE3009C419F /* Constants.swift in Sources */,
+				03894F5C2C2D6376008BB475 /* FilterableTable.swift in Sources */,
+				034C6DD92C2E174300E2BE89 /* CreateActionsMenu.swift in Sources */,
 				03FE87712C03CD13006D7A0F /* GTWeight+CoreDataHelper.swift in Sources */,
+				03A1AC3C2C2FE186008B20DC /* CalculationHelper.swift in Sources */,
 				03B76A462C039A9B0043A03B /* GTGlucoseMeasurement+CoreDataHelper.swift in Sources */,
 				03894F542C2CD32A008BB475 /* StartAndEndOfMonth+Date.swift in Sources */,
 				0384D7DD2C0A93DB009C419F /* SettingsScreen.swift in Sources */,
@@ -313,10 +381,14 @@
 				039903062C03CEDC00267D02 /* GTMedicationRecord+CoreDataHelper.swift in Sources */,
 				03B758842C03BF57000E9F27 /* GTMedication+CoreDataHelper.swift in Sources */,
 				03D987AF2C03886C002A75A6 /* GlucoTrack.xcdatamodeld in Sources */,
+				03A1AC432C304349008B20DC /* CalculationError.swift in Sources */,
+				0321F93C2C311A8F00DA5A8D /* AddBloodSugarReadingScreen+ViewModel.swift in Sources */,
 				0384D7D62C096805009C419F /* Sidebar.swift in Sources */,
 				0384D7D82C09F73B009C419F /* BloodGlucoseMeasurementsScreen.swift in Sources */,
+				03894F582C2D4C62008BB475 /* BloodSugarDataFilters.swift in Sources */,
 				03894F522C2CC3CF008BB475 /* FilterableChart.swift in Sources */,
 				03D987A32C03886B002A75A6 /* GlucoTrackApp.swift in Sources */,
+				03A1AC3E2C30428B008B20DC /* UnitOfMeasure.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +459,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -450,6 +523,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -480,6 +554,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"GlucoTrack/Preview Content\"";
 				DEVELOPMENT_TEAM = B3NH98QL9A;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -507,6 +582,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"GlucoTrack/Preview Content\"";
 				DEVELOPMENT_TEAM = B3NH98QL9A;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -528,10 +604,10 @@
 		03D987CD2C03886C002A75A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = B3NH98QL9A;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
@@ -547,10 +623,10 @@
 		03D987CE2C03886C002A75A6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = B3NH98QL9A;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
@@ -566,9 +642,9 @@
 		03D987D02C03886C002A75A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = B3NH98QL9A;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
@@ -583,9 +659,9 @@
 		03D987D12C03886C002A75A6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = B3NH98QL9A;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
