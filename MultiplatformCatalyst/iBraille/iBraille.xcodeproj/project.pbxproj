@@ -11,6 +11,19 @@
 		0363C1A62C3F60CD00D7AD86 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0363C1A52C3F60CD00D7AD86 /* ContentView.swift */; };
 		0363C1A82C3F60CD00D7AD86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0363C1A72C3F60CD00D7AD86 /* Assets.xcassets */; };
 		0363C1AB2C3F60CD00D7AD86 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0363C1AA2C3F60CD00D7AD86 /* Preview Assets.xcassets */; };
+		0363C1B52C3F646200D7AD86 /* Braille.json in Resources */ = {isa = PBXBuildFile; fileRef = 0363C1B42C3F646200D7AD86 /* Braille.json */; };
+		0363C1B92C3F6B3F00D7AD86 /* JSONHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0363C1B82C3F6B3F00D7AD86 /* JSONHelper.swift */; };
+		0363C1BB2C3F6B9300D7AD86 /* Bundle+DecodeJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0363C1BA2C3F6B9300D7AD86 /* Bundle+DecodeJSON.swift */; };
+		0363C1BE2C3F725F00D7AD86 /* BrailleDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0363C1BD2C3F725F00D7AD86 /* BrailleDictionary.swift */; };
+		0363C1C02C3F72F500D7AD86 /* BrailleDictionaryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0363C1BF2C3F72F500D7AD86 /* BrailleDictionaryEntry.swift */; };
+		0363C1C42C3FCABE00D7AD86 /* BrailleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0363C1C32C3FCABE00D7AD86 /* BrailleCell.swift */; };
+		0363C1C62C3FCB7300D7AD86 /* Dot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0363C1C52C3FCB7300D7AD86 /* Dot.swift */; };
+		0363C1C92C40122800D7AD86 /* BrailleAlphabetScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0363C1C82C40122800D7AD86 /* BrailleAlphabetScreen.swift */; };
+		0363C1CE2C4033DB00D7AD86 /* BrailleAlphabetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0363C1CD2C4033DB00D7AD86 /* BrailleAlphabetList.swift */; };
+		0363C1D02C40341300D7AD86 /* BrailleAlphabetListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0363C1CF2C40341300D7AD86 /* BrailleAlphabetListCell.swift */; };
+		0363C1D42C409DB300D7AD86 /* BrailleNumbersListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0363C1D32C409DB300D7AD86 /* BrailleNumbersListCell.swift */; };
+		0363C1D62C409E9500D7AD86 /* BrailleNumbersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0363C1D52C409E9500D7AD86 /* BrailleNumbersList.swift */; };
+		0363C1D82C409FF000D7AD86 /* BrailleNumbersScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0363C1D72C409FF000D7AD86 /* BrailleNumbersScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +32,20 @@
 		0363C1A52C3F60CD00D7AD86 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0363C1A72C3F60CD00D7AD86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0363C1AA2C3F60CD00D7AD86 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0363C1B12C3F611F00D7AD86 /* iBraille.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iBraille.entitlements; sourceTree = "<group>"; };
+		0363C1B42C3F646200D7AD86 /* Braille.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Braille.json; sourceTree = "<group>"; };
+		0363C1B82C3F6B3F00D7AD86 /* JSONHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONHelper.swift; sourceTree = "<group>"; };
+		0363C1BA2C3F6B9300D7AD86 /* Bundle+DecodeJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+DecodeJSON.swift"; sourceTree = "<group>"; };
+		0363C1BD2C3F725F00D7AD86 /* BrailleDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrailleDictionary.swift; sourceTree = "<group>"; };
+		0363C1BF2C3F72F500D7AD86 /* BrailleDictionaryEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrailleDictionaryEntry.swift; sourceTree = "<group>"; };
+		0363C1C32C3FCABE00D7AD86 /* BrailleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrailleCell.swift; sourceTree = "<group>"; };
+		0363C1C52C3FCB7300D7AD86 /* Dot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dot.swift; sourceTree = "<group>"; };
+		0363C1C82C40122800D7AD86 /* BrailleAlphabetScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrailleAlphabetScreen.swift; sourceTree = "<group>"; };
+		0363C1CD2C4033DB00D7AD86 /* BrailleAlphabetList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrailleAlphabetList.swift; sourceTree = "<group>"; };
+		0363C1CF2C40341300D7AD86 /* BrailleAlphabetListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrailleAlphabetListCell.swift; sourceTree = "<group>"; };
+		0363C1D32C409DB300D7AD86 /* BrailleNumbersListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrailleNumbersListCell.swift; sourceTree = "<group>"; };
+		0363C1D52C409E9500D7AD86 /* BrailleNumbersList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrailleNumbersList.swift; sourceTree = "<group>"; };
+		0363C1D72C409FF000D7AD86 /* BrailleNumbersScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrailleNumbersScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +78,17 @@
 		0363C1A22C3F60CD00D7AD86 /* iBraille */ = {
 			isa = PBXGroup;
 			children = (
+				0363C1C72C4011D700D7AD86 /* Screens */,
+				0363C1C12C3FCA6E00D7AD86 /* Views */,
+				0363C1BC2C3F722B00D7AD86 /* Models */,
+				0363C1B42C3F646200D7AD86 /* Braille.json */,
+				0363C1B12C3F611F00D7AD86 /* iBraille.entitlements */,
 				0363C1A32C3F60CD00D7AD86 /* iBrailleApp.swift */,
 				0363C1A52C3F60CD00D7AD86 /* ContentView.swift */,
 				0363C1A72C3F60CD00D7AD86 /* Assets.xcassets */,
 				0363C1A92C3F60CD00D7AD86 /* Preview Content */,
+				0363C1B82C3F6B3F00D7AD86 /* JSONHelper.swift */,
+				0363C1BA2C3F6B9300D7AD86 /* Bundle+DecodeJSON.swift */,
 			);
 			path = iBraille;
 			sourceTree = "<group>";
@@ -65,6 +99,61 @@
 				0363C1AA2C3F60CD00D7AD86 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0363C1BC2C3F722B00D7AD86 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0363C1BD2C3F725F00D7AD86 /* BrailleDictionary.swift */,
+				0363C1BF2C3F72F500D7AD86 /* BrailleDictionaryEntry.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0363C1C12C3FCA6E00D7AD86 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0363C1C22C3FCA9000D7AD86 /* Braille */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0363C1C22C3FCA9000D7AD86 /* Braille */ = {
+			isa = PBXGroup;
+			children = (
+				0363C1C32C3FCABE00D7AD86 /* BrailleCell.swift */,
+				0363C1C52C3FCB7300D7AD86 /* Dot.swift */,
+			);
+			path = Braille;
+			sourceTree = "<group>";
+		};
+		0363C1C72C4011D700D7AD86 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				0363C1D22C409D4E00D7AD86 /* Numbers */,
+				0363C1D12C409D2000D7AD86 /* Alphabet */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		0363C1D12C409D2000D7AD86 /* Alphabet */ = {
+			isa = PBXGroup;
+			children = (
+				0363C1C82C40122800D7AD86 /* BrailleAlphabetScreen.swift */,
+				0363C1CD2C4033DB00D7AD86 /* BrailleAlphabetList.swift */,
+				0363C1CF2C40341300D7AD86 /* BrailleAlphabetListCell.swift */,
+			);
+			path = Alphabet;
+			sourceTree = "<group>";
+		};
+		0363C1D22C409D4E00D7AD86 /* Numbers */ = {
+			isa = PBXGroup;
+			children = (
+				0363C1D32C409DB300D7AD86 /* BrailleNumbersListCell.swift */,
+				0363C1D52C409E9500D7AD86 /* BrailleNumbersList.swift */,
+				0363C1D72C409FF000D7AD86 /* BrailleNumbersScreen.swift */,
+			);
+			path = Numbers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +216,7 @@
 			files = (
 				0363C1AB2C3F60CD00D7AD86 /* Preview Assets.xcassets in Resources */,
 				0363C1A82C3F60CD00D7AD86 /* Assets.xcassets in Resources */,
+				0363C1B52C3F646200D7AD86 /* Braille.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +227,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0363C1C02C3F72F500D7AD86 /* BrailleDictionaryEntry.swift in Sources */,
+				0363C1C42C3FCABE00D7AD86 /* BrailleCell.swift in Sources */,
+				0363C1CE2C4033DB00D7AD86 /* BrailleAlphabetList.swift in Sources */,
+				0363C1D62C409E9500D7AD86 /* BrailleNumbersList.swift in Sources */,
+				0363C1B92C3F6B3F00D7AD86 /* JSONHelper.swift in Sources */,
+				0363C1C62C3FCB7300D7AD86 /* Dot.swift in Sources */,
+				0363C1BE2C3F725F00D7AD86 /* BrailleDictionary.swift in Sources */,
+				0363C1D42C409DB300D7AD86 /* BrailleNumbersListCell.swift in Sources */,
+				0363C1BB2C3F6B9300D7AD86 /* Bundle+DecodeJSON.swift in Sources */,
 				0363C1A62C3F60CD00D7AD86 /* ContentView.swift in Sources */,
+				0363C1C92C40122800D7AD86 /* BrailleAlphabetScreen.swift in Sources */,
+				0363C1D02C40341300D7AD86 /* BrailleAlphabetListCell.swift in Sources */,
+				0363C1D82C409FF000D7AD86 /* BrailleNumbersScreen.swift in Sources */,
 				0363C1A42C3F60CD00D7AD86 /* iBrailleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,6 +371,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = iBraille/iBraille.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iBraille/Preview Content\"";
@@ -280,6 +383,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -287,9 +391,14 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.joshrootdev.iBraille;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6,7";
+				XROS_DEPLOYMENT_TARGET = 1.0;
 			};
 			name = Debug;
 		};
@@ -298,6 +407,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = iBraille/iBraille.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iBraille/Preview Content\"";
@@ -309,6 +419,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -316,9 +427,14 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.joshrootdev.iBraille;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6,7";
+				XROS_DEPLOYMENT_TARGET = 1.0;
 			};
 			name = Release;
 		};

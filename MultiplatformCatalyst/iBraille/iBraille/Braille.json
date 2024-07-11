@@ -1,0 +1,153 @@
+{
+    "letters": [
+        {
+            "name": "a",
+            "dot_combinations": [[ 1 ]]
+        },
+        {
+            "name": "b",
+            "dot_combinations": [[ 1, 2  ]]
+        },
+        {
+            "name": "c",
+            "dot_combinations": [[ 1, 4 ]]
+        },
+        {
+            "name": "d",
+            "dot_combinations": [[ 1, 4, 5 ]]
+        },
+        {
+            "name": "e",
+            "dot_combinations": [[ 1,  5 ]]
+        },
+        {
+            "name": "f",
+            "dot_combinations": [[ 1, 2, 4 ]]
+        },
+        {
+            "name": "g",
+            "dot_combinations": [[ 1, 2, 4, 5 ]]
+        },
+        {
+            "name": "h",
+            "dot_combinations": [[ 1, 2, 5 ]]
+        },
+        {
+            "name": "i",
+            "dot_combinations": [[ 2, 4 ]]
+        },
+        {
+            "name": "j",
+            "dot_combinations": [[ 2, 4, 5 ]]
+        },
+        {
+            "name": "k",
+            "dot_combinations": [[ 1, 3 ]]
+        },
+        {
+            "name": "l",
+            "dot_combinations": [[ 1, 2, 3 ]]
+        },
+        {
+            "name": "m",
+            "dot_combinations": [[ 1, 3, 4 ]]
+        },
+        {
+            "name": "n",
+            "dot_combinations": [[1, 3, 4, 5 ]]
+        },
+        {
+            "name": "o",
+            "dot_combinations": [[ 1, 3, 5 ]]
+        },
+        {
+            "name": "p",
+            "dot_combinations": [[ 1, 2, 3, 4 ]]
+        },
+        {
+            "name": "q",
+            "dot_combinations": [[ 1, 2, 3, 4, 5 ]]
+        },
+        {
+            "name": "r",
+            "dot_combinations": [[ 1, 2, 3, 5 ]]
+        },
+        {
+            "name": "s",
+            "dot_combinations": [[ 2, 3, 4]]
+        },
+        {
+            "name": "t",
+            "dot_combinations": [[ 2, 3, 4, 5 ]]
+        },
+        {
+            "name": "u",
+            "dot_combinations": [[1, 3, 6 ]]
+        },
+        {
+            "name": "v",
+            "dot_combinations": [[ 1, 2, 3, 6 ]]
+        },
+        {
+            "name": "w",
+            "dot_combinations": [[ 2, 4, 5, 6 ]]
+        },
+        {
+            "name": "x",
+            "dot_combinations": [[ 1, 3, 4, 6 ]]
+        },
+        {
+            "name": "y",
+            "dot_combinations": [[ 1, 3, 4, 5, 6 ]]
+        },
+        {
+            "name": "z",
+            "dot_combinations": [[ 1, 3, 5, 6 ]]
+        }
+    ],
+    "numbers": [
+        {
+            "name": "1",
+            "dot_combinations": [[ 1 ]]
+        },
+        {
+            "name": "2",
+            "dot_combinations": [[ 1, 2  ]]
+        },
+        {
+            "name": "3",
+            "dot_combinations": [[ 1, 4 ]]
+        },
+        {
+            "name": "4",
+            "dot_combinations": [[ 1, 4, 5 ]]
+        },
+        {
+            "name": "5",
+            "dot_combinations": [[ 1,  5 ]]
+        },
+        {
+            "name": "6",
+            "dot_combinations": [[ 1, 2, 4 ]]
+        },
+        {
+            "name": "7",
+            "dot_combinations": [[ 1, 2, 4, 5 ]]
+        },
+        {
+            "name": "8",
+            "dot_combinations": [[ 1, 2, 5 ]]
+        },
+        {
+            "name": "9",
+            "dot_combinations": [[ 2, 4 ]]
+        },
+        {
+            "name": "0",
+            "dot_combinations": [[ 2, 4, 5 ]]
+        }
+    ],
+    "contractions": [],
+    "short_form_words": [],
+    "punctuation_and_indicators": []
+}
