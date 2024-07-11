@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		0321F93C2C311A8F00DA5A8D /* AddBloodSugarReadingScreen+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0321F93B2C311A8F00DA5A8D /* AddBloodSugarReadingScreen+ViewModel.swift */; };
 		034C6DD92C2E174300E2BE89 /* CreateActionsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C6DD82C2E174300E2BE89 /* CreateActionsMenu.swift */; };
+		0350BDCB2C3B5539005B0632 /* ReminderInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0350BDCA2C3B5539005B0632 /* ReminderInterval.swift */; };
+		0350BDCD2C3B5C42005B0632 /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0350BDCC2C3B5C42005B0632 /* Weekday.swift */; };
+		0350BDCF2C3B5E17005B0632 /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0350BDCE2C3B5E17005B0632 /* Month.swift */; };
+		0350BDD32C3B9381005B0632 /* EditBloodSugarReadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0350BDD22C3B9381005B0632 /* EditBloodSugarReadingScreen.swift */; };
+		0350BDD52C3B9505005B0632 /* EditBloodSugarReadingScreen+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0350BDD42C3B9505005B0632 /* EditBloodSugarReadingScreen+ViewModel.swift */; };
 		0384D7D62C096805009C419F /* Sidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0384D7D52C096805009C419F /* Sidebar.swift */; };
 		0384D7D82C09F73B009C419F /* BloodGlucoseMeasurementsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0384D7D72C09F73B009C419F /* BloodGlucoseMeasurementsScreen.swift */; };
 		0384D7DB2C0A8BE3009C419F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0384D7DA2C0A8BE3009C419F /* Constants.swift */; };
@@ -35,6 +40,8 @@
 		03D987BA2C03886C002A75A6 /* GlucoTrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D987B92C03886C002A75A6 /* GlucoTrackTests.swift */; };
 		03D987C42C03886C002A75A6 /* GlucoTrackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D987C32C03886C002A75A6 /* GlucoTrackUITests.swift */; };
 		03D987C62C03886C002A75A6 /* GlucoTrackUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D987C52C03886C002A75A6 /* GlucoTrackUITestsLaunchTests.swift */; };
+		03DE3C622C37F1AC00245808 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE3C612C37F1AC00245808 /* DataService.swift */; };
+		03DE3C642C37F52A00245808 /* GTError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE3C632C37F52A00245808 /* GTError.swift */; };
 		03FE87712C03CD13006D7A0F /* GTWeight+CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FE87702C03CD13006D7A0F /* GTWeight+CoreDataHelper.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +65,11 @@
 /* Begin PBXFileReference section */
 		0321F93B2C311A8F00DA5A8D /* AddBloodSugarReadingScreen+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddBloodSugarReadingScreen+ViewModel.swift"; sourceTree = "<group>"; };
 		034C6DD82C2E174300E2BE89 /* CreateActionsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateActionsMenu.swift; sourceTree = "<group>"; };
+		0350BDCA2C3B5539005B0632 /* ReminderInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderInterval.swift; sourceTree = "<group>"; };
+		0350BDCC2C3B5C42005B0632 /* Weekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
+		0350BDCE2C3B5E17005B0632 /* Month.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
+		0350BDD22C3B9381005B0632 /* EditBloodSugarReadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBloodSugarReadingScreen.swift; sourceTree = "<group>"; };
+		0350BDD42C3B9505005B0632 /* EditBloodSugarReadingScreen+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditBloodSugarReadingScreen+ViewModel.swift"; sourceTree = "<group>"; };
 		0384D7D52C096805009C419F /* Sidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sidebar.swift; sourceTree = "<group>"; };
 		0384D7D72C09F73B009C419F /* BloodGlucoseMeasurementsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodGlucoseMeasurementsScreen.swift; sourceTree = "<group>"; };
 		0384D7DA2C0A8BE3009C419F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -88,6 +100,8 @@
 		03D987BF2C03886C002A75A6 /* GlucoTrackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GlucoTrackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03D987C32C03886C002A75A6 /* GlucoTrackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoTrackUITests.swift; sourceTree = "<group>"; };
 		03D987C52C03886C002A75A6 /* GlucoTrackUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoTrackUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		03DE3C612C37F1AC00245808 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		03DE3C632C37F52A00245808 /* GTError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTError.swift; sourceTree = "<group>"; };
 		03FE87702C03CD13006D7A0F /* GTWeight+CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GTWeight+CoreDataHelper.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,11 +130,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0350BDD02C3B9269005B0632 /* AddBloodSugarReadingScreen */ = {
+			isa = PBXGroup;
+			children = (
+				03A1AC382C2FDE9C008B20DC /* AddBloodSugarReadingScreen.swift */,
+				0321F93B2C311A8F00DA5A8D /* AddBloodSugarReadingScreen+ViewModel.swift */,
+			);
+			path = AddBloodSugarReadingScreen;
+			sourceTree = "<group>";
+		};
+		0350BDD12C3B929C005B0632 /* EditBloodSugarReadingScreen */ = {
+			isa = PBXGroup;
+			children = (
+				0350BDD22C3B9381005B0632 /* EditBloodSugarReadingScreen.swift */,
+				0350BDD42C3B9505005B0632 /* EditBloodSugarReadingScreen+ViewModel.swift */,
+			);
+			path = EditBloodSugarReadingScreen;
+			sourceTree = "<group>";
+		};
 		03894F5D2C2D7F7D008BB475 /* Enumerations */ = {
 			isa = PBXGroup;
 			children = (
 				03894F5E2C2D7F9E008BB475 /* ChartType.swift */,
 				03A1AC3D2C30428B008B20DC /* UnitOfMeasure.swift */,
+				0350BDCA2C3B5539005B0632 /* ReminderInterval.swift */,
+				0350BDCC2C3B5C42005B0632 /* Weekday.swift */,
+				0350BDCE2C3B5E17005B0632 /* Month.swift */,
 			);
 			path = Enumerations;
 			sourceTree = "<group>";
@@ -136,9 +171,9 @@
 		03A1AC3A2C2FDF61008B20DC /* BloodSugar */ = {
 			isa = PBXGroup;
 			children = (
+				0350BDD12C3B929C005B0632 /* EditBloodSugarReadingScreen */,
 				0384D7D72C09F73B009C419F /* BloodGlucoseMeasurementsScreen.swift */,
-				03A1AC382C2FDE9C008B20DC /* AddBloodSugarReadingScreen.swift */,
-				0321F93B2C311A8F00DA5A8D /* AddBloodSugarReadingScreen+ViewModel.swift */,
+				0350BDD02C3B9269005B0632 /* AddBloodSugarReadingScreen */,
 			);
 			path = BloodSugar;
 			sourceTree = "<group>";
@@ -147,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				03A1AC422C304349008B20DC /* CalculationError.swift */,
+				03DE3C632C37F52A00245808 /* GTError.swift */,
 			);
 			path = Errors;
 			sourceTree = "<group>";
@@ -186,6 +222,7 @@
 		03D987A12C03886B002A75A6 /* GlucoTrack */ = {
 			isa = PBXGroup;
 			children = (
+				03DE3C602C37F17500245808 /* Data */,
 				03A1AC412C30431C008B20DC /* Errors */,
 				03894F5D2C2D7F7D008BB475 /* Enumerations */,
 				03B76A442C039A5F0043A03B /* Extensions */,
@@ -233,6 +270,14 @@
 				03D987C52C03886C002A75A6 /* GlucoTrackUITestsLaunchTests.swift */,
 			);
 			path = GlucoTrackUITests;
+			sourceTree = "<group>";
+		};
+		03DE3C602C37F17500245808 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				03DE3C612C37F1AC00245808 /* DataService.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,9 +413,13 @@
 				03D987AC2C03886C002A75A6 /* Persistence.swift in Sources */,
 				03A1AC392C2FDE9C008B20DC /* AddBloodSugarReadingScreen.swift in Sources */,
 				03894F5F2C2D7F9E008BB475 /* ChartType.swift in Sources */,
+				03DE3C642C37F52A00245808 /* GTError.swift in Sources */,
 				03A1AC362C2FADA2008B20DC /* GlobalState.swift in Sources */,
+				03DE3C622C37F1AC00245808 /* DataService.swift in Sources */,
 				0384D7DB2C0A8BE3009C419F /* Constants.swift in Sources */,
 				03894F5C2C2D6376008BB475 /* FilterableTable.swift in Sources */,
+				0350BDD52C3B9505005B0632 /* EditBloodSugarReadingScreen+ViewModel.swift in Sources */,
+				0350BDCF2C3B5E17005B0632 /* Month.swift in Sources */,
 				034C6DD92C2E174300E2BE89 /* CreateActionsMenu.swift in Sources */,
 				03FE87712C03CD13006D7A0F /* GTWeight+CoreDataHelper.swift in Sources */,
 				03A1AC3C2C2FE186008B20DC /* CalculationHelper.swift in Sources */,
@@ -380,12 +429,15 @@
 				03D987A52C03886B002A75A6 /* ContentView.swift in Sources */,
 				039903062C03CEDC00267D02 /* GTMedicationRecord+CoreDataHelper.swift in Sources */,
 				03B758842C03BF57000E9F27 /* GTMedication+CoreDataHelper.swift in Sources */,
+				0350BDD32C3B9381005B0632 /* EditBloodSugarReadingScreen.swift in Sources */,
 				03D987AF2C03886C002A75A6 /* GlucoTrack.xcdatamodeld in Sources */,
 				03A1AC432C304349008B20DC /* CalculationError.swift in Sources */,
 				0321F93C2C311A8F00DA5A8D /* AddBloodSugarReadingScreen+ViewModel.swift in Sources */,
 				0384D7D62C096805009C419F /* Sidebar.swift in Sources */,
 				0384D7D82C09F73B009C419F /* BloodGlucoseMeasurementsScreen.swift in Sources */,
+				0350BDCD2C3B5C42005B0632 /* Weekday.swift in Sources */,
 				03894F582C2D4C62008BB475 /* BloodSugarDataFilters.swift in Sources */,
+				0350BDCB2C3B5539005B0632 /* ReminderInterval.swift in Sources */,
 				03894F522C2CC3CF008BB475 /* FilterableChart.swift in Sources */,
 				03D987A32C03886B002A75A6 /* GlucoTrackApp.swift in Sources */,
 				03A1AC3E2C30428B008B20DC /* UnitOfMeasure.swift in Sources */,

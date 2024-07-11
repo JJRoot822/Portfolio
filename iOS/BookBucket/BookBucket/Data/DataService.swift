@@ -47,6 +47,7 @@ class DataService {
             
             return .success(())
         } catch {
+            print("Save error: \(error)")
             return .failure(.insertError)
         }
     }

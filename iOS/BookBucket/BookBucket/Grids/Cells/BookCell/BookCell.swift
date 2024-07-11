@@ -44,10 +44,9 @@ struct BookCell: View {
                         .foregroundStyle(viewModel.getFavoriteIndicatorIconColor(book: book))
                         .accessibilityLabel(Text(viewModel.getFavoritedStatus(book: book)))
                     
-                    ProgressView(value: viewModel.getReadingProgress(book: book))
-                    
                     Text(book.title)
                         .foregroundStyle(Color(uiColor: .label))
+                        .lineLimit(2, reservesSpace: true)
                 }
                 
                 if let firstAuthor = book.authors.first {

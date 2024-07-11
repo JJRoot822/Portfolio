@@ -8,6 +8,36 @@
 import SwiftUI
 import CoreData
 
+extension FilterableTable  {
+    @Observable
+    class ViewModel {
+        var isShowingEditBloodSugarScreen: Bool = false
+        var isDeleteRequested: Bool = false
+        
+        func toggleShowEditBloodSugarScreen() {
+            self.isShowingEditBloodSugarScreen.toggle()
+        }
+
+        func getColorBy(value: Double, inRangeHighValue: Double, inRangeLowValue: Double, tooLowHighValue: Double, tooHighLowValue: Double) -> Color {
+            if value <= tooLowHighValue {
+                return .red
+            } else if value > tooLowHighValue && value < inRangeLowValue {
+                return .yellow
+            } else if value >= inRangeLowValue && value <= inRangeHighValue {
+                return .green
+            } else if value > inRangeHighValue && value < tooHighLowValue {
+                return .yellow
+            }
+            
+            return .red
+        }
+        
+        func toggleIsDeleteRequested() {
+            self.isDeleteRequested.toggle()
+        }
+    }
+}
+
 struct FilterableTable: View {
     @Environment(\.managedObjectContext) private var viewContext
 
@@ -17,9 +47,12 @@ struct FilterableTable: View {
     @AppStorage("gt-in-range-upper-bound") var inRangeHighValue: Double = 120.0
     @AppStorage("gt-too-low-upper-bound") var tooLowHighValue: Double = 69.9
     @AppStorage("gt-too-high-lower-bound") var tooHighLowValue: Double = 160.0
-    
+
+    @State private var viewModel: ViewModel
     
     init(rangeStartDate: Date, rangeEndDate: Date, numberOfRecords: Int, searchTerm: String) {
+        self.+viewModel = State(wrappedValue: ViewModel())
+        
         let startDate = rangeStartDate as NSDate
         let endDate = rangeEndDate as NSDate
         
@@ -55,20 +88,12 @@ struct FilterableTable: View {
                 }
             }
             TableColumn("Notes", value: \.userNotes)
+            TableColumn("Actions") { reading in
+                HStack(spacing: 10) {
+                    Button("Edit", action: viewModel.toggleShowEditBloodSugarScreen)
+                    Button("Delete", role: .destructive, action: viewModel.toggleIsDeleteRequested)
+                }
+            }
         }
-    }
-    
-    private func getColorBy(value: Double) -> Color {
-        if value <= tooLowHighValue {
-            return .red
-        } else if value > tooLowHighValue && value < inRangeLowValue {
-            return .yellow
-        } else if value >= inRangeLowValue && value <= inRangeHighValue {
-            return .green
-        } else if value > inRangeHighValue && value < tooHighLowValue {
-            return .yellow
-        }
-        
-        return .red
     }
 }
