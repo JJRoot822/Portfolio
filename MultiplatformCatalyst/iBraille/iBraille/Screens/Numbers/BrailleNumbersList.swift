@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BraillNumbersList: View {
+struct BrailleNumbersList: View {
     var numbers: [BrailleDictionaryEntry]
     
     var body: some View {

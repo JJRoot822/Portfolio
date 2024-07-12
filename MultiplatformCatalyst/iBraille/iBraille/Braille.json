@@ -2,152 +2,1120 @@
     "letters": [
         {
             "name": "a",
-            "dot_combinations": [[ 1 ]]
+            "dot_combinations": [[ 1 ]],
+            "spell_out": true
         },
         {
             "name": "b",
-            "dot_combinations": [[ 1, 2  ]]
+            "dot_combinations": [[ 1, 2  ]],
+            "spell_out": true
         },
         {
             "name": "c",
-            "dot_combinations": [[ 1, 4 ]]
+            "dot_combinations": [[ 1, 4 ]],
+            "spell_out": true
         },
         {
             "name": "d",
-            "dot_combinations": [[ 1, 4, 5 ]]
+            "dot_combinations": [[ 1, 4, 5 ]],
+            "spell_out": true
         },
         {
             "name": "e",
-            "dot_combinations": [[ 1,  5 ]]
+            "dot_combinations": [[ 1,  5 ]],
+            "spell_out": true
         },
         {
             "name": "f",
-            "dot_combinations": [[ 1, 2, 4 ]]
+            "dot_combinations": [[ 1, 2, 4 ]],
+            "spell_out": true
         },
         {
             "name": "g",
-            "dot_combinations": [[ 1, 2, 4, 5 ]]
+            "dot_combinations": [[ 1, 2, 4, 5 ]],
+            "spell_out": true
         },
         {
             "name": "h",
-            "dot_combinations": [[ 1, 2, 5 ]]
+            "dot_combinations": [[ 1, 2, 5 ]],
+            "spell_out": true
         },
         {
             "name": "i",
-            "dot_combinations": [[ 2, 4 ]]
+            "dot_combinations": [[ 2, 4 ]],
+            "spell_out": true
         },
         {
             "name": "j",
-            "dot_combinations": [[ 2, 4, 5 ]]
+            "dot_combinations": [[ 2, 4, 5 ]],
+            "spell_out": true
         },
         {
             "name": "k",
-            "dot_combinations": [[ 1, 3 ]]
+            "dot_combinations": [[ 1, 3 ]],
+            "spell_out": true
         },
         {
             "name": "l",
-            "dot_combinations": [[ 1, 2, 3 ]]
+            "dot_combinations": [[ 1, 2, 3 ]],
+            "spell_out": true
         },
         {
             "name": "m",
-            "dot_combinations": [[ 1, 3, 4 ]]
+            "dot_combinations": [[ 1, 3, 4 ]],
+            "spell_out": true
         },
         {
             "name": "n",
-            "dot_combinations": [[1, 3, 4, 5 ]]
+            "dot_combinations": [[1, 3, 4, 5 ]],
+            "spell_out": true
         },
         {
             "name": "o",
-            "dot_combinations": [[ 1, 3, 5 ]]
+            "dot_combinations": [[ 1, 3, 5 ]],
+            "spell_out": true
         },
         {
             "name": "p",
-            "dot_combinations": [[ 1, 2, 3, 4 ]]
+            "dot_combinations": [[ 1, 2, 3, 4 ]],
+            "spell_out": true
         },
         {
             "name": "q",
-            "dot_combinations": [[ 1, 2, 3, 4, 5 ]]
+            "dot_combinations": [[ 1, 2, 3, 4, 5 ]],
+            "spell_out": true
         },
         {
             "name": "r",
-            "dot_combinations": [[ 1, 2, 3, 5 ]]
+            "dot_combinations": [[ 1, 2, 3, 5 ]],
+            "spell_out": true
         },
         {
             "name": "s",
-            "dot_combinations": [[ 2, 3, 4]]
+            "dot_combinations": [[ 2, 3, 4]],
+            "spell_out": true
         },
         {
             "name": "t",
-            "dot_combinations": [[ 2, 3, 4, 5 ]]
+            "dot_combinations": [[ 2, 3, 4, 5 ]],
+            "spell_out": true
         },
         {
             "name": "u",
-            "dot_combinations": [[1, 3, 6 ]]
+            "dot_combinations": [[1, 3, 6 ]],
+            "spell_out": true
         },
         {
             "name": "v",
-            "dot_combinations": [[ 1, 2, 3, 6 ]]
+            "dot_combinations": [[ 1, 2, 3, 6 ]],
+            "spell_out": true
         },
         {
             "name": "w",
-            "dot_combinations": [[ 2, 4, 5, 6 ]]
+            "dot_combinations": [[ 2, 4, 5, 6 ]],
+            "spell_out": true
         },
         {
             "name": "x",
-            "dot_combinations": [[ 1, 3, 4, 6 ]]
+            "dot_combinations": [[ 1, 3, 4, 6 ]],
+            "spell_out": true
         },
         {
             "name": "y",
-            "dot_combinations": [[ 1, 3, 4, 5, 6 ]]
+            "dot_combinations": [[ 1, 3, 4, 5, 6 ]],
+            "spell_out": true
         },
         {
             "name": "z",
-            "dot_combinations": [[ 1, 3, 5, 6 ]]
+            "dot_combinations": [[ 1, 3, 5, 6 ]],
+            "spell_out": true
         }
     ],
     "numbers": [
         {
+            "name": "Number Sign",
+            "dot_combinations": [[ 3, 4, 5, 6 ]],
+            "spell_out": false
+        },
+        {
             "name": "1",
-            "dot_combinations": [[ 1 ]]
+            "dot_combinations": [[ 1 ]],
+            "spell_out": true
         },
         {
             "name": "2",
-            "dot_combinations": [[ 1, 2  ]]
+            "dot_combinations": [[ 1, 2  ]],
+            "spell_out": true
         },
         {
             "name": "3",
-            "dot_combinations": [[ 1, 4 ]]
+            "dot_combinations": [[ 1, 4 ]],
+            "spell_out": true
         },
         {
             "name": "4",
-            "dot_combinations": [[ 1, 4, 5 ]]
+            "dot_combinations": [[ 1, 4, 5 ]],
+            "spell_out": true
         },
         {
             "name": "5",
-            "dot_combinations": [[ 1,  5 ]]
+            "dot_combinations": [[ 1,  5 ]],
+            "spell_out": true
         },
         {
             "name": "6",
-            "dot_combinations": [[ 1, 2, 4 ]]
+            "dot_combinations": [[ 1, 2, 4 ]],
+            "spell_out": true
         },
         {
             "name": "7",
-            "dot_combinations": [[ 1, 2, 4, 5 ]]
+            "dot_combinations": [[ 1, 2, 4, 5 ]],
+            "spell_out": true
         },
         {
             "name": "8",
-            "dot_combinations": [[ 1, 2, 5 ]]
+            "dot_combinations": [[ 1, 2, 5 ]],
+            "spell_out": true
         },
         {
             "name": "9",
-            "dot_combinations": [[ 2, 4 ]]
+            "dot_combinations": [[ 2, 4 ]],
+            "spell_out": true
         },
         {
             "name": "0",
-            "dot_combinations": [[ 2, 4, 5 ]]
+            "dot_combinations": [[ 2, 4, 5 ]],
+            "spell_out": true
         }
     ],
-    "contractions": [],
-    "short_form_words": [],
+    "contractions": [
+        {
+            "name": "ance",
+            "dot_combinations": [[ 4, 6 ], [ 1, 5 ]],
+            "spell_out": true
+        },
+        {
+            "name": "and",
+            "dot_combinations": [[ 1, 3, 4, 5, 6 ]],
+            "spell_out": true
+        },
+        {
+            "name": "ar",
+            "dot_combinations": [[ 3, 4, 5 ]],
+            "spell_out": true
+        },
+        {
+            "name": "bb",
+            "dot_combinations": [[ 2, 3 ]],
+            "spell_out": true
+        },
+        {
+            "name": "be",
+            "dot_combinations": [[ 2, 3 ]],
+            "spell_out": true
+        },
+        {
+            "name": "cc",
+            "dot_combinations": [[ 2, 5 ]],
+            "spell_out": true
+        },
+        {
+            "name": "ch",
+            "dot_combinations": [[ 1, 6 ]],
+            "spell_out": true
+        },
+        {
+            "name": "con",
+            "dot_combinations": [[ 2, 5 ]],
+            "spell_out": true
+        },
+        {
+            "name": "dis",
+            "dot_combinations": [[ 2, 5, 6 ]],
+            "spell_out": true
+        },
+        {
+            "name": "ea",
+            "dot_combinations": [[ 2 ]],
+            "spell_out": true
+        },
+        {
+            "name": "ed",
+            "dot_combinations": [[ 1, 2, 4, 6 ]],
+            "spell_out": true
+        },
+        {
+            "name": "en",
+            "dot_combinations": [[ 2, 6 ]],
+            "spell_out": true
+        },
+        {
+            "name": "ence",
+            "dot_combinations": [[ 5, 6 ], [ 1, 5 ]],
+            "spell_out": true
+        },
+        {
+            "name": "er",
+            "dot_combinations": [[ 1, 2, 4, 5, 6 ]],
+            "spell_out": true
+        },
+        {
+            "name": "ff",
+            "dot_combinations": [[ 2, 3, 5 ]],
+            "spell_out": true
+        },
+        {
+            "name": "for",
+            "dot_combinations": [[ 1, 2, 3, 4, 5, 6 ]],
+            "spell_out": true
+        },
+        {
+            "name": "ful",
+            "dot_combinations": [[ 5, 6 ], [ 1, 2, 3 ]],
+            "spell_out": true
+        },
+        {
+            "name": "gg",
+            "dot_combinations": [[ 2, 3, 5, 6 ]],
+            "spell_out": true
+        },
+        {
+            "name": "gh",
+            "dot_combinations": [[ 1, 2, 6 ]],
+            "spell_out": true
+        },
+        {
+            "name": "in",
+            "dot_combinations": [[ 3, 5 ]],
+            "spell_out": true
+        },
+        {
+            "name": "ing",
+            "dot_combinations": [[ 3, 4, 6 ]],
+            "spell_out": true
+        },
+        {
+            "name": "ity",
+            "dot_combinations": [[ 5, 6 ], [ 1, 3, 4, 5, 6 ]],
+            "spell_out": true
+        },
+        {
+            "name": "less",
+            "dot_combinations": [[ 4, 6 ], [ 2, 3, 4 ]],
+            "spell_out": true
+        },
+        {
+            "name": "ment",
+            "dot_combinations": [[ 5, 6 ], [ 2, 3, 4, 5 ]],
+            "spell_out": true
+        },
+        {
+            "name": "ness",
+            "dot_combinations": [[ 5, 6 ], [ 2, 3, 4 ]],
+            "spell_out": true
+        },
+        {
+            "name": "gh",
+            "dot_combinations": [[ 1, 2, 6 ]],
+            "spell_out": true
+        },
+        {
+            "name": "ong",
+            "dot_combinations": [[ 5, 6 ], [ 1, 2, 4, 5 ]],
+            "spell_out": true
+        },
+        {
+            "name": "ou",
+            "dot_combinations": [[ 1, 2, 5, 6 ]],
+            "spell_out": true
+        },
+        {
+            "name": "ound",
+            "dot_combinations": [[ 4, 6 ], [ 1, 4, 5 ]],
+            "spell_out": true
+        },
+        {
+            "name": "ount",
+            "dot_combinations": [[ 4, 6 ], [ 2, 3, 4, 5 ]],
+            "spell_out": true
+        },
+        {
+            "name": "ow",
+            "dot_combinations": [[ 2, 4, 6 ]],
+            "spell_out": true
+        },
+        {
+            "name": "sh",
+            "dot_combinations": [[ 1, 4, 6 ]],
+            "spell_out": true
+        },
+        {
+            "name": "sion",
+            "dot_combinations": [[ 4, 6 ], [ 1, 3, 4, 5 ]],
+            "spell_out": true
+        },
+        {
+            "name": "st",
+            "dot_combinations": [[ 3, 4 ]],
+            "spell_out": true
+        },
+        {
+            "name": "th",
+            "dot_combinations": [[ 1, 4, 5, 6 ]],
+            "spell_out": true
+        },
+        {
+            "name": "the",
+            "dot_combinations": [[ 2, 3, 4, 6 ]],
+            "spell_out": true
+        },
+        {
+            "name": "tion",
+            "dot_combinations": [[ 5, 6 ], [ 1, 3, 4, 5 ]],
+            "spell_out": true
+        },
+        {
+            "name": "wh",
+            "dot_combinations": [[ 1, 5, 6 ]],
+            "spell_out": true
+        }
+    ],
+    "short_form_words": [
+        {
+            "name": "about",
+            "dot_combinations": [[ 1 ], [ 1, 2 ]],
+            "spell_out": false
+        },
+        {
+            "name": "above",
+            "dot_combinations": [[ 1 ], [ 1, 2 ], [ 1, 2, 3, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "according",
+            "dot_combinations": [[ 1 ], [ 1, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "across",
+            "dot_combinations": [[ 1 ], [ 1, 4 ], [ 1, 2, 3, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "after",
+            "dot_combinations": [[ 1 ], [ 1, 2, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "afternoon",
+            "dot_combinations": [[ 1 ], [ 1, 2, 4 ], [ 1, 3, 4, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "afterward",
+            "dot_combinations": [[ 1 ], [ 1, 2, 4 ], [ 2, 4, 5, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "again",
+            "dot_combinations": [[ 1 ], [1, 2, 4, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "against",
+            "dot_combinations": [[ 1 ], [ 1, 2, 4, 5 ], [ 3, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "almost",
+            "dot_combinations": [[ 1 ], [ 1, 2, 3 ], [ 1, 3, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "already",
+            "dot_combinations": [[ 1 ], [ 1, 2, 3 ], [ 1, 2, 3, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "also",
+            "dot_combinations": [[ 1 ], [ 1, 2, 3 ]],
+            "spell_out": false
+        },
+        {
+            "name": "although",
+            "dot_combinations": [[ 1 ], [ 1, 2, 3 ], [ 1, 4, 5, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "altogether",
+            "dot_combinations": [[ 1 ], [ 1, 2, 3 ], [ 2, 3, 4, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "always",
+            "dot_combinations": [[ 1 ], [ 1, 2, 3 ], [ 2, 4, 5, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "and",
+            "dot_combinations": [[ 1, 3, 4, 5, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "as",
+            "dot_combinations": [[ 1, 3, 5, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "because",
+            "dot_combinations": [[ 2, 3 ], [ 1, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "before",
+            "dot_combinations": [[ 2, 3 ], [ 1, 2, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "behind",
+            "dot_combinations": [[ 2, 3 ], [ 1, 2, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "below",
+            "dot_combinations": [[2, 3 ], [ 1, 2, 3 ]],
+            "spell_out": false
+        },
+        {
+            "name": "beneath",
+            "dot_combinations": [[ 2, 3 ], [ 1, 3, 4, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "beside",
+            "dot_combinations": [[ 2, 3 ], [ 2, 3, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "between",
+            "dot_combinations": [[ 2, 3 ], [ 2, 3, 4, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "beyond",
+            "dot_combinations": [[ 2, 3 ], [ 1, 3, 4, 5, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "blind",
+            "dot_combinations": [[ 1, 2 ], [ 1, 2, 3 ]],
+            "spell_out": false
+        },
+        {
+            "name": "braille",
+            "dot_combinations": [[ 1, 2 ], [ 1, 2, 3, 5 ], [ 1, 2, 3 ]],
+            "spell_out": false
+        },
+        {
+            "name": "but",
+            "dot_combinations": [[ 1, 2  ]],
+            "spell_out": false
+        },
+        {
+            "name": "can",
+            "dot_combinations": [[ 1, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "cannot",
+            "dot_combinations": [[ 4, 5, 6 ], [ 1, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "character",
+            "dot_combinations": [[ 5 ], [ 1, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "child",
+            "dot_combinations": [[ 1, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "children",
+            "dot_combinations": [[ 1, 6 ], [ 1, 3, 4, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "conceive",
+            "dot_combinations": [[ 2, 5 ], [ 1, 4 ], [ 1, 2, 3, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "conceiving ",
+            "dot_combinations": [[ 2, 5 ], [ 1, 4 ], [ 1, 2, 3, 6 ], [ 1, 2, 4, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "could",
+            "dot_combinations": [[ 1, 4 ], [ 1, 4, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "day",
+            "dot_combinations": [[ 5 ], [ 1, 4, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "deceive",
+            "dot_combinations": [[ 1, 4, 5 ], [ 1, 4 ], [ 1, 2, 3, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "deceiving",
+            "dot_combinations": [[ 1, 4, 5 ], [ 1, 4 ], [ 1, 2, 3, 6 ], [ 1, 2, 4, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "declare",
+            "dot_combinations": [[1, 4, 5 ], [ 1, 4 ], [ 1, 2, 3 ]],
+            "spell_out": false
+        },
+        {
+            "name": "declaring",
+            "dot_combinations": [[ 1, 4, 5 ], [ 1, 4 ], [ 1, 2, 3 ], [ 1, 2, 4, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "do",
+            "dot_combinations": [[ 1, 4, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "either",
+            "dot_combinations": [[ 1, 5 ], [ 2, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "enough",
+            "dot_combinations": [[ 2, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "ever",
+            "dot_combinations": [[ 5 ], [ 1, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "every",
+            "dot_combinations": [[ 1, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "father",
+            "dot_combinations": [[ 5 ], [ 1, 2, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "first",
+            "dot_combinations": [[ 1, 2, 4 ], [ 3, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "for",
+            "dot_combinations": [[ 1, 2, 3, 4, 5, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "friend",
+            "dot_combinations": [[ 1, 2, 4 ], [ 1, 2, 3, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "from",
+            "dot_combinations": [[ 1, 2, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "go",
+            "dot_combinations": [[ 1, 2, 4, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "good",
+            "dot_combinations": [[ 1,2, 4, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "great",
+            "dot_combinations": [[ 1, 2, 4, 5 ], [ 1, 2, 3, 5 ], [ 2, 3, 4, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "had",
+            "dot_combinations": [[ 4, 5, 6 ], [ 1, 2, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "have",
+            "dot_combinations": [[ 1, 2, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "here",
+            "dot_combinations": [[ 5 ], [ 1, 2, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "herself",
+            "dot_combinations": [[ 1, 2, 5 ], [ 1, 2, 4, 5, 6 ], [ 1, 2, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "him",
+            "dot_combinations": [[ 1, 2, 5 ], [ 1, 3, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "himself",
+            "dot_combinations": [[ 1, 2, 5 ], [ 1, 3, 4 ], [ 1, 2, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "his",
+            "dot_combinations": [[ 2, 3, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "immediate",
+            "dot_combinations": [[ 2, 4 ], [ 1, 3, 4 ], [ 1, 3, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "in",
+            "dot_combinations": [[ 3, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "it",
+            "dot_combinations": [[ 1, 3, 4, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "its",
+            "dot_combinations": [[ 1, 3, 4, 6 ], [ 2, 3, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "itself",
+            "dot_combinations": [[ 1, 3, 4, 6 ], [ 1, 2, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "just",
+            "dot_combinations": [[ 2, 4, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "know",
+            "dot_combinations": [[ 1, 3 ]],
+            "spell_out": false
+        },
+        {
+            "name": "knowledge",
+            "dot_combinations": [[ 5 ], [ 1, 3 ]],
+            "spell_out": false
+        },
+        {
+            "name": "letter",
+            "dot_combinations": [[ 1, 2, 3 ], [ 1, 2, 3, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "like",
+            "dot_combinations": [[ 1, 2, 3 ]],
+            "spell_out": false
+        },
+        {
+            "name": "little",
+            "dot_combinations": [[ 1, 2, 3 ], [ 1, 2, 3 ]],
+            "spell_out": false
+        },
+        {
+            "name": "lord",
+            "dot_combinations": [[ 5 ], [ 1, 2, 3 ]],
+            "spell_out": false
+        },
+        {
+            "name": "many",
+            "dot_combinations": [[ 4, 5, 6 ], [ 1, 3, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "more",
+            "dot_combinations": [[ 1, 3, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "mother",
+            "dot_combinations": [[ 5 ], [ 1, 3, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "much",
+            "dot_combinations": [[ 1, 3, 4 ], [ 1, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "must",
+            "dot_combinations": [[ 1, 3, 4 ], [ 3, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "myself",
+            "dot_combinations": [[ 1, 3, 4 ], [ 1, 3, 4, 5, 6 ], [ 1, 2, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "name",
+            "dot_combinations": [[ 5 ], [ 1, 3, 4, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "necessary",
+            "dot_combinations": [[ 1, 3, 4, 5 ], [ 1, 5 ], [ 1, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "neither",
+            "dot_combinations": [[ 1, 3, 4, 5 ], [ 1, 5 ], [ 2, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "not",
+            "dot_combinations": [[ 1, 3, 4, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "of",
+            "dot_combinations": [[ 1, 2, 3, 5, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "one",
+            "dot_combinations": [[ 5 ], [ 1, 3, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "oneself",
+            "dot_combinations": [[ 5 ], [ 1, 3, 5 ], [ 1, 2, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "ought",
+            "dot_combinations": [[ 5 ], [ 1, 2, 5, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "ourselves",
+            "dot_combinations": [[ 1, 2, 5, 6 ], [ 1, 2, 3, 5 ], [ 1, 2, 3, 6 ], [ 2, 3, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "out",
+            "dot_combinations": [[ 1, 2, 4, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "paid",
+            "dot_combinations": [[ 1, 2, 3, 4 ], [ 1, 4, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "part",
+            "dot_combinations": [[ 5 ], [ 1, 2, 3, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "people",
+            "dot_combinations": [[ 1, 2, 3, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "perceive",
+            "dot_combinations": [[ 1, 2, 3, 4 ], [ 1, 2, 4, 5, 6 ], [ 1, 4 ], [ 1, 2, 3, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "perceiving",
+            "dot_combinations": [[ 1, 2, 3, 4 ], [ 1, 2, 4, 5, 6 ], [ 1, 4 ], [ 1, 2, 3, 6 ], [ 1, 2, 4, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "perhaps",
+            "dot_combinations": [[ 1, 2, 3, 4 ], [ 1, 2, 4, 5, 6 ], [ 1, 2, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "question",
+            "dot_combinations": [[ 5 ], [ 1, 2, 3, 4, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "quick",
+            "dot_combinations": [[ 1, 2, 3, 4, 5 ], [ 1, 3 ]],
+            "spell_out": false
+        },
+        {
+            "name": "quite",
+            "dot_combinations": [[ 1, 2, 3, 4, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "rather",
+            "dot_combinations": [[ 1, 2, 3, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "receive",
+            "dot_combinations": [[ 1, 2, 3, 5 ], [ 1, 4 ], [ 1, 2, 3, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "receiving",
+            "dot_combinations": [[ 1, 2, 3, 5 ], [ 1, 4 ], [ 1, 2, 3, 6 ], [ 1, 2, 4, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "rejoice",
+            "dot_combinations": [[ 1, 2, 3, 5 ], [ 2, 4, 5 ], [ 1, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "rejoicing",
+            "dot_combinations": [[ 1, 2, 3, 5 ], [ 2, 4, 5 ], [ 1, 4 ], [ 1, 2, 4, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "right",
+            "dot_combinations": [[ 5 ], [ 1, 2, 3, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "said",
+            "dot_combinations": [[ 2, 3, 4 ], [ 1, 4, 5 ]],
+            "spell_out": true
+        },
+        {
+            "name": "shall",
+            "dot_combinations": [[ 1, 4, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "should",
+            "dot_combinations": [[ 1, 4, 6 ], [ 1, 4, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "so",
+            "dot_combinations": [[ 2, 3, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "some",
+            "dot_combinations": [[ 5 ], [ 2, 3, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "spirit",
+            "dot_combinations": [[ 4, 5, 6 ], [ 2, 3, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "still",
+            "dot_combinations": [[ 3, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "such",
+            "dot_combinations": [[ 2, 3, 4 ], [ 1, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "that",
+            "dot_combinations": [[ 2, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "the",
+            "dot_combinations": [[ 2, 4, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "their",
+            "dot_combinations": [[ 1, 3 ]],
+            "spell_out": false
+        },
+        {
+            "name": "themselves",
+            "dot_combinations": [[ 1, 2, 3 ]],
+            "spell_out": false
+        },
+        {
+            "name": "there",
+            "dot_combinations": [[ 1, 3, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "these",
+            "dot_combinations": [[1, 3, 4, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "this",
+            "dot_combinations": [[ 1, 3, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "those",
+            "dot_combinations": [[ 1, 2, 3, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "through",
+            "dot_combinations": [[ 1, 2, 3, 4, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "thyself",
+            "dot_combinations": [[ 1, 2, 3, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "time",
+            "dot_combinations": [[ 2, 3, 4]],
+            "spell_out": false
+        },
+        {
+            "name": "today",
+            "dot_combinations": [[ 2, 3, 4, 5 ], [ 1, 4, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "together",
+            "dot_combinations": [[2, 3, 4, 5 ], [ 1, 2, 4, 5 ], [ 1, 2, 3, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "tomorrow",
+            "dot_combinations": [[ 2, 3, 4, 5 ], [ 1, 3, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "tonight",
+            "dot_combinations": [[ 2, 3, 4, 5 ], [ 1, 3, 4, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "under",
+            "dot_combinations": [[ 5 ], [ 1, 3, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "upon",
+            "dot_combinations": [[ 4, 5 ], [ 1, 3, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "us",
+            "dot_combinations": [[ 1, 3, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "very",
+            "dot_combinations": [[ 1, 2, 3, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "was",
+            "dot_combinations": [[ 3, 5, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "were",
+            "dot_combinations": [[ 2, 3, 5, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "where",
+            "dot_combinations": [[ 5 ], [ 1, 5, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "which",
+            "dot_combinations": [[ 1, 5, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "whose",
+            "dot_combinations": [[ 4, 5 ], [ 1, 5, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "well",
+            "dot_combinations": [[ 2, 4, 5, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "with",
+            "dot_combinations": [[ 2, 3, 4, 5, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "word",
+            "dot_combinations": [[ 4, 5 ], [ 2, 4, 5, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "work",
+            "dot_combinations": [[ 5 ], [ 2, 4, 5, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "world",
+            "dot_combinations": [[ 4, 5, 6 ], [ 2, 4, 5, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "would",
+            "dot_combinations": [[ 2, 4, 5, 6 ], [ 1, 4, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "you",
+            "dot_combinations": [[ 1, 3, 4, 5, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "young",
+            "dot_combinations": [[ 5 ], [ 1, 3, 4, 5, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "your",
+            "dot_combinations": [[ 1, 3,  4, 5, 6 ], [ 1, 2, 3, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "yourself",
+            "dot_combinations": [[ 1, 3, 4, 5, 6 ], [ 1, 2, 3, 5 ], [ 1, 2, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "yourselves",
+            "dot_combinations": [[ 1, 3, 4, 5, 6 ], [ 1, 2, 3, 5 ], [ 1, 2, 3, 6 ], [ 2, 3, 4 ]],
+            "spell_out": false
+        }
+    ],
     "punctuation_and_indicators": []
 }

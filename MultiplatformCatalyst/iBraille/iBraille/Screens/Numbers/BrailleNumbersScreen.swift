@@ -17,7 +17,7 @@ struct BrailleNumbersScreen: View {
             }
             
             if let numbers = numbers {
-                BraillNumbersList(numbers: numbers)
+                BrailleNumbersList(numbers: numbers)
             }
         }
         .task {

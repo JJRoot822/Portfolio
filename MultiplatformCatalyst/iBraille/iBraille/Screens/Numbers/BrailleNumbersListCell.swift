@@ -12,8 +12,12 @@ struct BrailleNumbersListCell: View {
     
     var body: some View {
         HStack {
-            Text("\(entry.name)")
-                .speechSpellsOutCharacters()
+            if entry.spellOut {
+                Text(entry.name)
+                    .speechSpellsOutCharacters()
+            } else {
+                Text(entry.name)
+            }
             
             Spacer()
             

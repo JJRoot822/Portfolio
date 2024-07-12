@@ -44,10 +44,10 @@ struct ContentView: View {
                 BrailleAlphabetScreen()
             case 1:
                 BrailleNumbersScreen()
-            // case 2:
-                // BrailleContractionsScreen()
-            // case 3:
-                // BrailleShortFormWordsScreen()
+            case 2:
+                BrailleContractionsScreen()
+            case 3:
+                BrailleShortFormWordsScreen()
             // case 4:
                 // BraillePunctuationAndIndicatorsScreen()
             // case 5:

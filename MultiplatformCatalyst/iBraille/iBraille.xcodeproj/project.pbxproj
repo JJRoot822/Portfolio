@@ -24,6 +24,11 @@
 		0363C1D42C409DB300D7AD86 /* BrailleNumbersListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0363C1D32C409DB300D7AD86 /* BrailleNumbersListCell.swift */; };
 		0363C1D62C409E9500D7AD86 /* BrailleNumbersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0363C1D52C409E9500D7AD86 /* BrailleNumbersList.swift */; };
 		0363C1D82C409FF000D7AD86 /* BrailleNumbersScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0363C1D72C409FF000D7AD86 /* BrailleNumbersScreen.swift */; };
+		0363C1DB2C40AAB400D7AD86 /* GradeTwoBrailleListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0363C1DA2C40AAB400D7AD86 /* GradeTwoBrailleListCell.swift */; };
+		0363C1DE2C40AE2F00D7AD86 /* BrailleContractionsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0363C1DD2C40AE2F00D7AD86 /* BrailleContractionsScreen.swift */; };
+		0363C1DF2C40AE2F00D7AD86 /* BrailleContractionsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0363C1DC2C40AE2F00D7AD86 /* BrailleContractionsList.swift */; };
+		03E52F4F2C418A9F0016BAF6 /* BrailleShortFormWordsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E52F4D2C418A9F0016BAF6 /* BrailleShortFormWordsList.swift */; };
+		03E52F502C418A9F0016BAF6 /* BrailleShortFormWordsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E52F4E2C418A9F0016BAF6 /* BrailleShortFormWordsScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +51,11 @@
 		0363C1D32C409DB300D7AD86 /* BrailleNumbersListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrailleNumbersListCell.swift; sourceTree = "<group>"; };
 		0363C1D52C409E9500D7AD86 /* BrailleNumbersList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrailleNumbersList.swift; sourceTree = "<group>"; };
 		0363C1D72C409FF000D7AD86 /* BrailleNumbersScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrailleNumbersScreen.swift; sourceTree = "<group>"; };
+		0363C1DA2C40AAB400D7AD86 /* GradeTwoBrailleListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeTwoBrailleListCell.swift; sourceTree = "<group>"; };
+		0363C1DC2C40AE2F00D7AD86 /* BrailleContractionsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrailleContractionsList.swift; sourceTree = "<group>"; };
+		0363C1DD2C40AE2F00D7AD86 /* BrailleContractionsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrailleContractionsScreen.swift; sourceTree = "<group>"; };
+		03E52F4D2C418A9F0016BAF6 /* BrailleShortFormWordsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrailleShortFormWordsList.swift; sourceTree = "<group>"; };
+		03E52F4E2C418A9F0016BAF6 /* BrailleShortFormWordsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrailleShortFormWordsScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				0363C1C22C3FCA9000D7AD86 /* Braille */,
+				0363C1DA2C40AAB400D7AD86 /* GradeTwoBrailleListCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -130,6 +141,8 @@
 		0363C1C72C4011D700D7AD86 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				03E52F4C2C418A860016BAF6 /* ShortFormWords */,
+				0363C1D92C40AA4800D7AD86 /* Contractions */,
 				0363C1D22C409D4E00D7AD86 /* Numbers */,
 				0363C1D12C409D2000D7AD86 /* Alphabet */,
 			);
@@ -154,6 +167,24 @@
 				0363C1D72C409FF000D7AD86 /* BrailleNumbersScreen.swift */,
 			);
 			path = Numbers;
+			sourceTree = "<group>";
+		};
+		0363C1D92C40AA4800D7AD86 /* Contractions */ = {
+			isa = PBXGroup;
+			children = (
+				0363C1DC2C40AE2F00D7AD86 /* BrailleContractionsList.swift */,
+				0363C1DD2C40AE2F00D7AD86 /* BrailleContractionsScreen.swift */,
+			);
+			path = Contractions;
+			sourceTree = "<group>";
+		};
+		03E52F4C2C418A860016BAF6 /* ShortFormWords */ = {
+			isa = PBXGroup;
+			children = (
+				03E52F4D2C418A9F0016BAF6 /* BrailleShortFormWordsList.swift */,
+				03E52F4E2C418A9F0016BAF6 /* BrailleShortFormWordsScreen.swift */,
+			);
+			path = ShortFormWords;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,7 +258,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0363C1DB2C40AAB400D7AD86 /* GradeTwoBrailleListCell.swift in Sources */,
 				0363C1C02C3F72F500D7AD86 /* BrailleDictionaryEntry.swift in Sources */,
+				0363C1DE2C40AE2F00D7AD86 /* BrailleContractionsScreen.swift in Sources */,
+				0363C1DF2C40AE2F00D7AD86 /* BrailleContractionsList.swift in Sources */,
 				0363C1C42C3FCABE00D7AD86 /* BrailleCell.swift in Sources */,
 				0363C1CE2C4033DB00D7AD86 /* BrailleAlphabetList.swift in Sources */,
 				0363C1D62C409E9500D7AD86 /* BrailleNumbersList.swift in Sources */,
@@ -240,6 +274,8 @@
 				0363C1C92C40122800D7AD86 /* BrailleAlphabetScreen.swift in Sources */,
 				0363C1D02C40341300D7AD86 /* BrailleAlphabetListCell.swift in Sources */,
 				0363C1D82C409FF000D7AD86 /* BrailleNumbersScreen.swift in Sources */,
+				03E52F4F2C418A9F0016BAF6 /* BrailleShortFormWordsList.swift in Sources */,
+				03E52F502C418A9F0016BAF6 /* BrailleShortFormWordsScreen.swift in Sources */,
 				0363C1A42C3F60CD00D7AD86 /* iBrailleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
