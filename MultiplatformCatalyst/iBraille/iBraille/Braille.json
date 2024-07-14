@@ -1117,5 +1117,276 @@
             "spell_out": false
         }
     ],
-    "punctuation_and_indicators": []
+    "punctuation_and_indicators": [
+        {
+            "name": "Apostrophe",
+            "dot_combinations": [[ 3 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Asterisk",
+            "dot_combinations": [[ 5 ], [ 3, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "At Sign",
+            "dot_combinations": [[ 4 ], [ 1 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Bold Word",
+            "dot_combinations": [[ 4, 5 ], [ 2 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Bold Passage",
+            "dot_combinations": [[ 4, 5 ], [ 2, 3, 5, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Bold Terminator",
+            "dot_combinations": [[ 4, 5 ], [ 3 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Opening Square Bracket",
+            "dot_combinations": [[ 4, 6 ], [ 1, 2, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Closing Square Bracket",
+            "dot_combinations": [[ 4, 6 ], [ 3, 4, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Bullet",
+            "dot_combinations": [[ 4, 5, 6 ], [ 2, 5, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Capital Letter",
+            "dot_combinations": [[ 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Capital Word",
+            "dot_combinations": [[ 6 ], [ 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Capital Passage",
+            "dot_combinations": [[ 6 ], [ 6 ], [ 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Capitals Terminator",
+            "dot_combinations": [[ 3 ], [ 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Colon",
+            "dot_combinations": [[ 2, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Comma",
+            "dot_combinations": [[ 2 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Copyright",
+            "dot_combinations": [[ 4, 5 ], [ 1, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Crosshatch (Pound)",
+            "dot_combinations": [[ 4, 5, 6 ], [ 1, 4, 5, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Dash",
+            "dot_combinations": [[ 6 ], [ 3, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Degrees",
+            "dot_combinations": [[ 4, 5 ], [ 2, 4, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Divided By",
+            "dot_combinations": [[ 5 ], [ 3, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Dollar Sign",
+            "dot_combinations": [[ 4 ], [ 2, 3, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Ellipsis",
+            "dot_combinations": [[ 2, 5, 6 ], [ 2, 5, 6 ], [ 2, 5, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Equals",
+            "dot_combinations": [[ 5 ], [ 2, 3, 5, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Exclamation Point",
+            "dot_combinations": [[ 2, 3, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Feet (Prime)",
+            "dot_combinations": [[ 2, 3, 5, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Fraction-line",
+            "dot_combinations": [[ 3, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Grade 1 Symbol",
+            "dot_combinations": [[ 5, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Grade 1 Word",
+            "dot_combinations": [[ 5, 6 ], [ 5, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Hyphen",
+            "dot_combinations": [[ 3, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Inches (Double Prime)",
+            "dot_combinations": [[ 2, 3, 5, 6 ], [ 2, 3, 5, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Italic Word",
+            "dot_combinations": [[ 4, 6 ], [ 2 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Italic Passage",
+            "dot_combinations": [[ 4, 6 ], [ 2, 3, 5, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Italics Terminator",
+            "dot_combinations": [[ 4, 6 ], [ 3 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Minus (Subtraction)",
+            "dot_combinations": [[ 5 ], [ 3, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Numeric Indicator",
+            "dot_combinations": [[ 3, 4, 5, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Opening Parenthesis",
+            "dot_combinations": [[ 5 ], [ 1, 2, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Closing Parenthesis",
+            "dot_combinations": [[ 5 ], [ 3, 4, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Percent",
+            "dot_combinations": [[ 4, 6 ], [ 3, 5, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Period or Decimal Point",
+            "dot_combinations": [[ 2, 5, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Plus (Addition)",
+            "dot_combinations": [[ 5 ], [ 2, 3, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Question Mark",
+            "dot_combinations": [[ 2, 3, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Opening Double Quote",
+            "dot_combinations": [[ 2, 3, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Closing Double Quote",
+            "dot_combinations": [[ 3, 5, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Opening Single Quote",
+            "dot_combinations": [[ 6 ], [ 2, 3, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Closing Single Quote",
+            "dot_combinations": [[ 6 ], [ 3, 5, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Registered",
+            "dot_combinations": [[ 4, 5 ], [ 1, 2, 3, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Semicolon",
+            "dot_combinations": [[ 2, 3 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Slash",
+            "dot_combinations": [[ 4, 5, 6 ], [ 3, 4 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Multiplication (Times)",
+            "dot_combinations": [[ 5 ], [ 2, 3, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Trademark",
+            "dot_combinations": [[ 4, 5 ], [ 2, 3, 4, 5 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Underlined Word",
+            "dot_combinations": [[ 4, 5, 6 ], [ 2 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Underlined Passage",
+            "dot_combinations": [[ 4, 5, 6 ], [ 2, 3, 5, 6 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Underline Terminator",
+            "dot_combinations": [[ 4, 5, 6 ], [ 3 ]],
+            "spell_out": false
+        },
+        {
+            "name": "Underscore",
+            "dot_combinations": [[ 46 ], [ 3, 6 ]],
+            "spell_out": false
+        }
+    ]
 }
