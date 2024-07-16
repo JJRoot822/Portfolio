@@ -13,7 +13,13 @@ struct iBrailleApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if UIDevice.current.userInterfaceIdiom == .mac {
+                ContentView()
+                    .frame(width: 1440, height: 900)
+            } else {
+                ContentView()
+            }
+            
         }
         
     }
