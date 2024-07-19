@@ -46,7 +46,8 @@ struct FilterableChart: View {
                 if type == .bar {
                     BarMark(
                         x: .value("Date Measured", level.formattedMeasurementDate),
-                        y: .value("Blood Sugar Level", level.value)
+                        y: .value("Blood Sugar Level", level.value),
+                        width: 50
                     )
                     .foregroundStyle(getColorBy(value: level.value).gradient)
                 } else {

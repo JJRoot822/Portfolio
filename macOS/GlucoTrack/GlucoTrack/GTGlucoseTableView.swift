@@ -10,15 +10,20 @@ import SwiftUI
 struct GTGlucoseTableView: NSViewRepresentable {
     @Binding var selection: [GTGlucoseMeasurement]
     
-    var data: [GTGlucoseMeasurement]
+    var data:FetchedResults<GTGlucoseMeasurement>
     
     private var table = NSTableView()
     
+    init(selection: Binding<[GTGlucoseMeasurement]>, data: FetchedResults<GTGlucoseMeasurement>) {
+        self._selection = selection
+        self.data = data
+    }
+    
     class Coordinator: NSObject, NSTableViewDelegate, NSTableViewDataSource {
         private var parent: GTGlucoseTableView
-        private var data: [GTGlucoseMeasurement]
+        private var data: FetchedResults<GTGlucoseMeasurement>
         
-        init(parent: GTGlucoseTableView, data: [GTGlucoseMeasurement]) {
+        init(parent: GTGlucoseTableView, data: FetchedResults<GTGlucoseMeasurement>) {
             self.parent = parent
             self.data = data
         }

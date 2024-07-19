@@ -36,6 +36,7 @@ struct ContentView: View {
             Sidebar()
         },detail: {
             BloodGlucoseMeasurementsScreen()
+                .id(id)
         })
         .sheet(isPresented: $globalState.showAddBloodSugarReading, onDismiss: {
             id = UUID()

@@ -21,11 +21,11 @@ struct FilterableGlucoseDataTable: View {
 
     @State private var viewModel: ViewModel
     
-    @Binding var selectedRecord: GTGlucoseMeasurement.ID?
+    @Binding var selection: [GTGlucoseMeasurement]
     
-    init(selectedRecord: Binding<GTGlucoseMeasurement.ID?>, rangeStartDate: Date, rangeEndDate: Date, numberOfRecords: Int, searchTerm: String) {
+    init(selection: Binding<[GTGlucoseMeasurement]>, rangeStartDate: Date, rangeEndDate: Date, numberOfRecords: Int, searchTerm: String) {
         self._viewModel = State(wrappedValue: ViewModel())
-        self._selectedRecord = selectedRecord
+        self._selection = selection
         
         let startDate = rangeStartDate as NSDate
         let endDate = rangeEndDate as NSDate
@@ -42,53 +42,37 @@ struct FilterableGlucoseDataTable: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            Table(measurements, selection: $selectedRecord) {
-                TableColumn("Glucose Level") { reading in
-                    Text(reading.formattedMeasurement)
-                        .foregroundStyle(
-                            viewModel.getColorBy(value: reading.value, inRangeHighValue: inRangeHighValue, inRangeLowValue: inRangeLowValue, tooLowHighValue: tooLowHighValue, tooHighLowValue: tooHighLowValue)
-                        )
-                }
-                
-                TableColumn("Unit", value: \.measurementUnit)
-                TableColumn("Date Measured", value: \.formattedMeasurementDate)
-                TableColumn("Status") { reading in
-                    if reading.value >= inRangeLowValue && reading.value <= inRangeHighValue {
-                        Text("In Range")
-                    } else if reading.value > tooHighLowValue && reading.value < inRangeLowValue {
-                        Text("Below Range")
-                    } else if reading.value > inRangeHighValue && reading.value < tooHighLowValue {
-                        Text("Above Range")
-                    } else if reading.value <= tooLowHighValue {
-                        Text("Too Low")
-                    } else {
-                        Text("Too High")
-                    }
-                }
-                TableColumn("Notes", value: \.userNotes)
-            }
+            GTGlucoseTableView(selection: $selection, data: measurements)
+                .id(viewModel.id)
             
-            HStack {
+            HStack(spacing: 0) {
+                Spacer()
+                
                 Button {
                     globalState.showAddBloodSugarReading.toggle()
                 } label: {
                     Label("add Reading", systemImage: "plus")
                         .labelStyle(.iconOnly)
                 }
+                .buttonStyle(.borderless)
+                
                 
                 Button {
                     viewModel.toggleIsDeleteRequested()
                 } label: {
-                    Label("Remove Reading", systemImage: "minus")
+                    Label("Delete", systemImage: "minus")
                         .labelStyle(.iconOnly)
                 }
+                .buttonStyle(.borderless)
+                
+                Button("Edit", action: viewModel.toggleShowEditBloodSugarScreen)
             }
+            .buttonStyle(.borderless)
         }
-        .confirmationDialog("Are you sure you want to delete this measurement?", isPresented: $viewModel.isDeleteRequested) {
+        .confirmationDialog("Are you sure you want to delete all selected blood sugar readings?", isPresented: $viewModel.isDeleteRequested) {
             Button("Delete", role: .destructive){
-                if let selectedRecord = selectedRecord {
-                    viewModel.delete(record: context.object(with: selectedRecord), context: context)
-                }
+                viewModel.delete(selection, context: context)
+                viewModel.id = UUID()
             }
             
             Button("Cancel", role: .cancel, action: viewModel.toggleIsDeleteRequested)
@@ -97,6 +81,11 @@ struct FilterableGlucoseDataTable: View {
             Text(error.failureReason!)
         } message: { error in
             Text(error.errorDescription!)
+        }
+        .sheet(isPresented: $viewModel.isShowingEditBloodSugarScreen) {
+            viewModel.id = UUID()
+        } content: {
+            EditBloodSugarReadingScreen(reading: measurements.first!)
         }
     }
 }

@@ -15,7 +15,7 @@ struct BloodGlucoseMeasurementsScreen: View {
     @State private var rangeStartDate: Date = Calendar.current.date(byAdding: .day, value: -365, to: Date.now)!
     @State private var rangeEndDate: Date = Calendar.current.date(byAdding: .day, value: 365, to: Date.now)!
     @State private var numberOfRecords: Int = 25
-    @State private var selectedReading: GTGlucoseMeasurement.ID?
+    @State private var selection: [GTGlucoseMeasurement] = []
     
     @AppStorage(Constants.bloodGlucoseDisplayModeKey) var displayMode: Int = 0
     
@@ -24,7 +24,8 @@ struct BloodGlucoseMeasurementsScreen: View {
             VStack(spacing: 20) {
                 BloodSugarDataFilters(chartType: $chartType, rangeStartDate: $rangeStartDate, rangeEndDate: $rangeEndDate, numberOfRecords: $numberOfRecords)
                 
-                FilterableGlucoseDataTable(rangeStartDate: rangeStartDate, rangeEndDate: rangeEndDate, numberOfRecords: numberOfRecords, searchTerm: searchTerm)
+                
+                FilterableGlucoseDataTable(selection: $selection, rangeStartDate: rangeStartDate, rangeEndDate: rangeEndDate, numberOfRecords: numberOfRecords, searchTerm: searchTerm)
             }
             .padding(5)
             
