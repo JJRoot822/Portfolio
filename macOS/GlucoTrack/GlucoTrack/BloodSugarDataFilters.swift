@@ -13,6 +13,15 @@ struct BloodSugarDataFilters: View {
     @Binding var rangeEndDate: Date
     @Binding var numberOfRecords: Int
     
+    var integerFormatter: NumberFormatter {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.maximumFractionDigits = 0
+        formatter.minimumFractionDigits = 0
+        
+        return formatter
+    }
+    
     var body: some View {
         HStack(spacing: 20) {
             Picker("Chart Type", selection: $chartType) {
@@ -25,16 +34,24 @@ struct BloodSugarDataFilters: View {
             DatePicker("Range Start Date", selection: $rangeStartDate, displayedComponents: [ .date, .hourAndMinute ])
             DatePicker("Range End Date", selection: $rangeEndDate, displayedComponents: [ .date, .hourAndMinute ])
             
-            Stepper {
-                Text("Max Number of Records")
-            }onIncrement: {
-                numberOfRecords += 1
-            } onDecrement: {
-                if numberOfRecords > 0 {
-                    numberOfRecords -= 1
+            HStack(spacing: 5) {
+                Text("Max Records")
+                
+                TextField("Number of Records", value: $numberOfRecords, formatter: integerFormatter)
+                    .accessibilityLabel(Text("Max Records"))
+                
+                Stepper {
+                    Text("Number of Records")
+                }onIncrement: {
+                    numberOfRecords += 1
+                } onDecrement: {
+                    if numberOfRecords > 0 {
+                        numberOfRecords -= 1
+                    }
                 }
+                .labelsHidden()
+                .accessibilityValue(Text("\(numberOfRecords) Records"))
             }
-            .accessibilityValue(Text("\(numberOfRecords) Records"))
         }
     }
 }
