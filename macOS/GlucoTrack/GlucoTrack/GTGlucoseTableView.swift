@@ -68,6 +68,7 @@ struct GTGlucoseTableView: NSViewRepresentable {
             return cellView
         }
         
+        @MainActor
         private func createCell() -> NSTableCellView {
             let cell = NSTableCellView()
             let textField = NSTextField()
