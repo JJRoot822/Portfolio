@@ -48,7 +48,7 @@ extension EditBloodSugarReadingScreen {
             }
         }
         
-        func gaugeColor(_ value: Double) -> Color {
+        func gaugeColor(_ value: Int) -> Color {
             if value <= 120 {
                 return .blue
             } else if value > 120 && value <= 150 {

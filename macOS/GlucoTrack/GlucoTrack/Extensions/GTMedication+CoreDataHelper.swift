@@ -15,8 +15,25 @@ extension GTMedication {
         return notes ?? ""
     }
     
+    var formattedDosageValue: String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.minimumFractionDigits = 0
+        formatter.maximumFractionDigits = 2
+        
+        return formatter.string(from: NSNumber(value: doseValue)) ?? ""
+    }
+    
     var originalPrescriptionDate: Date {
         return datePrescribed ?? Date()
+    }
+    
+    var formattedPrescriptionDate: String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .full
+        formatter.timeStyle = .short
+        
+        return formatter.string(from: originalPrescriptionDate)
     }
     
     var dosageUnit: String {

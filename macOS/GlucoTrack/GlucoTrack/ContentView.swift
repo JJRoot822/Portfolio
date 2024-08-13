@@ -7,12 +7,7 @@
 
 import SwiftUI
 import CoreData
-
-struct MedicationsScreen: View {
-    var body: some View {
-        Text("")
-    }
-}
+import LocalAuthentication
 
 struct WeightMeasurementsScreen: View {
     var body: some View {
@@ -30,32 +25,71 @@ struct ContentView: View {
     @EnvironmentObject var globalState: GlobalState
     
     @State private var id: UUID = UUID()
+    @State private var wasSuccessful: Bool = false
     
     var body: some View {
-        NavigationSplitView(sidebar: {
-            Sidebar()
-        },detail: {
-            BloodGlucoseMeasurementsScreen()
-                .id(id)
-        })
-        .sheet(isPresented: $globalState.showAddBloodSugarReading, onDismiss: {
-            id = UUID()
-        }) {
-            AddBloodSugarReadingScreen()
-        }
-        .touchBar {
-            CreateActionsMenu()
-            SettingsLink {
-                Label("Settings", systemImage: "gear")
+        ZStack {
+            if !wasSuccessful {
+                Text("Failed to unlock your data")
+                    .font(.callout)
+                    .fontWeight(.bold)
+                    .foregroundStyle(.secondary)
+            } else {
+                TabView {
+                    Tab("Blood Sugar", systemImage: "drop") {
+                        BloodGlucoseMeasurementsScreen()
+                            .id(id)
+                    }
+                    
+                    Tab("Medications", systemImage: "pills") {
+                        MedicationsScreen()
+                            .id(id)
+                    }
+                    
+                    Tab("Consumption", systemImage: "list.clipboard") {
+                        MedicationRecordsScreen()
+                            .id(id)
+                    }
+                    
+                    Tab("Weight", systemImage: "scalemass") {
+                        WeightMeasurementsScreen()
+                            .id(id)
+                    }
+                    
+                    Tab("Reminders", systemImage: "alarm") {
+                        RemindersScreen()
+                            .id(id)
+                    }
+                }
+                .tabViewStyle(.sidebarAdaptable)
+                .sheet(isPresented: $globalState.showAddBloodSugarReading, onDismiss: {
+                    id = UUID()
+                }) {
+                    AddBloodSugarReadingScreen()
+                }
+                .sheet(isPresented: $globalState.showAddMedication, onDismiss: {
+                    id = UUID()
+                }) {
+                    AddMedicationScreen()
+                }
+                .touchBar {
+                    CreateActionsMenu()
+                    SettingsLink {
+                        Label("Settings", systemImage: "gear")
+                    }
+                }
+                .toolbar {
+                    CreateActionsMenu()
+                }
             }
         }
-        .toolbar {
-            CreateActionsMenu()
-            
-            SettingsLink {
-                Label("Settings", systemImage: "gear")
-            }
+        .task {
+            await authenticate()
         }
+    }
+    
+    private func authenticate() async {
+        wasSuccessful = await AuthenticationService().authenticate(using: .deviceOwnerAuthentication, for: "unlock your health data")
     }
 }
 

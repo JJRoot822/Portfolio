@@ -47,7 +47,7 @@ struct AddBloodSugarReadingScreen: View {
                     Text("\(150 - viewModel.charactersInNote) characters left")
                 }
                 .labelsHidden()
-                .tint(viewModel.gaugeColor(viewModel.level))
+                .tint(viewModel.gaugeColor(viewModel.charactersInNote))
             }
             
             Button("Cancel", role: .cancel) {

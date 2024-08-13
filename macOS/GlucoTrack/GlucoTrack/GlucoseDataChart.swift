@@ -1,5 +1,5 @@
 //
-//  FilterableChart.swift
+//  GlucoseDataChart.swift
 //  GlucoTrack
 //
 //  Created by Joshua Root on 6/26/24.
@@ -9,7 +9,7 @@ import SwiftUI
 import CoreData
 import Charts
 
-struct FilterableChart: View {
+struct GlucoseDataChart: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest var measurements: FetchedResults<GTGlucoseMeasurement>

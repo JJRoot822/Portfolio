@@ -1,5 +1,5 @@
 //
-//  AddBloodSugarReadingScreen+ViewModel.swift
+//  EditMedicationScreen+ViewModel.swift
 //  GlucoTrack
 //
 //  Created by Joshua Root on 6/29/24.
@@ -8,19 +8,20 @@
 import SwiftUI
 import CoreData
 
-extension AddBloodSugarReadingScreen {
+extension EditMedicationScreen {
     @Observable
     class ViewModel {
-        var level: Double = 0
-        var unit: String = "mg/dL"
-        var dateMeasured: Date = Date()
+        var name: String = ""
+        var dosageValue: Double = 0
+        var dosageUnit: String = ""
+        var datePrescribed: Date = Date()
         var notes: String = ""
         var charactersInNote: Int = 0
         var error: GTError?
         var isShowingError: Bool = false
         var shouldDismiss: Bool = false
         
-        var levelFormatter: NumberFormatter {
+        var dosageFormatter: NumberFormatter {
             let formatter = NumberFormatter()
             formatter.numberStyle = .decimal
             formatter.minimumFractionDigits = 0
@@ -29,12 +30,12 @@ extension AddBloodSugarReadingScreen {
             return formatter
         }
         
-        func fullUnitOfMeasure(from: String) -> String {
-            if from == "mmol/L" {
-                return "Millimoles Per Liter"
-            } else {
-                return "Milligrams Per Deciliter"
-            }
+        init(name: String, dosageValue: Double, dosageUnit: String, datePrescribed: Date, notes: String) {
+            self.name = name
+            self.dosageValue = dosageValue
+            self.dosageUnit = dosageUnit
+            self.datePrescribed = datePrescribed
+            self.notes = notes
         }
         
         func gaugeColor(_ value: Int) -> Color {
@@ -47,24 +48,24 @@ extension AddBloodSugarReadingScreen {
             }
         }
         
-        func incrementLevel() {
-            level += 0.1
+        func incrementDosage() {
+            dosageValue += 0.1
         }
         
-        func decrementLevel() {
-            if level > 0 {
-                level -= 0.1
+        func decrementDosage() {
+            if dosageValue > 0 {
+                dosageValue -= 0.1
             }
         }
         
-        func addReading(context: NSManagedObjectContext) {
+        func updateMedication(context: NSManagedObjectContext, medication: GTMedication) {
             let dataService = DataService(context: context)
             
             do {
-                try dataService.addReading(level: self.level, unit: self.unit, dateMeasured: self.dateMeasured, notes: self.notes)
+                try dataService.modifyMedication(oldMedication: medication, name: name, doseValue: dosageValue, doseUnit: dosageUnit, datePrescribed: datePrescribed, notes: notes)
                 shouldDismiss = true
             } catch {
-                self.error = GTError.insertGlucoseError
+                self.error = GTError.updateMedicationError
                 isShowingError = true
             }
         }

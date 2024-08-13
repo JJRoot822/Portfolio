@@ -12,7 +12,7 @@ enum GTError: LocalizedError, Identifiable {
          insertMedicationError, updateMedicationError, deleteMedicationError, deleteMedicationBatchError,
          insertMedRecordError, updateMedRecordError, deleteMedRecordError, deleteMedRecordBatchError,
          insertWeightError, updateWeightError, deleteWeightError, deleteWeightBatchError,
-         saveError
+         saveError, invalidMedicationEntryError
     
     var id: Int {
         switch self {
@@ -50,6 +50,8 @@ enum GTError: LocalizedError, Identifiable {
             return 16
         case .saveError:
             return 17
+        case .invalidMedicationEntryError:
+            return 18
         }
     }
     
@@ -89,6 +91,8 @@ enum GTError: LocalizedError, Identifiable {
             return"Something went wrong when trying to remove the weight data you selected. Either select one at a time or try again later."
         case .saveError:
             return "Failed to save the changes you made. Please try again later."
+        case .invalidMedicationEntryError:
+            return "You must specify a medication to associate this record with."
         }
     }
     
@@ -128,6 +132,8 @@ enum GTError: LocalizedError, Identifiable {
             return "Failed to Remove Multiple Weight Data Entries"
         case .saveError:
             return "Failed to Save Changes"
+        case .invalidMedicationEntryError:
+            return "Invalid Entry"
         }
     }
 }

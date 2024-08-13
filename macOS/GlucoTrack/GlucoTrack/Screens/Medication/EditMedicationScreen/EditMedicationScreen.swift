@@ -1,49 +1,47 @@
 //
-//  EditBloodSugarReadingScreen.swift
+//  EditMedicationScreen.swift
 //  GlucoTrack
 //
-//  Created by Joshua Root on 7/7/24.
+//  Created by Joshua Root on 6/29/24.
 //
 
 import SwiftUI
 import CoreData
 
-struct EditBloodSugarReadingScreen: View {
+struct EditMedicationScreen: View {
     @Environment(\.managedObjectContext) var context
     @Environment(\.dismiss) var dismiss
     
     @State private var viewModel: ViewModel
     
-    var reading: GTGlucoseMeasurement
-
-    init(reading: GTGlucoseMeasurement) {
-        self.reading = reading
-        
-        let viewModel = ViewModel(level: reading.value, unit: reading.measurementUnit, dateMeasured: reading.measurementTakenAt, notes: reading.userNotes)
+    var medication: GTMedication
+    
+    init(medication: GTMedication) {
+        self.medication = medication
+    
+        let viewModel = ViewModel(name: medication.medicationName, dosageValue: medication.doseValue, dosageUnit: medication.dosageUnit, datePrescribed: medication.originalPrescriptionDate, notes: medication.medicationNotes)
         self._viewModel = State(wrappedValue: viewModel)
     }
     
     var body: some View {
         Form {
+            TextField("Medication Name", text: $viewModel.name)
+            
             HStack(spacing: 20) {
                 HStack(spacing: 5) {
-                    TextField("Blood Sugar Level", value: $viewModel.level, formatter: viewModel.levelFormatter)
+                    TextField("Medication Dosage", value: $viewModel.dosageValue, formatter: viewModel.dosageFormatter)
                     
                     Stepper(label: {
-                        Text("Blood Sugar Level")
-                    }, onIncrement: viewModel.incrementLevel, onDecrement: viewModel.decrementLevel)
+                        Text("Medication Dosage")
+                    }, onIncrement: viewModel.incrementDosage, onDecrement: viewModel.decrementDosage)
                     .labelsHidden()
-                    .accessibilityValue(Text("\(NSNumber(value: viewModel.level), formatter: viewModel.levelFormatter) \(viewModel.fullUnitOfMeasure(from: viewModel.unit))"))
+                    .accessibilityValue(Text("\(NSNumber(value: viewModel.dosageValue), formatter: viewModel.dosageFormatter) \(viewModel.dosageUnit)"))
                 }
                 
-                Picker("Unit of Measure", selection: $viewModel.unit) {
-                    Text("Millimoles Per Liter").tag("mmol/L")
-                    Text("Milligrams Per Deciliter").tag("mg/dL")
-                }
-                .labelsHidden()
+                TextField("Dosage Unit", text: $viewModel.dosageUnit)
             }
             
-            DatePicker("Date Measured", selection: $viewModel.dateMeasured, displayedComponents: [ .date, .hourAndMinute ])
+            DatePicker("Date Prescribed", selection: $viewModel.datePrescribed, displayedComponents: [ .date ])
             
             HStack {
                 TextField("Notes", text: $viewModel.notes)
@@ -63,8 +61,8 @@ struct EditBloodSugarReadingScreen: View {
                 dismiss()
             }
             
-            Button("Save Changes") {
-                viewModel.updateReading(context: context, reading: reading)
+            Button("SaveChanges") {
+                viewModel.updateMedication(context: context, medication: medication)
             }
             .tint(Color.accentColor)
         }
@@ -74,7 +72,7 @@ struct EditBloodSugarReadingScreen: View {
             }
             
             Button("Save Changes") {
-                viewModel.updateReading(context: context, reading: reading)
+                viewModel.updateMedication(context: context, medication: medication)
             }
             .tint(Color.accentColor)
         }
@@ -92,4 +90,3 @@ struct EditBloodSugarReadingScreen: View {
         }
     }
 }
-

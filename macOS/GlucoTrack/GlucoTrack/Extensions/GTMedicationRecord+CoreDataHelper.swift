@@ -15,4 +15,16 @@ extension GTMedicationRecord {
     var consumptionNotes: String {
         return notes ?? ""
     }
+    
+    var formattedDateTaken: String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .full
+        formatter.timeStyle = .short
+        
+        return formatter.string(from: dateMedicationTaken)
+    }
+    
+    var dateMedicationTaken: Date {
+        return dateTaken ?? Date()
+    }
 }

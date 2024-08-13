@@ -1,14 +1,14 @@
 //
-//  ViewModel.swift
+//  GlucoseReadingCell+ViewModel.swift
 //  GlucoTrack
 //
-//  Created by Joshua Root on 7/16/24.
+//  Created by Joshua Root on 8/6/24.
 //
 
+import Foundation
 import SwiftUI
-import CoreData
 
-extension FilterableGlucoseDataTable  {
+extension GlucoseReadingCell {
     @Observable
     class ViewModel {
         var id: UUID = UUID()
@@ -29,16 +29,14 @@ extension FilterableGlucoseDataTable  {
             isShowingError.toggle()
         }
         
-        func delete(_ readings: [GTGlucoseMeasurement], context: NSManagedObjectContext) {
+        func delete(_ reading: GTGlucoseMeasurement, context: NSManagedObjectContext) {
             let service = DataService(context: context)
             
-            readings.forEach { reading in
-                do {
-                    try service.delete(measurement: reading)
-                } catch {
-                    self.error = GTError.deleteGlucoseError
-                    toggleIsShowingError()
-                }
+            do {
+                try service.delete(measurement: reading)
+            } catch {
+                self.error = GTError.deleteGlucoseError
+                toggleIsShowingError()
             }
         }
     }

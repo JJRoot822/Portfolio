@@ -54,7 +54,7 @@ class DataService {
         }
     }
     
-    func addMedication(name: String, doseValue: Float, doseUnit: String, datePrescribed: Date, notes: String) throws {
+    func addMedication(name: String, doseValue: Double, doseUnit: String, datePrescribed: Date, notes: String) throws {
         let medication = GTMedication(context: context)
         medication.id = UUID()
         medication.name = name
@@ -72,7 +72,7 @@ class DataService {
         }
     }
     
-    func modifyMedication(oldMedication: GTMedication, name: String, doseValue: Float, doseUnit: String, datePrescribed: Date, notes: String) throws {
+    func modifyMedication(oldMedication: GTMedication, name: String, doseValue: Double, doseUnit: String, datePrescribed: Date, notes: String) throws {
         oldMedication.name = name
         oldMedication.doseValue = doseValue
         oldMedication.doseUnit = doseUnit
@@ -88,7 +88,7 @@ class DataService {
         }
     }
     
-    func addMedicationRecord(doseAmountTaken: Float, doseUnit: String, notes: String, medication: GTMedication) throws {
+    func addMedicationRecord(doseAmountTaken: Double, doseUnit: String, notes: String, medication: GTMedication) throws {
         let record = GTMedicationRecord(context: context)
         record.id = UUID()
         record.doseAmountTaken = doseAmountTaken
@@ -105,7 +105,7 @@ class DataService {
         }
     }
     
-    func modifyMedicationRecord(oldRecord: GTMedicationRecord, doseAmountTaken: Float, doseUnit: String, notes: String, medication: GTMedication) throws {
+    func modifyMedicationRecord(oldRecord: GTMedicationRecord, doseAmountTaken: Double, doseUnit: String, notes: String, medication: GTMedication) throws {
         oldRecord.doseAmountTaken = doseAmountTaken
         oldRecord.unit = doseUnit
         oldRecord.notes = notes
