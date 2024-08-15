@@ -9,13 +9,13 @@ import SwiftUI
 import CoreData
 import LocalAuthentication
 
-struct WeightMeasurementsScreen: View {
+struct RemindersScreen: View {
     var body: some View {
         Text("")
     }
 }
 
-struct RemindersScreen: View {
+struct AddReminderScreen: View {
     var body: some View {
         Text("")
     }
@@ -71,12 +71,6 @@ struct ContentView: View {
                     id = UUID()
                 }) {
                     AddMedicationScreen()
-                }
-                .touchBar {
-                    CreateActionsMenu()
-                    SettingsLink {
-                        Label("Settings", systemImage: "gear")
-                    }
                 }
                 .toolbar {
                     CreateActionsMenu()

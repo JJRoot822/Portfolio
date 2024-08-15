@@ -14,8 +14,6 @@ class Constants {
     static let bloodGlucoseUnitKey = "gt-bgm-unit"
     static let weightUnitKey = "gt-weight-unit"
     static let bloodGlucoseDisplayModeKey = "gt-blood-sugar-display-mode"
-static let authenticationAttemptsKey = "gt-authentication-attempts"
-    static let authenticationLockoutDateKey = "gt-lockout-date"
     
     static let invalidRangesErrorMessage = "The upper limit of Too Low readings must be lower than the lower limit of In Range readings.\n\nThe lower limit of In Range readings must be between the upper limit of Too Low and the upper limit of In Range.\n\nThe upper limit of In Range readings must be lower than the lower limit of Too High readings."
 }

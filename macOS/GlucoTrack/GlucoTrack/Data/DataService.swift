@@ -120,7 +120,7 @@ class DataService {
         }
     }
     
-    func insertWeight(value: Float, unit: String, dateWeighed: Date) throws {
+    func addWeight(value: Double, unit: String, dateWeighed: Date) throws {
         let weight = GTWeight(context: context)
         weight.id = UUID()
         weight.value = value
@@ -136,7 +136,7 @@ class DataService {
         }
     }
     
-    func modifyWeight(oldWeight: GTWeight, value: Float, unit: String, dateWeighed: Date) throws {
+    func modifyWeight(oldWeight: GTWeight, value: Double, unit: String, dateWeighed: Date) throws {
         oldWeight.value = value
         oldWeight.unit = unit
         oldWeight.dateWeighed = dateWeighed
@@ -172,20 +172,6 @@ class DataService {
         }
     }
     
-    func delete(measurements: [GTGlucoseMeasurement]) throws {
-        for measurement in measurements {
-            delete(measurement)
-        }
-        
-        do {
-            try saveChanges()
-        } catch {
-            rollbackUnsavedChanges()
-            
-            throw GTError.deleteGlucoseBatchError
-        }
-    }
-    
     func delete(medication: GTMedication) throws {
         delete(medication)
         
@@ -195,18 +181,6 @@ class DataService {
             rollbackUnsavedChanges()
             
             throw GTError.deleteGlucoseError
-        }
-    }
-    
-    func delete(medications: [GTMedication]) throws {
-        for medication in medications {
-            delete(medication)
-        }
-        
-        do {
-            try saveChanges()
-        } catch {
-            throw GTError.deleteMedicationBatchError
         }
     }
     
@@ -222,20 +196,6 @@ class DataService {
         }
     }
     
-    func delete(records: [GTMedicationRecord]) throws {
-        for record in records {
-            delete(record)
-        }
-        
-        do {
-            try saveChanges()
-        } catch {
-            rollbackUnsavedChanges()
-            
-            throw GTError.deleteMedRecordBatchError
-        }
-    }
-    
     func delete(weight: GTWeight) throws {
         delete(weight)
         
@@ -245,18 +205,6 @@ class DataService {
             rollbackUnsavedChanges()
             
             throw GTError.deleteWeightError
-        }
-    }
-    
-    func delete(weights: [GTWeight]) throws {
-        for weight in weights {
-            delete(weight)
-        }
-        
-        do {
-            try saveChanges()
-        } catch {
-            throw GTError.deleteWeightBatchError
         }
     }
 }

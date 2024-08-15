@@ -16,6 +16,18 @@
 		032320832C62AD9300A2C1F6 /* MedicationCell+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032320822C62AD9300A2C1F6 /* MedicationCell+ViewModel.swift */; };
 		032320852C62AF4400A2C1F6 /* MedicationSortOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032320842C62AF4400A2C1F6 /* MedicationSortOrder.swift */; };
 		032320872C62AF9300A2C1F6 /* MedicationDataList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032320862C62AF9300A2C1F6 /* MedicationDataList.swift */; };
+		032F136B2C6BE6B200DDBB7F /* WeightMeasurementsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F136A2C6BE6B200DDBB7F /* WeightMeasurementsScreen.swift */; };
+		032F136D2C6BE85600DDBB7F /* WeightDataSortOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F136C2C6BE85600DDBB7F /* WeightDataSortOrder.swift */; };
+		032F136F2C6BE8BA00DDBB7F /* WeightUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F136E2C6BE8BA00DDBB7F /* WeightUnit.swift */; };
+		032F13752C6BFFBC00DDBB7F /* WeightDataList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F13742C6BFFBC00DDBB7F /* WeightDataList.swift */; };
+		032F13782C6C036500DDBB7F /* WeightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F13772C6C036500DDBB7F /* WeightCell.swift */; };
+		032F137A2C6C3C5600DDBB7F /* WeightCell+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F13792C6C3C5600DDBB7F /* WeightCell+ViewModel.swift */; };
+		032F137D2C6C464100DDBB7F /* AddWeightScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F137C2C6C464100DDBB7F /* AddWeightScreen.swift */; };
+		032F137F2C6C4AAD00DDBB7F /* AddWeightScreen+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F137E2C6C4AAD00DDBB7F /* AddWeightScreen+ViewModel.swift */; };
+		032F13822C6C6AF600DDBB7F /* EditWeightScreen+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F13812C6C6AF600DDBB7F /* EditWeightScreen+ViewModel.swift */; };
+		032F13842C6C6F3700DDBB7F /* EditWeightScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F13832C6C6F3700DDBB7F /* EditWeightScreen.swift */; };
+		032F13872C6D07AA00DDBB7F /* NotificationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F13862C6D07AA00DDBB7F /* NotificationsService.swift */; };
+		032F13892C6DA00300DDBB7F /* GTReminder+CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F13882C6DA00300DDBB7F /* GTReminder+CoreDataHelper.swift */; };
 		034C6DD92C2E174300E2BE89 /* CreateActionsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C6DD82C2E174300E2BE89 /* CreateActionsMenu.swift */; };
 		0350BDD32C3B9381005B0632 /* EditBloodSugarReadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0350BDD22C3B9381005B0632 /* EditBloodSugarReadingScreen.swift */; };
 		0350BDD52C3B9505005B0632 /* EditBloodSugarReadingScreen+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0350BDD42C3B9505005B0632 /* EditBloodSugarReadingScreen+ViewModel.swift */; };
@@ -89,6 +101,18 @@
 		032320822C62AD9300A2C1F6 /* MedicationCell+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MedicationCell+ViewModel.swift"; sourceTree = "<group>"; };
 		032320842C62AF4400A2C1F6 /* MedicationSortOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationSortOrder.swift; sourceTree = "<group>"; };
 		032320862C62AF9300A2C1F6 /* MedicationDataList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationDataList.swift; sourceTree = "<group>"; };
+		032F136A2C6BE6B200DDBB7F /* WeightMeasurementsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightMeasurementsScreen.swift; sourceTree = "<group>"; };
+		032F136C2C6BE85600DDBB7F /* WeightDataSortOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightDataSortOrder.swift; sourceTree = "<group>"; };
+		032F136E2C6BE8BA00DDBB7F /* WeightUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightUnit.swift; sourceTree = "<group>"; };
+		032F13742C6BFFBC00DDBB7F /* WeightDataList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightDataList.swift; sourceTree = "<group>"; };
+		032F13772C6C036500DDBB7F /* WeightCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightCell.swift; sourceTree = "<group>"; };
+		032F13792C6C3C5600DDBB7F /* WeightCell+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeightCell+ViewModel.swift"; sourceTree = "<group>"; };
+		032F137C2C6C464100DDBB7F /* AddWeightScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWeightScreen.swift; sourceTree = "<group>"; };
+		032F137E2C6C4AAD00DDBB7F /* AddWeightScreen+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddWeightScreen+ViewModel.swift"; sourceTree = "<group>"; };
+		032F13812C6C6AF600DDBB7F /* EditWeightScreen+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditWeightScreen+ViewModel.swift"; sourceTree = "<group>"; };
+		032F13832C6C6F3700DDBB7F /* EditWeightScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWeightScreen.swift; sourceTree = "<group>"; };
+		032F13862C6D07AA00DDBB7F /* NotificationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsService.swift; sourceTree = "<group>"; };
+		032F13882C6DA00300DDBB7F /* GTReminder+CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GTReminder+CoreDataHelper.swift"; sourceTree = "<group>"; };
 		034C6DD82C2E174300E2BE89 /* CreateActionsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateActionsMenu.swift; sourceTree = "<group>"; };
 		0350BDD22C3B9381005B0632 /* EditBloodSugarReadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBloodSugarReadingScreen.swift; sourceTree = "<group>"; };
 		0350BDD42C3B9505005B0632 /* EditBloodSugarReadingScreen+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditBloodSugarReadingScreen+ViewModel.swift"; sourceTree = "<group>"; };
@@ -190,6 +214,89 @@
 			path = MedicationDataList;
 			sourceTree = "<group>";
 		};
+		032F13692C6BE6A700DDBB7F /* Weight */ = {
+			isa = PBXGroup;
+			children = (
+				032F13802C6C6A4300DDBB7F /* EditWeightScreen */,
+				032F137B2C6C45D400DDBB7F /* AddWeightScreen */,
+				032F136A2C6BE6B200DDBB7F /* WeightMeasurementsScreen.swift */,
+			);
+			path = Weight;
+			sourceTree = "<group>";
+		};
+		032F13702C6BFA7E00DDBB7F /* Lists */ = {
+			isa = PBXGroup;
+			children = (
+				032F13732C6BFF9600DDBB7F /* WeightDataList */,
+				031D8ADF2C46C6370013AF24 /* GlucoseDataList */,
+				0323207F2C62ACF900A2C1F6 /* MedicationDataList */,
+				03F23C842C6B262D0043FF1A /* MedicationRecordsDataList */,
+			);
+			path = Lists;
+			sourceTree = "<group>";
+		};
+		032F13712C6BFAFB00DDBB7F /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				03894F512C2CC3CF008BB475 /* GlucoseDataChart.swift */,
+			);
+			path = Charts;
+			sourceTree = "<group>";
+		};
+		032F13722C6BFCBA00DDBB7F /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				03EC5D402C6404CD0057C3D9 /* Pickers */,
+				034C6DD82C2E174300E2BE89 /* CreateActionsMenu.swift */,
+				03894F572C2D4C62008BB475 /* BloodSugarDataFilters.swift */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		032F13732C6BFF9600DDBB7F /* WeightDataList */ = {
+			isa = PBXGroup;
+			children = (
+				032F13762C6C034900DDBB7F /* WeightCell */,
+				032F13742C6BFFBC00DDBB7F /* WeightDataList.swift */,
+			);
+			path = WeightDataList;
+			sourceTree = "<group>";
+		};
+		032F13762C6C034900DDBB7F /* WeightCell */ = {
+			isa = PBXGroup;
+			children = (
+				032F13772C6C036500DDBB7F /* WeightCell.swift */,
+				032F13792C6C3C5600DDBB7F /* WeightCell+ViewModel.swift */,
+			);
+			path = WeightCell;
+			sourceTree = "<group>";
+		};
+		032F137B2C6C45D400DDBB7F /* AddWeightScreen */ = {
+			isa = PBXGroup;
+			children = (
+				032F137C2C6C464100DDBB7F /* AddWeightScreen.swift */,
+				032F137E2C6C4AAD00DDBB7F /* AddWeightScreen+ViewModel.swift */,
+			);
+			path = AddWeightScreen;
+			sourceTree = "<group>";
+		};
+		032F13802C6C6A4300DDBB7F /* EditWeightScreen */ = {
+			isa = PBXGroup;
+			children = (
+				032F13812C6C6AF600DDBB7F /* EditWeightScreen+ViewModel.swift */,
+				032F13832C6C6F3700DDBB7F /* EditWeightScreen.swift */,
+			);
+			path = EditWeightScreen;
+			sourceTree = "<group>";
+		};
+		032F13852C6D078300DDBB7F /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				032F13862C6D07AA00DDBB7F /* NotificationsService.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
 		0350BDD02C3B9269005B0632 /* AddBloodSugarReadingScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +361,8 @@
 				03894F5E2C2D7F9E008BB475 /* ChartType.swift */,
 				03A1AC3D2C30428B008B20DC /* UnitOfMeasure.swift */,
 				03F23C822C6B18590043FF1A /* MedicationRecordSortOrder.swift */,
+				032F136C2C6BE85600DDBB7F /* WeightDataSortOrder.swift */,
+				032F136E2C6BE8BA00DDBB7F /* WeightUnit.swift */,
 			);
 			path = Enumerations;
 			sourceTree = "<group>";
@@ -261,6 +370,7 @@
 		03A1AC372C2FDE79008B20DC /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				032F13692C6BE6A700DDBB7F /* Weight */,
 				036085C12C4D7CBC00EC3E88 /* Medication */,
 				0384D7DC2C0A93DB009C419F /* SettingsScreen.swift */,
 				03A1AC3A2C2FDF61008B20DC /* BloodSugar */,
@@ -294,6 +404,7 @@
 				03B758832C03BF57000E9F27 /* GTMedication+CoreDataHelper.swift */,
 				03FE87702C03CD13006D7A0F /* GTWeight+CoreDataHelper.swift */,
 				039903052C03CEDC00267D02 /* GTMedicationRecord+CoreDataHelper.swift */,
+				032F13882C6DA00300DDBB7F /* GTReminder+CoreDataHelper.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -321,27 +432,24 @@
 		03D987A12C03886B002A75A6 /* GlucoTrack */ = {
 			isa = PBXGroup;
 			children = (
+				032F13852C6D078300DDBB7F /* Notifications */,
 				03D987A62C03886C002A75A6 /* Assets.xcassets */,
 				0317C8DB2C63C5570074EB94 /* Authentication */,
-				03894F572C2D4C62008BB475 /* BloodSugarDataFilters.swift */,
+				032F13722C6BFCBA00DDBB7F /* Controls */,
 				03A1AC3B2C2FE186008B20DC /* CalculationHelper.swift */,
+				032F13712C6BFAFB00DDBB7F /* Charts */,
 				0384D7DA2C0A8BE3009C419F /* Constants.swift */,
 				03D987A42C03886B002A75A6 /* ContentView.swift */,
-				034C6DD82C2E174300E2BE89 /* CreateActionsMenu.swift */,
 				03DE3C602C37F17500245808 /* Data */,
 				03894F5D2C2D7F7D008BB475 /* Enumerations */,
 				03A1AC412C30431C008B20DC /* Errors */,
 				03B76A442C039A5F0043A03B /* Extensions */,
 				03A1AC352C2FADA2008B20DC /* GlobalState.swift */,
-				03894F512C2CC3CF008BB475 /* GlucoseDataChart.swift */,
-				031D8ADF2C46C6370013AF24 /* GlucoseDataList */,
 				03D987B02C03886C002A75A6 /* GlucoTrack.entitlements */,
 				03D987AD2C03886C002A75A6 /* GlucoTrack.xcdatamodeld */,
 				03D987A22C03886B002A75A6 /* GlucoTrackApp.swift */,
-				0323207F2C62ACF900A2C1F6 /* MedicationDataList */,
-				03F23C842C6B262D0043FF1A /* MedicationRecordsDataList */,
+				032F13702C6BFA7E00DDBB7F /* Lists */,
 				03D987AB2C03886C002A75A6 /* Persistence.swift */,
-				03EC5D402C6404CD0057C3D9 /* Pickers */,
 				03D987A82C03886C002A75A6 /* Preview Content */,
 				03A1AC372C2FDE79008B20DC /* Screens */,
 			);
@@ -575,10 +683,14 @@
 			files = (
 				03D987AC2C03886C002A75A6 /* Persistence.swift in Sources */,
 				03A1AC392C2FDE9C008B20DC /* AddBloodSugarReadingScreen.swift in Sources */,
+				032F137F2C6C4AAD00DDBB7F /* AddWeightScreen+ViewModel.swift in Sources */,
+				032F137D2C6C464100DDBB7F /* AddWeightScreen.swift in Sources */,
 				03894F5F2C2D7F9E008BB475 /* ChartType.swift in Sources */,
 				03DE3C642C37F52A00245808 /* GTError.swift in Sources */,
+				032F13822C6C6AF600DDBB7F /* EditWeightScreen+ViewModel.swift in Sources */,
 				032320812C62AD2700A2C1F6 /* MedicationCell.swift in Sources */,
 				03A1AC362C2FADA2008B20DC /* GlobalState.swift in Sources */,
+				032F13892C6DA00300DDBB7F /* GTReminder+CoreDataHelper.swift in Sources */,
 				03EC5D422C6405060057C3D9 /* MedicationPicker.swift in Sources */,
 				03DE3C622C37F1AC00245808 /* DataService.swift in Sources */,
 				032320852C62AF4400A2C1F6 /* MedicationSortOrder.swift in Sources */,
@@ -586,6 +698,9 @@
 				03FE5B3E2C6443D2008F1213 /* EditMedicationRecordScreen.swift in Sources */,
 				03F23C892C6B26AB0043FF1A /* MedicationRecordCell.swift in Sources */,
 				03894F5C2C2D6376008BB475 /* GlucoseDataList.swift in Sources */,
+				032F13752C6BFFBC00DDBB7F /* WeightDataList.swift in Sources */,
+				032F136F2C6BE8BA00DDBB7F /* WeightUnit.swift in Sources */,
+				032F136B2C6BE6B200DDBB7F /* WeightMeasurementsScreen.swift in Sources */,
 				0350BDD52C3B9505005B0632 /* EditBloodSugarReadingScreen+ViewModel.swift in Sources */,
 				03FE5B3B2C64264C008F1213 /* AddMedicationRecordScreen+ViewModel.swift in Sources */,
 				034C6DD92C2E174300E2BE89 /* CreateActionsMenu.swift in Sources */,
@@ -606,10 +721,15 @@
 				03D987AF2C03886C002A75A6 /* GlucoTrack.xcdatamodeld in Sources */,
 				03A1AC432C304349008B20DC /* CalculationError.swift in Sources */,
 				03FE5B402C64459D008F1213 /* EditMedicationRecordScreen+ViewModel.swift in Sources */,
+				032F136D2C6BE85600DDBB7F /* WeightDataSortOrder.swift in Sources */,
+				032F13872C6D07AA00DDBB7F /* NotificationsService.swift in Sources */,
 				0321F93C2C311A8F00DA5A8D /* AddBloodSugarReadingScreen+ViewModel.swift in Sources */,
 				03F23C832C6B18590043FF1A /* MedicationRecordSortOrder.swift in Sources */,
 				032320832C62AD9300A2C1F6 /* MedicationCell+ViewModel.swift in Sources */,
+				032F137A2C6C3C5600DDBB7F /* WeightCell+ViewModel.swift in Sources */,
 				0323207E2C62A43000A2C1F6 /* GlucoseReadingCell+ViewModel.swift in Sources */,
+				032F13842C6C6F3700DDBB7F /* EditWeightScreen.swift in Sources */,
+				032F13782C6C036500DDBB7F /* WeightCell.swift in Sources */,
 				0395B2092C5194BB0070AC20 /* MedicationsScreen.swift in Sources */,
 				0384D7D82C09F73B009C419F /* BloodGlucoseMeasurementsScreen.swift in Sources */,
 				032320872C62AF9300A2C1F6 /* MedicationDataList.swift in Sources */,

@@ -84,7 +84,7 @@ extension EditMedicationRecordScreen {
                 try dataService.modifyMedicationRecord(oldRecord: record, doseAmountTaken: doseTaken, doseUnit: doseUnit, notes: notes, medication: medication)
                 shouldDismiss = true
             } catch {
-                self.error = GTError.insertMedRecordError
+                self.error = GTError.updateMedRecordError
                 isShowingError = true
             }
         }
