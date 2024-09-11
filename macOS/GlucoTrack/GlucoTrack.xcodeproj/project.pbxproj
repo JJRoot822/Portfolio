@@ -26,7 +26,6 @@
 		032F137F2C6C4AAD00DDBB7F /* AddWeightScreen+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F137E2C6C4AAD00DDBB7F /* AddWeightScreen+ViewModel.swift */; };
 		032F13822C6C6AF600DDBB7F /* EditWeightScreen+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F13812C6C6AF600DDBB7F /* EditWeightScreen+ViewModel.swift */; };
 		032F13842C6C6F3700DDBB7F /* EditWeightScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F13832C6C6F3700DDBB7F /* EditWeightScreen.swift */; };
-		032F13872C6D07AA00DDBB7F /* NotificationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F13862C6D07AA00DDBB7F /* NotificationsService.swift */; };
 		032F13892C6DA00300DDBB7F /* GTReminder+CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F13882C6DA00300DDBB7F /* GTReminder+CoreDataHelper.swift */; };
 		034C6DD92C2E174300E2BE89 /* CreateActionsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C6DD82C2E174300E2BE89 /* CreateActionsMenu.swift */; };
 		0350BDD32C3B9381005B0632 /* EditBloodSugarReadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0350BDD22C3B9381005B0632 /* EditBloodSugarReadingScreen.swift */; };
@@ -111,7 +110,6 @@
 		032F137E2C6C4AAD00DDBB7F /* AddWeightScreen+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddWeightScreen+ViewModel.swift"; sourceTree = "<group>"; };
 		032F13812C6C6AF600DDBB7F /* EditWeightScreen+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditWeightScreen+ViewModel.swift"; sourceTree = "<group>"; };
 		032F13832C6C6F3700DDBB7F /* EditWeightScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWeightScreen.swift; sourceTree = "<group>"; };
-		032F13862C6D07AA00DDBB7F /* NotificationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsService.swift; sourceTree = "<group>"; };
 		032F13882C6DA00300DDBB7F /* GTReminder+CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GTReminder+CoreDataHelper.swift"; sourceTree = "<group>"; };
 		034C6DD82C2E174300E2BE89 /* CreateActionsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateActionsMenu.swift; sourceTree = "<group>"; };
 		0350BDD22C3B9381005B0632 /* EditBloodSugarReadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBloodSugarReadingScreen.swift; sourceTree = "<group>"; };
@@ -289,14 +287,6 @@
 			path = EditWeightScreen;
 			sourceTree = "<group>";
 		};
-		032F13852C6D078300DDBB7F /* Notifications */ = {
-			isa = PBXGroup;
-			children = (
-				032F13862C6D07AA00DDBB7F /* NotificationsService.swift */,
-			);
-			path = Notifications;
-			sourceTree = "<group>";
-		};
 		0350BDD02C3B9269005B0632 /* AddBloodSugarReadingScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -432,7 +422,6 @@
 		03D987A12C03886B002A75A6 /* GlucoTrack */ = {
 			isa = PBXGroup;
 			children = (
-				032F13852C6D078300DDBB7F /* Notifications */,
 				03D987A62C03886C002A75A6 /* Assets.xcassets */,
 				0317C8DB2C63C5570074EB94 /* Authentication */,
 				032F13722C6BFCBA00DDBB7F /* Controls */,
@@ -722,7 +711,6 @@
 				03A1AC432C304349008B20DC /* CalculationError.swift in Sources */,
 				03FE5B402C64459D008F1213 /* EditMedicationRecordScreen+ViewModel.swift in Sources */,
 				032F136D2C6BE85600DDBB7F /* WeightDataSortOrder.swift in Sources */,
-				032F13872C6D07AA00DDBB7F /* NotificationsService.swift in Sources */,
 				0321F93C2C311A8F00DA5A8D /* AddBloodSugarReadingScreen+ViewModel.swift in Sources */,
 				03F23C832C6B18590043FF1A /* MedicationRecordSortOrder.swift in Sources */,
 				032320832C62AD9300A2C1F6 /* MedicationCell+ViewModel.swift in Sources */,

@@ -1,0 +1,45 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Alphabet" : {
+
+    },
+    "Contractions" : {
+
+    },
+    "iBraille" : {
+
+    },
+    "Loading..." : {
+
+    },
+    "Numbers" : {
+
+    },
+    "Punctuation" : {
+
+    },
+    "Punctuation and Indicators" : {
+
+    },
+    "Search for a Contraction" : {
+
+    },
+    "Search for a Letter" : {
+
+    },
+    "Search for a Number" : {
+
+    },
+    "Search for a Short Form Word" : {
+
+    },
+    "Search for an Indicator or Punctuation" : {
+
+    },
+    "Short Form Words" : {
+
+    }
+  },
+  "version" : "1.0"
+}

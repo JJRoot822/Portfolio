@@ -9,18 +9,6 @@ import SwiftUI
 import CoreData
 import LocalAuthentication
 
-struct RemindersScreen: View {
-    var body: some View {
-        Text("")
-    }
-}
-
-struct AddReminderScreen: View {
-    var body: some View {
-        Text("")
-    }
-}
-
 struct ContentView: View {
     @EnvironmentObject var globalState: GlobalState
     
@@ -53,11 +41,6 @@ struct ContentView: View {
                     
                     Tab("Weight", systemImage: "scalemass") {
                         WeightMeasurementsScreen()
-                            .id(id)
-                    }
-                    
-                    Tab("Reminders", systemImage: "alarm") {
-                        RemindersScreen()
                             .id(id)
                     }
                 }

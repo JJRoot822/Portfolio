@@ -27,10 +27,6 @@ struct CreateActionsMenu: View {
             Button("Add a Weight Record") {
                 globalState.showAddWeightRecord = true
             }
-            
-            Button("Add Medication Reminder") {
-                globalState.showAddMedicationReminder = true
-            }
         }) {
             Label("Add", systemImage: "plus")
         }

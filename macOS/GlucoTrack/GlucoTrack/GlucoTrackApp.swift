@@ -66,11 +66,6 @@ struct GlucoTrackApp: App {
                         globalState.showAddWeightRecord = true
                     }
                     .keyboardShortcut("R", modifiers: [ .command, .shift ])
-                    
-                    Button("Add Medication Reminder") {
-                        globalState.showAddMedicationReminder = true
-                    }
-                    .keyboardShortcut("R", modifiers: [ .command, .option, .shift ])
                 }) {
                     Text("New...")
                 }

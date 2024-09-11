@@ -15,4 +15,8 @@ extension GTReminder {
     var reminderNotificationId: String {
         return notificationId ?? UUID().uuidString
     }
+    
+    var reminderScheduledDate: Date {
+        return scheduled ?? Date()
+    }
 }

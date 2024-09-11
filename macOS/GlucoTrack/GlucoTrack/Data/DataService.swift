@@ -149,7 +149,7 @@ class DataService {
             throw GTError.updateWeightError
         }
     }
-    
+
     private func delete<T: NSManagedObject>(_ object: T) {
         context.delete(object)
     }
@@ -180,7 +180,7 @@ class DataService {
         } catch {
             rollbackUnsavedChanges()
             
-            throw GTError.deleteGlucoseError
+            throw GTError.deleteMedicationError
         }
     }
     
@@ -205,6 +205,20 @@ class DataService {
             rollbackUnsavedChanges()
             
             throw GTError.deleteWeightError
+        }
+    }
+    
+    func addReminder(notificationId: UUID, schedule: Date, isRecurring: Bool) throws {
+        let reminder = GTReminder(context: context)
+        reminder.id = notificationId
+        reminder.notificationId = notificationId.uuidString
+        reminder.scheduled = schedule
+        reminder.recurring = isRecurring
+        
+        do {
+            try saveChanges()
+        } catch {
+            throw GTError.insertReminderError
         }
     }
 }

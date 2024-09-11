@@ -12,8 +12,9 @@ enum GTError: LocalizedError, Identifiable {
          insertMedicationError, updateMedicationError, deleteMedicationError,
          insertMedRecordError, updateMedRecordError, deleteMedRecordError,
          insertWeightError, updateWeightError, deleteWeightError,
-         insertReminderError, updateReminderError, deleteReminderError,
-         saveError, invalidMedicationEntryError, notAuthorizedError
+         insertReminderError, deleteReminderError,
+         saveError, invalidMedicationEntryError, notAuthorizedError,
+         authorizationRequestFailedError
     
     var id: Int {
         switch self {
@@ -43,7 +44,7 @@ enum GTError: LocalizedError, Identifiable {
             return 12
         case .insertReminderError:
             return 13
-        case .updateReminderError:
+        case .authorizationRequestFailedError:
             return 14
         case .deleteReminderError:
             return 15
@@ -84,8 +85,8 @@ enum GTError: LocalizedError, Identifiable {
             return"Something went wrong when trying to remove the weight data. Please try again later."
         case .insertReminderError:
             return "Something went wrong when trying to create a reminder. Please try again later."
-        case .updateReminderError:
-            return "Something went wrong when tring to update the reminder. Please try again later."
+        case .authorizationRequestFailedError:
+            return "Something went wrong when trying to request permission for GlucoTrack to send you notifications."
         case .deleteReminderError:
             return "Something went wrong when trying to remove the reminder. Please try again later."
         case .saveError:
@@ -125,8 +126,8 @@ enum GTError: LocalizedError, Identifiable {
             return "Failed to Remove Weight Data"
         case .insertReminderError:
             return "Failed to Create Reminder"
-        case .updateReminderError:
-            return "Failed to Update Reminder"
+        case .authorizationRequestFailedError:
+            return "Failed to Request Permission for Notifications"
         case .deleteReminderError:
             return "Failed to Remove Reminder"
         case .saveError:
