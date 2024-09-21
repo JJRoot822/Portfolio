@@ -16,8 +16,6 @@ struct SettingsScreen: View {
     @AppStorage(Constants.inRangeUpperBoundKey) var inRangeUpperBound: Double = 120.0
     @AppStorage(Constants.tooLowUpperBoundKey) var tooLowUpperBound: Double = 65.0
     @AppStorage(Constants.tooHighLowerBoundKey) var tooHighLowerBound: Double = 160.0
-    @AppStorage(Constants.bloodGlucoseUnitKey) var bloodGlucoseUnit = "mg/dL"
-    @AppStorage(Constants.weightUnitKey) var weightUnit = "lbs"
     
     let formatter: NumberFormatter = {
         let formatter = NumberFormatter()
@@ -30,23 +28,38 @@ struct SettingsScreen: View {
     
     var body: some View {
         Form {
-            TextField("Lower Bound of In-Range Blood Sugar Levels", value: $inRangeLowerBound, formatter: formatter)
-            TextField("Upper Bound of In-Range Blood Sugar Levels", value: $inRangeUpperBound, formatter: formatter)
-            TextField("Upper Bound of Too Low Blood Sugar Levels", value: $tooLowUpperBound, formatter: formatter)
-            TextField("Lower Bound of Too High Blood Sugar Levels", value: $tooHighLowerBound, formatter: formatter)
-            
-            Picker("Unit of Measurement for Blood Sugar Levels", selection: $bloodGlucoseUnit) {
-                Text("Milligrams Per Deciliter").tag("mg/dL")
-                Text("Millimoles Per Liter").tag("mmol/L")
+            HStack {
+                TextField("Lower Bound of In-Range Blood Sugar Levels", value: $inRangeLowerBound, formatter: formatter)
+                
+                HSlider(value: $inRangeLowerBound, label: "Lower Bound of In-Range Blood Sugar Levels", min: tooLowUpperBound + 0.1, max: inRangeUpperBound - 0.1)
             }
             
-            Picker("Unit of Measurement for Weight", selection: $weightUnit) {
-                Text("Pounds").tag("lbs")
-                Text("Kilograms").tag("kg")
+            HStack {
+                TextField("Upper Bound of In-Range Blood Sugar Levels", value: $inRangeUpperBound, formatter: formatter)
+                
+                HSlider(value: $inRangeUpperBound, label: "Upper Bound of In-Range Blood Sugar Levels", min: inRangeLowerBound + 0.1, max: tooHighLowerBound - 0.1)
             }
             
-            Button("Done", action: close)
+            HStack {
+                TextField("Upper Bound of Too Low Blood Sugar Levels", value: $tooLowUpperBound, formatter: formatter)
+                
+                HSlider(value: $tooLowUpperBound, label: "Upper Bound of Too Low Blood Sugar Levels", min: 0, max: inRangeLowerBound - 0.1)
+            }
+            
+            HStack {
+                TextField("Lower Bound of Too High Blood Sugar Levels", value: $tooHighLowerBound, formatter: formatter)
+            
+                HSlider(value: $tooHighLowerBound, label: "Lower Bound of Too High Blood Sugar Levels", min: inRangeUpperBound + 0.1, max: 750)
+            }
+            
+            HStack {
+                Spacer()
+                Button("Reset Defaults", action: reset)
+                Button("Done", action: close)
+            }
         }
+        .padding(20)
+        .presentationSizing(.fitted)
         .alert(isPresented: $isShowingError) {
             Alert(title: Text("Error: Blood sugar range limits are invalid"), 
                   message: Text(Constants.invalidRangesErrorMessage),

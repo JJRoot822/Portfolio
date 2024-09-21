@@ -9,9 +9,20 @@ import SwiftUI
 
 struct WeightMeasurementsScreen: View {
     @State private var sortOrder: WeightDataSortOrder = .dateWeighedAscending
+    @State private var filter: WeightUnit = .pounds
     
     var body: some View {
-        WeightDataList(sortOrder: sortOrder)
+        Picker("Weight Unit", selection: $filter) {
+            Text("Pounds").tag(WeightUnit.pounds)
+            Text("Kilograms").tag(WeightUnit.kilograms)
+            Text("Stone").tag(WeightUnit.stone)
+        }
+        .pickerStyle(.segmented)
+        
+        VSplitView {
+            WeightDataList(sortOrder: sortOrder, filter: filter)
+            WeightDataChart(filter: filter)
+        }
             .toolbar {
                 Picker("Weight Sort Order", selection: $sortOrder) {
                     Text("Date Weighed (Ascending)").tag(WeightDataSortOrder.dateWeighedAscending)

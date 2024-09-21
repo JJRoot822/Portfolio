@@ -55,6 +55,16 @@ struct ContentView: View {
                 }) {
                     AddMedicationScreen()
                 }
+                .sheet(isPresented: $globalState.showAddMedConsumptionRecord, onDismiss: {
+                    id = UUID()
+                }) {
+                    AddMedicationRecordScreen()
+                }
+                .sheet(isPresented: $globalState.showAddWeightRecord, onDismiss: {
+                    id = UUID()
+                }) {
+                    AddWeightScreen()
+                }
                 .toolbar {
                     CreateActionsMenu()
                 }
