@@ -8,7 +8,7 @@
 import Foundation
 
 struct BrailleDictionaryEntry: Decodable, Identifiable {
-    let id: UUID = UUID()
+    var id: UUID = UUID()
     var name: String
     var dotCombinations: [[Int]]
     var spellOut: Bool
