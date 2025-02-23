@@ -60,6 +60,14 @@ class DataController {
         try save()
     }
     
+    func rollback() {
+        let context = container.viewContext
+        
+        if context.hasChanges {
+            context.rollback()
+        }
+    }
+    
     func tags(searchTerm: String = "") -> [Tag] {
         let request = Tag.fetchRequest()
         let searchPredicate = NSPredicate(format: "title contains %@", searchTerm)
@@ -73,10 +81,15 @@ class DataController {
             request.predicate = searchPredicate
         }
         
-        let tags = (try? container.viewContext.fetch(request)) ?? []
-    
+        var tags = (try? container.viewContext.fetch(request)) ?? []
+        
         if request.predicate != nil {
             return tags.filter { !$0.tagTitle.contains("All") }
+        }
+        
+        if let index = tags.firstIndex(where: { $0.tagTitle.contains("All") }),
+               index > 0 {
+            tags.move(fromOffsets: IndexSet(integer: index), toOffset: 0)
         }
         
         return tags

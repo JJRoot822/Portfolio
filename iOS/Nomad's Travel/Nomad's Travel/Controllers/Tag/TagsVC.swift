@@ -65,6 +65,29 @@ class TagsVC: UITableViewController, CreateTagDelegate {
         loadTags()
         tableView.refreshControl?.endRefreshing()
     }
+
+    func deleteTag(_ tag: Tag) -> Bool {
+        do {
+            try dataController.delete(tag)
+            tags.removeAll { $0 == tag }
+            
+            loadTags()
+            
+            return true
+        } catch {
+            let alert = UIAlertController(title: "Failed to Delete the Tag", message: "Something went wrong when trying to delete the tag. Please try again later.", preferredStyle: .alert)
+            alert.addAction(.init(title: "Ok", style: .default))
+            present(alert, animated: true)
+            
+            dataController.rollback()
+            
+            return false
+        }
+    }
+
+    func openEditTagSheet(tag: Tag) {
+        
+    }
     
     @objc private func openAddTagSheet() {
         let addTagVC = CreateTagVC()
