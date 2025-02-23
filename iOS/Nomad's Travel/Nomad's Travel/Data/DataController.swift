@@ -34,4 +34,51 @@ class DataController {
             try container.viewContext.save()
         }
     }
+    
+    func createTag(title: String, color: String) throws {
+        let tag = Tag(context: container.viewContext)
+        tag.tagId = UUID()
+        tag.tagTitle = title
+        tag.tagColor = color
+        tag.tagCreatedAt = .now
+        tag.tagLastModifiedAt = .now
+        
+        try save()
+    }
+    
+    func update(_ tag: Tag, title: String, color: String) throws {
+        tag.tagTitle = title
+        tag.tagColor = color
+        tag.tagLastModifiedAt = .now
+    
+        try save()
+    }
+    
+    func delete(_ object: NSManagedObject) throws {
+        container.viewContext.delete(object)
+        
+        try save()
+    }
+    
+    func tags(searchTerm: String = "") -> [Tag] {
+        let request = Tag.fetchRequest()
+        let searchPredicate = NSPredicate(format: "title contains %@", searchTerm)
+        let sortDescriptor = SortDescriptor(\Tag.title, order: .forward)
+        
+        request.sortDescriptors = [
+            NSSortDescriptor(sortDescriptor)
+        ]
+        
+        if !searchTerm.isEmpty {
+            request.predicate = searchPredicate
+        }
+        
+        let tags = (try? container.viewContext.fetch(request)) ?? []
+    
+        if request.predicate != nil {
+            return tags.filter { !$0.tagTitle.contains("All") }
+        }
+        
+        return tags
+    }
 }

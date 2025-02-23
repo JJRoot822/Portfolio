@@ -9,10 +9,15 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
+    let dataController = DataController()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        let tagsCount = try! dataController.container.viewContext.count(for: Tag.fetchRequest())
+
+        if tagsCount == 0 {
+            try! dataController.createTag(title: "All", color: "clear")
+        }
+        
         return true
     }
 

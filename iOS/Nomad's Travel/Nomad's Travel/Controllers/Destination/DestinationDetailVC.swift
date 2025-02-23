@@ -1,5 +1,5 @@
 //
-//  LocationDetailVC.swift
+//  DestinationDetailVC.swift
 //  Nomad's Travel
 //
 //  Created by Joshua Root on 2/19/25.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LocationDetailVC: UIViewController {
+class DestinationDetailVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

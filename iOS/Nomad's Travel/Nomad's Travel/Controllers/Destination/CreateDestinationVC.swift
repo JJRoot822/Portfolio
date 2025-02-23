@@ -1,5 +1,5 @@
 //
-//  SidebarVC.swift
+//  CreateDestinationVC.swift
 //  Nomad's Travel
 //
 //  Created by Joshua Root on 2/19/25.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SidebarVC: UIViewController {
+class CreateDestinationVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
