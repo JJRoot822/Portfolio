@@ -1,14 +1,12 @@
 //
 //  Constants.swift
-//  Nomad's Travel
+//  NomadTravel
 //
-//  Created by Joshua Root on 2/19/25.
+//  Created by Joshua Root on 2/26/25.
 //
 
 import UIKit
 
 class Constants {
-    static let colors: [UIColor] = TagColor.uiColors()
-    static let colorNames: [String] = TagColor.colorNames()
-    static let colorAssetNames: [String] = TagColor.colorAssetNames()
+	static let selectedTabKey = "selected_tab"
 }
