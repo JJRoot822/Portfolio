@@ -17,7 +17,7 @@ struct DestinationPriorityPickerView: View {
 		Picker("Priority", selection: $selection) {
 			ForEach(DestinationPriority.allCases, id: \.rawValue) { priority in
 				if !exclude.contains(priority) {
-					Text(priority.rawValue).tag(DestinationPriority.intValue(for: priority))
+					Text(priority.rawValue).tag(priority)
 				}
 			}
 		}
@@ -28,7 +28,7 @@ struct DestinationPriorityPickerView: View {
 		Picker("Priority", selection: $selection) {
 			ForEach(DestinationPriority.allCases, id: \.rawValue) { priority in
 				if !exclude.contains(priority) {
-					Text(priority.rawValue).tag(DestinationPriority.intValue(for: priority))
+					Text(priority.rawValue).tag(priority)
 				}
 			}
 		}
