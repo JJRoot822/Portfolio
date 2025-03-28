@@ -42,11 +42,11 @@ class DestinationValidator {
 		return true
 	}
 	
-	static func validate(name: String, location: String, latitude: String, longitude: String) -> String? {
+	static func isValidDestination(name: String, location: String, latitude: String, longitude: String) -> Bool {
 		if isValidName(name) && isValidLocation(location) && isValidCoordinates(latitude: latitude, longitude: longitude) {
-			return nil
+			return true
 		}
 		
-		return "Name and location must not be left blank. If you enter coordinates, both latitude and longitude must have a numeric value, otherwise they must be empty."
+		return false
 	}
 }
