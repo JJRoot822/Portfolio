@@ -6,47 +6,6 @@
 //
 
 import SwiftUI
-import SwiftData
-
-@Observable
-class DestinationFormData {
-	var name: String = ""
-	var location: String = ""
-	var latitude: String = ""
-	var longitude: String = ""
-	var priority: DestinationPriority = .low
-	var visited: Bool = false
-	var image: UIImage? = nil
-	var notes: String = ""
-	
-	var isShowingSaveError: Bool = false
-	
-	func isValidDestination() -> Bool {
-		return DestinationValidator.isValidDestination(name: name, location: location, latitude: latitude, longitude: longitude)
-	}
-	
-	func save(context: ModelContext) {
-		let destination = Destination(
-			name: name,
-			location: location,
-			latitude: Double(latitude)!,
-			longitude: Double(longitude)!,
-			priority: DestinationPriority.intValue(for: priority),
-			visited: visited,
-			image: image?.jpegData(compressionQuality: 0.1),
-			notes: notes,
-			tags: []
-		)
-		
-		context.insert(destination)
-		
-		do {
-			try context.save()
-		} catch {
-			isShowingSaveError = true
-		}
-	}
-}
 
 struct AddDestinationView: View {
 	@Environment(\.modelContext) var context
