@@ -73,12 +73,12 @@ struct AddDestinationView: View {
 					.disabled(!destination.isValidDestination())
 				}
 			}
-			.alert("Failed to Save Destination", isPresented: $destination.isShowingSaveError) {
+			.alert(Constants.insertDestinationErrorTitle, isPresented: $destination.isShowingSaveError) {
 				Button("OK") {
 					destination.isShowingSaveError = false
 				}
 			} message: {
-				Text("Something went wrong when trying to save the destination data you entered. Please try again later.")
+				Text(Constants.insertDestinationErrorMessage)
 			}
 		}
 	}
