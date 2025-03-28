@@ -53,6 +53,8 @@ struct AddDestinationView: View {
 	@Environment(\.dismiss) var dismiss
 	
 	@State private var destination: DestinationFormData = DestinationFormData()
+
+	@FocusState private var focusedCoordinateField: CoordinateField?
 	
 	var body: some View {
 		NavigationStack {
@@ -61,10 +63,17 @@ struct AddDestinationView: View {
 					TextField("Name", text: $destination.name)
 					TextField("Location", text: $destination.location)
 					
-					NumericField("Latitude Coordinate", text: $destination.latitude)
-					NumericField("Longitude Coordinate", text: $destination.longitude)
+					TextField("Latitude Coordinate", text: $destination.latitude)
+						.accessibilityLabel(Text("Latitude Coordinate"))
+						.focused($focusedCoordinateField, equals: CoordinateField.latitude)
+						.keyboardType(.decimalPad)
+					
+					TextField("Longitude Coordinate", text: $destination.longitude)
+						.accessibilityLabel(Text("Longitude Coordinate"))
+						.focused($focusedCoordinateField, equals: CoordinateField.longitude)
+						.keyboardType(.decimalPad)
 				} footer: {
-					Text("Latitude and longitude are optional. Both must be either empty or populated, not just one.")
+					Text("Latitude and longitude fields are both optional. Both must be populated or empty. When Populated, only numbers with optional decimal points and negative signs are allowed.")
 				}
 				
 				Section {
@@ -79,6 +88,18 @@ struct AddDestinationView: View {
 			.navigationTitle(Text("Add Destination"))
 			.navigationBarTitleDisplayMode(.inline)
 			.toolbar {
+				if focusedCoordinateField != nil {
+					ToolbarItem(placement: .keyboard) {
+						HStack {
+							Spacer()
+							
+							Button("Done") {
+								focusedCoordinateField = nil
+							}
+						}
+					}
+				}
+				
 				ToolbarItem(placement: .cancellationAction) {
 					Button("Cancel", role: .cancel) {
 						dismiss()
