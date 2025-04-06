@@ -8,35 +8,13 @@
 import SwiftUI
 import CoreLocation
 
-final class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
+class LocationManager: ObservableObject {
 	@Published var userLocation: CLLocationCoordinate2D?
 	
 	var manager: CLLocationManager
 	
-	override init() {
+	init() {
 		self.manager = CLLocationManager()
-		
-		super.init()
-		
-		manager.delegate = self
-		manager.startUpdatingLocation()
-	}
-	
-	func checkAuthorization() {
-		switch manager.authorizationStatus {
-		case .authorizedWhenInUse:
-			userLocation = manager.location?.coordinate
-		default:
-			break
-		}
-	}
-	
-	func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-		checkAuthorization()
-	}
-	
-	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-		userLocation = locations.first?.coordinate
 	}
 	
 	func getLocationFromAddress(name: String, city: String, state: String?, country: String, zipCode: String) async throws -> CLLocation? {
