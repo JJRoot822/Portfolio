@@ -117,9 +117,6 @@ struct DestinationDetailView: View {
 		} message: {
 			Text(Constants.destinationGeocodingErrorMessage)
 		}
-		.onAppear {
-			locationManager.checkAuthorization()
-		}
 		.task {
 			await updateLocation()
 		}
