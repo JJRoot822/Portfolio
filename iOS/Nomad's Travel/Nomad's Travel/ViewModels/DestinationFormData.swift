@@ -13,9 +13,10 @@ class DestinationFormData {
 	var destination: Destination?
 	
 	var name: String
-	var location: String
-	var latitude: String
-	var longitude: String
+	var city: String
+	var state: String
+	var country: String
+	var zipCode: String
 	var priority: DestinationPriority
 	var visited: Bool
 	var image: UIImage?
@@ -27,9 +28,10 @@ class DestinationFormData {
 		self.destination = nil
 		
 		self.name = ""
-		self.location = ""
-		self.latitude = ""
-		self.longitude = ""
+		self.city = ""
+		self.state = ""
+		self.zipCode = ""
+		self.country = ""
 		self.priority = .low
 		self.visited = false
 		self.image = nil
@@ -42,9 +44,16 @@ class DestinationFormData {
 		self.destination = destination
 		
 		self.name = destination.name
-		self.location = destination.location
-		self.latitude = String(destination.latitude)
-		self.longitude = String(destination.longitude)
+		self.city = destination.city
+		self.country = destination.country
+		self.zipCode = destination.zipCode
+		
+		if let state = destination.state {
+			self.state = state
+		} else {
+			self.state = "None"
+		}
+		
 		self.priority = DestinationPriority.priority(for: destination.priority)
 		self.visited = destination.visited
 		self.notes = destination.notes
@@ -59,18 +68,30 @@ class DestinationFormData {
 	}
 	
 	func isValidDestination() -> Bool {
-		return DestinationValidator.isValidDestination(name: name, location: location, latitude: latitude, longitude: longitude)
+		return DestinationValidator.isValidDestination(name: name, city: city, country: country, zipCode: zipCode)
 	}
 	
 	func save(context: ModelContext) {
 		if let destination = destination {
+			destination.name = name
+			destination.city = city
+			destination.state = state == "None" ? nil : state
+			destination.country = country
+			destination.zipCode = zipCode
+			destination.visited = visited
+			destination.priority = DestinationPriority.intValue(for: priority)
+			destination.notes = notes
+			destination.lastModifiedAt = .now
+			destination.image = image?.jpegData(compressionQuality: 0.1)
+			
 			applyChanges(context: context)
 		} else {
 			let destination = Destination(
 				name: name,
-				location: location,
-				latitude: Double(latitude)!,
-				longitude: Double(longitude)!,
+				city: city,
+				state: state == "None" ? nil : state,
+				country: country,
+				zipCode: zipCode,
 				priority: DestinationPriority.intValue(for: priority),
 				visited: visited,
 				image: image?.jpegData(compressionQuality: 0.1),

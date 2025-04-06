@@ -13,10 +13,10 @@ struct EditDestinationView: View {
 	
 	@State private var destinationData: DestinationFormData
 
-	@FocusState private var focusedCoordinateField: CoordinateField?
+	@FocusState private var focusedField: DestinationField?
 
 	var destination: Destination
-
+	
 	init(destination: Destination) {
 		self.destination = destination
 		self._destinationData = State(wrappedValue: DestinationFormData(destination: destination))
@@ -27,19 +27,29 @@ struct EditDestinationView: View {
 			Form {
 				Section {
 					TextField("Name", text: $destinationData.name)
-					TextField("Location", text: $destinationData.location)
+						.focused($focusedField, equals: DestinationField.name)
+						.accessibilityLabel(Text("Name"))
 					
-					TextField("Latitude Coordinate", text: $destinationData.latitude)
-						.accessibilityLabel(Text("Latitude Coordinate"))
-						.focused($focusedCoordinateField, equals: CoordinateField.latitude)
-						.keyboardType(.decimalPad)
+					TextField("City", text: $destinationData.city)
+						.focused($focusedField, equals: DestinationField.city)
+						.accessibilityLabel(Text("City"))
 					
-					TextField("Longitude Coordinate", text: $destinationData.longitude)
-						.accessibilityLabel(Text("Longitude Coordinate"))
-						.focused($focusedCoordinateField, equals: CoordinateField.longitude)
-						.keyboardType(.decimalPad)
-				} footer: {
-					Text("Latitude and longitude fields are both optional. Both must be populated or empty. When Populated, only numbers with optional decimal points and negative signs are allowed.")
+					Picker("State", selection: $destinationData.state) {
+						Text("None").tag("None")
+						
+						ForEach(Constants.states, id: \.abbreviation) { state in
+							Text("\(state.abbreviation) - \(state.name)").tag(state.name)
+						}
+					}
+					
+					TextField("Country", text: $destinationData.country)
+						.focused($focusedField, equals: DestinationField.country)
+						.accessibilityLabel(Text("Country"))
+					
+					TextField("Zip Code", text: $destinationData.zipCode)
+						.focused($focusedField, equals: DestinationField.zipCode)
+						.keyboardType(.numberPad)
+						.accessibilityLabel(Text("Zip Code"))
 				}
 				
 				Section {
@@ -50,17 +60,22 @@ struct EditDestinationView: View {
 				Section {
 					DestinationPhotoPicker(selection: $destinationData.image)
 				}
+				
+				Section {
+					TextField("Additional Notes", text: $destinationData.notes, axis: .vertical)
+						.focused($focusedField, equals: DestinationField.notes )
+				}
 			}
-			.navigationTitle(Text("Edit Destination"))
+			.navigationTitle(Text("Add Destination"))
 			.navigationBarTitleDisplayMode(.inline)
 			.toolbar {
-				if focusedCoordinateField != nil {
+				if focusedField != nil {
 					ToolbarItem(placement: .keyboard) {
 						HStack {
 							Spacer()
 							
 							Button("Done") {
-								focusedCoordinateField = nil
+								focusedField = nil
 							}
 						}
 					}

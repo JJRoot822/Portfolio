@@ -11,49 +11,64 @@ struct AddDestinationView: View {
 	@Environment(\.modelContext) var context
 	@Environment(\.dismiss) var dismiss
 	
-	@State private var destination: DestinationFormData = DestinationFormData()
+	@State private var destinationData: DestinationFormData = DestinationFormData()
 
-	@FocusState private var focusedCoordinateField: CoordinateField?
-	
+	@FocusState private var focusedField: DestinationField?
+
 	var body: some View {
 		NavigationStack {
 			Form {
 				Section {
-					TextField("Name", text: $destination.name)
-					TextField("Location", text: $destination.location)
+					TextField("Name", text: $destinationData.name)
+						.focused($focusedField, equals: DestinationField.name)
+						.accessibilityLabel(Text("Name"))
 					
-					TextField("Latitude Coordinate", text: $destination.latitude)
-						.accessibilityLabel(Text("Latitude Coordinate"))
-						.focused($focusedCoordinateField, equals: CoordinateField.latitude)
-						.keyboardType(.decimalPad)
+					TextField("City", text: $destinationData.city)
+						.focused($focusedField, equals: DestinationField.city)
+						.accessibilityLabel(Text("City"))
 					
-					TextField("Longitude Coordinate", text: $destination.longitude)
-						.accessibilityLabel(Text("Longitude Coordinate"))
-						.focused($focusedCoordinateField, equals: CoordinateField.longitude)
-						.keyboardType(.decimalPad)
-				} footer: {
-					Text("Latitude and longitude fields are both optional. Both must be populated or empty. When Populated, only numbers with optional decimal points and negative signs are allowed.")
+					Picker("State", selection: $destinationData.state) {
+						Text("None").tag("None")
+						
+						ForEach(Constants.states, id: \.abbreviation) { state in
+							Text("\(state.abbreviation) - \(state.name)").tag(state.name)
+						}
+					}
+					
+					TextField("Country", text: $destinationData.country)
+						.focused($focusedField, equals: DestinationField.country)
+						.accessibilityLabel(Text("Country"))
+					
+					TextField("Zip Code", text: $destinationData.zipCode)
+						.focused($focusedField, equals: DestinationField.zipCode)
+						.keyboardType(.numberPad)
+						.accessibilityLabel(Text("Zip Code"))
 				}
 				
 				Section {
-					DestinationPriorityPickerView(selection: $destination.priority, style: .defaultPicker, exclude: [ .all ])
-					Toggle("Visited", isOn: $destination.visited)
+					DestinationPriorityPickerView(selection: $destinationData.priority, style: .defaultPicker, exclude: [ .all ])
+					Toggle("Visited", isOn: $destinationData.visited)
 				}
 				
 				Section {
-					DestinationPhotoPicker(selection: $destination.image)
+					DestinationPhotoPicker(selection: $destinationData.image)
+				}
+				
+				Section {
+					TextField("Additional Notes", text: $destinationData.notes, axis: .vertical)
+						.focused($focusedField, equals: DestinationField.notes )
 				}
 			}
 			.navigationTitle(Text("Add Destination"))
 			.navigationBarTitleDisplayMode(.inline)
 			.toolbar {
-				if focusedCoordinateField != nil {
+				if focusedField != nil {
 					ToolbarItem(placement: .keyboard) {
 						HStack {
 							Spacer()
 							
 							Button("Done") {
-								focusedCoordinateField = nil
+								focusedField = nil
 							}
 						}
 					}
@@ -67,18 +82,18 @@ struct AddDestinationView: View {
 				
 				ToolbarItem(placement: .confirmationAction) {
 					Button("Save") {
-						destination.save(context: context)
+						destinationData.save(context: context)
 						dismiss()
 					}
-					.disabled(!destination.isValidDestination())
+					.disabled(!destinationData.isValidDestination())
 				}
 			}
-			.alert(Constants.insertDestinationErrorTitle, isPresented: $destination.isShowingSaveError) {
+			.alert(Constants.updateDestinationErrorTitle, isPresented: $destinationData.isShowingSaveError) {
 				Button("OK") {
-					destination.isShowingSaveError = false
+					destinationData.isShowingSaveError = false
 				}
 			} message: {
-				Text(Constants.insertDestinationErrorMessage)
+				Text(Constants.updateDestinationErrorMessage)
 			}
 		}
 	}

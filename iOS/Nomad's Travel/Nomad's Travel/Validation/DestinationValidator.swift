@@ -12,41 +12,22 @@ class DestinationValidator {
 		return Validator.exists(name)
 	}
 	
-	static func isValidLocation(_ location: String) -> Bool {
-	return Validator.exists(location)
+	static func isValidZipCode(_ zipCode: String) -> Bool {
+		return Validator.exists(zipCode) && Validator.isNumeric(zipCode) && Validator.isValidLength(string: zipCode, length: 5)
 	}
 	
-	static func isValidCoordinates(latitude: String, longitude: String) -> Bool {
-		if Validator.bothExist(first: latitude, second: longitude) {
-			if !Validator.isDouble(latitude) && !Validator.isDouble(longitude) {
-				return false
-			} else {
-				if !Validator.isDouble(latitude) && Validator.isDouble(longitude) {
-					return false
-				}
-				
-				if Validator.isDouble(latitude) && !Validator.isDouble(longitude) {
-					return false
-				}
-			}
-		} else {
-			if Validator.exists(latitude) && !Validator.exists(longitude) {
-				return false
-			}
-			
-			if !Validator.exists(latitude) && Validator.exists(longitude) {
-				return false
-			}
-		}
-		
-		return true
+	static func isValidCountry(_ country: String) -> Bool {
+		return Validator.exists(country)
 	}
 	
-	static func isValidDestination(name: String, location: String, latitude: String, longitude: String) -> Bool {
-		if isValidName(name) && isValidLocation(location) && isValidCoordinates(latitude: latitude, longitude: longitude) {
-			return true
-		}
-		
-		return false
+	static func isValidCity(_ city: String) -> Bool {
+		return Validator.exists(city)
+	}
+	
+	static func isValidDestination(name: String, city: String, country: String, zipCode: String) -> Bool {
+		return isValidName(name) &&
+			   isValidCity(city) &&
+			   isValidCountry(country) &&
+			   isValidZipCode(zipCode)
 	}
 }

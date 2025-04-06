@@ -19,4 +19,18 @@ class Validator {
 	static func bothExist(first: String, second: String) -> Bool {
 		return exists(first) && exists(second)
 	}
+	
+	static func isNumeric(_ string: String) -> Bool {
+		for character in string {
+			if !character.isNumber {
+				return false
+			}
+		}
+		
+		return true
+	}
+	
+	static func isValidLength(string: String, length: Int) -> Bool {
+		return string.count == length
+	}
 }

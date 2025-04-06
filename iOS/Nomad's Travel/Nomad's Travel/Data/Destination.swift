@@ -7,14 +7,16 @@
 
 import Foundation
 import SwiftData
+import CoreLocation
 
 @Model
 class Destination {
 	var id: UUID
 	var name: String
-	var location: String
-	var latitude: Double
-	var longitude: Double
+	var city: String
+	var state: String?
+	var country: String
+	var zipCode: String
 	var priority: Int
 	var visited: Bool
 	@Attribute(.externalStorage) var image: Data?
@@ -23,12 +25,27 @@ class Destination {
 	var lastModifiedAt: Date
 	var tags: [Tag]
 	
-	init(id: UUID = UUID(), name: String, location: String, latitude: Double, longitude: Double, priority: Int, visited: Bool, image: Data? = nil, notes: String, createdAt: Date = .now, lastModifiedAt: Date = .now, tags: [Tag]) {
+	init(
+		id: UUID = UUID(),
+		name: String,
+		city: String,
+		state: String?,
+		country: String,
+		zipCode: String,
+		priority: Int,
+		visited: Bool,
+		image: Data? = nil,
+		notes: String,
+		createdAt: Date = .now,
+		lastModifiedAt: Date = .now,
+		tags: [Tag]
+	) {
 		self.id = id
 		self.name = name
-		self.location = location
-		self.latitude = latitude
-		self.longitude = longitude
+		self.city = city
+		self.state = state
+		self.country = country
+		self.zipCode = zipCode
 		self.priority = priority
 		self.visited = visited
 		self.image = image
@@ -36,5 +53,9 @@ class Destination {
 		self.createdAt = createdAt
 		self.lastModifiedAt = lastModifiedAt
 		self.tags = tags
+	}
+	
+	func getCoordinates(_ manager: LocationManager) async throws -> CLLocationCoordinate2D? {
+		return try await manager.getLocationFromAddress(name: name, city: city, state: state, country: country, zipCode: zipCode)?.coordinate
 	}
 }
