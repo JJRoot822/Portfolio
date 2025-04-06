@@ -22,10 +22,15 @@ struct DestinationCellContentView: View {
 				Text(destination.name)
 					.font(.headline)
 				
-				Text(destination.location)
-					.font(.subheadline)
-					.foregroundStyle(.secondary)
-				
+				if let state = destination.state {
+					Text("\(destination.city), \(state) \(destination.country)")
+						.font(.subheadline)
+						.foregroundStyle(.secondary)
+				} else {
+					Text("\(destination.city), \(destination.country)")
+						.font(.subheadline)
+						.foregroundStyle(.secondary)
+				}
 				Text("\(destinationPriority) Priority")
 					.font(.subheadline)
 					.foregroundStyle(.secondary)

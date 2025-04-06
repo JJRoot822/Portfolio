@@ -10,15 +10,13 @@ import UIKit
 enum DestinationSortOrder: String, CaseIterable {
     case nameAscending = "Name (Ascending)",
 		 nameDescending = "Name (Descending)",
-		 locationAscending = "Location (Ascending)",
-		 locationDescending = "Location (Descending)",
 		 dateCreatedAscending = "Creation Date (Ascending)",
 		 dateCreatedDescending = "Creation Date (Descending)",
 		 modifiecationDateAscending = "Modification Date (Ascending)",
 		 modificationDateDescending = "Modification Date (Descending)"
 	
 	static var allCases: [DestinationSortOrder] {
-		return [ .nameAscending, .nameDescending, .locationAscending, .locationDescending, .dateCreatedAscending, .dateCreatedDescending, .modifiecationDateAscending, .modificationDateDescending ]
+		return [ .nameAscending, .nameDescending, .dateCreatedAscending, .dateCreatedDescending, .modifiecationDateAscending, .modificationDateDescending ]
 	}
 	
 	static func sortDescriptor(for order: DestinationSortOrder) -> SortDescriptor<Destination> {
@@ -27,10 +25,6 @@ enum DestinationSortOrder: String, CaseIterable {
 			return SortDescriptor(\.name, order: .forward)
 		case .nameDescending:
 			return SortDescriptor(\.name, order: .reverse)
-		case .locationAscending:
-			return SortDescriptor(\.location, order: .forward)
-		case .locationDescending:
-			return SortDescriptor(\.location, order: .reverse)
 		case .dateCreatedAscending:
 			return SortDescriptor(\.createdAt, order: .forward)
 		case .dateCreatedDescending:

@@ -25,15 +25,23 @@ struct DestinationsListView: View {
 		self.tag = tag
 		
 		let searchAllPredicate = #Predicate<Destination> { destination in
-			return destination.name.localizedStandardContains(searchTerm) || destination.location.localizedStandardContains(searchTerm)
+			return destination.name.localizedStandardContains(searchTerm) ||
+				   destination.city.localizedStandardContains(searchTerm) ||
+				   destination.country.localizedStandardContains(searchTerm)
 		}
 		
 		let searchVisitedPredicate = #Predicate<Destination> { destination in
-			return destination.name.localizedStandardContains(searchTerm) || destination.location.localizedStandardContains(searchTerm) && destination.visited == true
+			return destination.name.localizedStandardContains(searchTerm) ||
+				   destination.city.localizedStandardContains(searchTerm) ||
+				   destination.country.localizedStandardContains(searchTerm) &&
+				   destination.visited == true
 		}
 		
 		let searchNotVisitedPredicate = #Predicate<Destination> { destination in
-			return destination.name.localizedStandardContains(searchTerm) || destination.location.localizedStandardContains(searchTerm) && destination.visited == false
+			return destination.name.localizedStandardContains(searchTerm) ||
+				   destination.city.localizedStandardContains(searchTerm) ||
+				   destination.country.localizedStandardContains(searchTerm) &&
+				   destination.visited == false
 		}
 		
 		let visitedPredicate = #Predicate<Destination> { destination in
