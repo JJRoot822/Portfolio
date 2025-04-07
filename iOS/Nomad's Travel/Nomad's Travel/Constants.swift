@@ -19,12 +19,21 @@ class Constants {
 	static let updateDestinationErrorTitle = "Failed to Update the Destination"
 	static let updateDestinationErrorMessage = "Something went wrong when trying to update the specified destination. Please try again later."
 	
-	static let insertDestinationErrorTitle = "Failed to Add Destination"
+	static let insertDestinationErrorTitle = "Failed to Create Destination"
 	static let insertDestinationErrorMessage = "Something went wrong when trying to add a destination with the data you provided. Please try again later."
 	
 	static let destinationGeocodingErrorTitle = "Unable to Get Location Data"
 	static let destinationGeocodingErrorMessage = "Something went wrong when trying to get the information necessary to display this destination on the map. Please try again later."
 	
+	
+	static let insertTagErrorTitle = "Failed to Create Tag"
+	static let insertTagErrorMessage = "Something went wrong when trying to add a new tag with the data you provided. Please try again later."
+
+	static let updateTagErrorTitle = "Failed to Update Tag"
+	static let updateTagErrorMessage = "Something went wrong when trying to update the specified tag. Please try again later."
+
+	static let deleteTagErrorTitle = "Failed to Delete Tag"
+	static let deleteTagErrorMessage = "Something went wrong when trying to delete the specified tag. Please try again later."
 	
 static let states: [USState] = [
 		USState(abbreviation: "AL", name: "Alabama"),

@@ -43,7 +43,7 @@ struct DestinationCellView: View {
 			.tint(visitedToggleColor)
 			.alert(Constants.updateDestinationVisitedStatusErrorTitle, isPresented: $isShowingDeleteError) {
 				Button("OK") {
-					isShowingDeleteError = false
+					isShowingEditError = false
 				}
 			} message: {
 				Text(Constants.updateDestinationVisitedStatusErrorMessage)

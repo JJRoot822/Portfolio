@@ -1,20 +1,27 @@
 //
-//  AddDestinationView.swift
+//  EditDestinationView.swift
 //  Nomad's Travel
 //
-//  Created by Joshua Root on 3/27/25.
+//  Created by Joshua Root on 3/28/25.
 //
 
 import SwiftUI
 
-struct AddDestinationView: View {
+struct EditDestinationView: View {
 	@Environment(\.modelContext) var context
 	@Environment(\.dismiss) var dismiss
 	
-	@State private var destinationData: DestinationFormData = DestinationFormData()
+	@State private var destinationData: DestinationFormData
 
 	@FocusState private var focusedField: DestinationField?
 
+	var destination: Destination
+	
+	init(destination: Destination) {
+		self.destination = destination
+		self._destinationData = State(wrappedValue: DestinationFormData(destination: destination))
+	}
+	
 	var body: some View {
 		NavigationStack {
 			Form {
@@ -86,6 +93,11 @@ struct AddDestinationView: View {
 						dismiss()
 					}
 					.disabled(!destinationData.isValidDestination())
+				}
+			}
+			.onChange(of: destinationData.shouldDismiss) {
+				if destinationData.shouldDismiss {
+					dismiss()
 				}
 			}
 			.alert(Constants.updateDestinationErrorTitle, isPresented: $destinationData.isShowingSaveError) {

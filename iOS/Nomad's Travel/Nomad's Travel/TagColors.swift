@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct TagColor: Identifiable {
+struct TagColor: Identifiable, Hashable {
     let id = UUID()
     var name: String
     var resourceName: String
@@ -33,4 +33,13 @@ class TagColors {
     static let lightBlue = TagColor(name: "Light Blue", resourceName: "NTLightBlue", color: .ntLightBlue)
     static let purple = TagColor(name: "Purple", resourceName: "NTPurple", color: .ntPurple)
     static let yellow = TagColor(name: "Yellow", resourceName: "NTYellow", color: .ntYellow)
+	
+	static let all: [TagColor] = [
+		TagColors.blue, TagColors.brown, TagColors.cyan,
+		TagColors.darkBlue, TagColors.darkGray, TagColors.gold,
+		TagColors.gray, TagColors.green, TagColors.indigo,
+		TagColors.lightBlue, TagColors.midnight, TagColors.mint,
+		TagColors.orange, TagColors.pink, TagColors.purple,
+		TagColors.red, TagColors.teal
+	]
 }

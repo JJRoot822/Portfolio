@@ -1,5 +1,5 @@
 //
-//  AllDestinationsSidebarView.swift
+//  AllDestinationsListView.swift
 //  Nomad's Travel
 //
 //  Created by Joshua Root on 3/26/25.
@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftData
 
-struct AllDestinationsSidebarView: View {
+struct AllDestinationsListView: View {
 	@State private var selectedSort: DestinationSortOrder = .nameAscending
 	@State private var selectedFilter: DestinationFilter = .all
 	@State private var selectedPriority: DestinationPriority = .all

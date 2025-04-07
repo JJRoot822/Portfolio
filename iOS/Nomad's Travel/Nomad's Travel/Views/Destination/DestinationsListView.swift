@@ -92,7 +92,7 @@ struct DestinationsListView: View {
 
 	var body: some View {
 		List {
-			ForEach(destinations, id: \.id) { destination in
+			ForEach(filteredDestinations, id: \.id) { destination in
 				DestinationCellView(destination: destination)
 			}
 		}

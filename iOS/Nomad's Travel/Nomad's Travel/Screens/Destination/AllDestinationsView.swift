@@ -6,12 +6,11 @@
 //
 
 import SwiftUI
-import SwiftData
 
 struct AllDestinationsView: View {
 	var body: some View {
 		NavigationSplitView {
-			AllDestinationsSidebarView()
+			AllDestinationsListView()
 		} detail: {
 			ContentUnavailableView("No Destination Selected", systemImage: "airplane")
 		}

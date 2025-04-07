@@ -34,7 +34,7 @@ struct NomadsTravelApp: App {
 				}
 				
 				Tab("Tags", systemImage: "tag", value: 1) {
-					Text("Tags List Goes Here...")
+					AllTagsView()
 				}
 			}
 			.tabViewStyle(.tabBarOnly)

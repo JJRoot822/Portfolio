@@ -5,7 +5,7 @@
 //  Created by Joshua Root on 2/28/25.
 //
 
-import UIKit
+import Foundation
 
 enum DestinationSortOrder: String, CaseIterable {
     case nameAscending = "Name (Ascending)",

@@ -23,6 +23,7 @@ class DestinationFormData {
 	var notes: String
 	
 	var isShowingSaveError: Bool
+	var shouldDismiss: Bool
 	
 	init() {
 		self.destination = nil
@@ -38,6 +39,7 @@ class DestinationFormData {
 		self.notes = ""
 		
 		self.isShowingSaveError = false
+		self.shouldDismiss = false
 	}
 	
 	init(destination: Destination) {
@@ -65,6 +67,7 @@ class DestinationFormData {
 		}
 		
 		self.isShowingSaveError = false
+		self.shouldDismiss = false
 	}
 	
 	func isValidDestination() -> Bool {
@@ -107,6 +110,7 @@ class DestinationFormData {
 	private func applyChanges(context: ModelContext) {
 		do {
 			try context.save()
+			shouldDismiss = true
 		} catch {
 			isShowingSaveError = true
 		}
