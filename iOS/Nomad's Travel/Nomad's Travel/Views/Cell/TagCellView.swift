@@ -17,7 +17,7 @@ struct TagCellView: View {
 	
 	var body: some View {
 		NavigationLink {
-			AllDestinationsListView()
+			AllTaggedDestinationsListView(tag: tag)
 		} label: {
 			TagCellContentView(tag: tag)
 		}
