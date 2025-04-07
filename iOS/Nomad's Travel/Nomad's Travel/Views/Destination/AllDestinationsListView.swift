@@ -17,7 +17,7 @@ struct AllDestinationsListView: View {
 	
 	var body: some View {
 		DestinationsListView(sort: selectedSort, filter: selectedFilter, priority: selectedPriority, searchTerm: searchTerm)
-			.navigationTitle(Text("Nomad's Travel"))
+			.navigationTitle(Text("Destinations"))
 			.searchable(text: $searchTerm, placement: .sidebar, prompt: Text("Search for a Destination"))
 			.sheet(isPresented: $isShowingAddView) {
 				AddDestinationView()
