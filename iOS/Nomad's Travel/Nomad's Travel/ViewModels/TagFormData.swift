@@ -51,6 +51,7 @@ class TagFormData {
 	private func updateTag(_ tag: Tag, context: ModelContext) {
 		tag.title = title
 		tag.color = color
+		tag.lastModifiedAt = .now
 		
 		do {
 			try context.save()
