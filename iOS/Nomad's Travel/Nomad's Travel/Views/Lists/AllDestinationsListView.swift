@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SwiftData
 
 struct AllDestinationsListView: View {
 	@State private var selectedSort: DestinationSortOrder = .nameAscending
