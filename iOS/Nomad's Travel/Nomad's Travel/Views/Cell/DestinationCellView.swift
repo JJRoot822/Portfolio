@@ -51,9 +51,6 @@ struct DestinationCellView: View {
 			} label: {
 				Label("Add Tag to Destination", systemImage: "tag")
 			}
-			.popover(isPresented: $isShowingAddTagView) {
-				TagDestinationView(destination: destination)
-			}
 			
 			Button(role: .destructive) {
 				delete(destination: destination)
@@ -99,6 +96,9 @@ struct DestinationCellView: View {
 		}
 		.sheet(isPresented: $isShowingEditDestinationView) {
 			EditDestinationView(destination: destination)
+		}
+		.popover(isPresented: $isShowingAddTagView) {
+			TagDestinationView(destination: destination)
 		}
 	}
 	

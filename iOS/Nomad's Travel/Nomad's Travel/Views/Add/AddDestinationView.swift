@@ -21,11 +21,11 @@ struct AddDestinationView: View {
 				Section {
 					TextField("Name", text: $destinationData.name)
 						.focused($focusedField, equals: DestinationField.name)
-						.accessibilityLabel(Text("Name"))
+						.accessibilityLabel(Text(destinationData.name.isEmpty ? "" : "Name"))
 					
 					TextField("City", text: $destinationData.city)
 						.focused($focusedField, equals: DestinationField.city)
-						.accessibilityLabel(Text("City"))
+						.accessibilityLabel(Text(destinationData.city.isEmpty ? "" : "City"))
 					
 					Picker("State", selection: $destinationData.state) {
 						Text("None").tag("None")
@@ -37,12 +37,12 @@ struct AddDestinationView: View {
 					
 					TextField("Country", text: $destinationData.country)
 						.focused($focusedField, equals: DestinationField.country)
-						.accessibilityLabel(Text("Country"))
+						.accessibilityLabel(Text(destinationData.country.isEmpty ? "" : "Country"))
 					
 					TextField("Zip Code", text: $destinationData.zipCode)
 						.focused($focusedField, equals: DestinationField.zipCode)
 						.keyboardType(.numberPad)
-						.accessibilityLabel(Text("Zip Code"))
+						.accessibilityLabel(Text(destinationData.zipCode.isEmpty ? "" : "Zip Code"))
 				}
 				
 				Section {
@@ -57,6 +57,7 @@ struct AddDestinationView: View {
 				Section {
 					TextField("Additional Notes", text: $destinationData.notes, axis: .vertical)
 						.focused($focusedField, equals: DestinationField.notes )
+						.accessibilityLabel(Text(destinationData.notes.isEmpty ? "" : "Additional Notes"))
 				}
 			}
 			.navigationTitle(Text("Add Destination"))

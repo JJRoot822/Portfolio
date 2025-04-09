@@ -24,7 +24,7 @@ struct TagDestinationView: View {
 	@State private var isShowingError: Bool = false
 	
 	var filteredTags: [Tag] {
-		return tags.filter(destination.tags.contains)
+		return tags.filter { !destination.tags.contains($0) }
 	}
 	
 	var body: some View {
