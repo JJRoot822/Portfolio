@@ -55,6 +55,7 @@ struct DestinationDetailView: View {
 						Text(destination.name)
 							.foregroundStyle(.secondary)
 					}
+					.accessibilityElement(children: .combine)
 					
 					HStack {
 						Text("Destination Location")
@@ -69,6 +70,7 @@ struct DestinationDetailView: View {
 								.foregroundStyle(.secondary)
 						}
 					}
+					.accessibilityElement(children: .combine)
 					
 					HStack {
 						Text("Priority")
@@ -78,6 +80,7 @@ struct DestinationDetailView: View {
 						Text(DestinationPriority.priority(for: destination.priority).rawValue)
 							.foregroundStyle(.secondary)
 					}
+					.accessibilityElement(children: .combine)
 					
 					HStack {
 						Text("Visited")
@@ -92,6 +95,7 @@ struct DestinationDetailView: View {
 								.foregroundStyle(.secondary)
 						}
 					}
+					.accessibilityElement(children: .combine)
 					
 					VStack(spacing: 20) {
 						Text("Additional Notes")
@@ -99,15 +103,20 @@ struct DestinationDetailView: View {
 						Text(destination.notes)
 							.foregroundStyle(.secondary)
 					}
+					.accessibilityElement(children: .combine)
 				}
 				.frame(height: proxy.size.height / 2)
 				
-				Map(position: $position, interactionModes: [ .all ]) {
-					if let location = location {
+				if let location = location {
+					Map(position: $position, interactionModes: [ .all ]) {
 						Marker(destination.name, coordinate: location.coordinate)
 					}
+					.mapStyle(.hybrid(elevation: .realistic))
+					.frame(height: proxy.size.height / 2)
+				} else {
+					ContentUnavailableView("No Map Available", systemImage: "mappin")
+						.frame(height: proxy.size.height / 2)
 				}
-				.mapStyle(.hybrid(elevation: .realistic))
 			}
 		}
 		.alert(Constants.destinationGeocodingErrorTitle, isPresented: $isShowingError) {

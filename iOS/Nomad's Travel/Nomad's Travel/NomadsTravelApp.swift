@@ -8,6 +8,16 @@
 import SwiftUI
 import SwiftData
 
+extension ModelContext {
+	var sqliteCommand: String {
+		if let url = container.configurations.first?.url.path(percentEncoded: false) {
+			"sqlite3 \"\(url)\""
+		} else {
+			"No SQLite database found."
+		}
+	}
+}
+
 @main
 struct NomadsTravelApp: App {
 	@AppStorage(Constants.selectedTabKey) var selectedTab: Int = 0
@@ -18,11 +28,11 @@ struct NomadsTravelApp: App {
         ])
         
 		let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
+		
         do {
             return try ModelContainer(for: schema, configurations: [modelConfiguration])
         } catch {
-            fatalError("Could not create ModelContainer: \(error)")
+			fatalError("Could not create ModelContainer: \(error)")
         }
     }()
 

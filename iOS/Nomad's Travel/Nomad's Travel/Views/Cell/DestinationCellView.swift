@@ -11,6 +11,7 @@ struct DestinationCellView: View {
 	@Environment(\.modelContext) var context
 	
 	@State private var isShowingEditDestinationView: Bool = false
+	@State private var isShowingAddTagView: Bool = false
 	@State private var isShowingDeleteError: Bool = false
 	@State private var isShowingEditError: Bool = false
 	
@@ -33,6 +34,32 @@ struct DestinationCellView: View {
 			DestinationDetailView(destination: destination)
 		} label: {
 			DestinationCellContentView(destination: destination)
+		}
+		.contextMenu {
+			Button(action: toggleVisitedStatus) {
+				Label(visitedToggleLabel, systemImage: visitedToggleSymbol)
+			}
+			
+			Button {
+				isShowingEditDestinationView = true
+			} label: {
+				Label("Edit", systemImage: "pencil")
+			}
+			
+			Button {
+				isShowingAddTagView = true
+			} label: {
+				Label("Add Tag to Destination", systemImage: "tag")
+			}
+			.popover(isPresented: $isShowingAddTagView) {
+				TagDestinationView(destination: destination)
+			}
+			
+			Button(role: .destructive) {
+				delete(destination: destination)
+			} label: {
+				Label("Delete", systemImage: "trash")
+			}
 		}
 		.swipeActions(edge: .leading, allowsFullSwipe: true) {
 			Button {

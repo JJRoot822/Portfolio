@@ -9,6 +9,8 @@ import Foundation
 
 class Constants {
 	static let selectedTabKey = "selected_tab"
+
+	static let noTagId = UUID()
 	
 	static let deleteDestinationErrorTitle = "Failed to Delete Destination"
 	static let deleteDestinationErrorMessage = "Something went wrong when trying to delete the specified destination. Please try again later."
@@ -34,6 +36,9 @@ class Constants {
 
 	static let deleteTagErrorTitle = "Failed to Delete Tag"
 	static let deleteTagErrorMessage = "Something went wrong when trying to delete the specified tag. Please try again later."
+
+	static let tagDestinationErrorTitle = "Couldn't Add Tag to Destination"
+	static let tagDestinationErrorMessage = "Something went wrong when trying to add the specified tag to the specified destination. Please try again later."
 	
 static let states: [USState] = [
 		USState(abbreviation: "AL", name: "Alabama"),
