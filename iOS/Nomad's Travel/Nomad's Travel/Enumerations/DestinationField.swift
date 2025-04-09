@@ -8,5 +8,5 @@
 import Foundation
 
 enum DestinationField {
-	case name, city, country, zipCode, notes
+	case name, address, city, country, zipCode, notes
 }

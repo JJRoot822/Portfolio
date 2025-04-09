@@ -13,6 +13,7 @@ class TaggedDestinationFormData {
 	var tag: Tag
 	
 	var name: String
+	var streetAddress: String
 	var city: String
 	var state: String
 	var country: String
@@ -29,6 +30,7 @@ class TaggedDestinationFormData {
 		self.tag = tag
 		
 		self.name = ""
+		self.streetAddress = ""
 		self.city = ""
 		self.state = ""
 		self.zipCode = ""
@@ -43,12 +45,13 @@ class TaggedDestinationFormData {
 	}
 	
 	func isValidDestination() -> Bool {
-		return DestinationValidator.isValidDestination(name: name, city: city, country: country, zipCode: zipCode)
+		return DestinationValidator.isValidDestination(name: name, streetAddress: streetAddress, city: city, country: country, zipCode: zipCode)
 	}
 	
 	func save(context: ModelContext) {
 		let destination = Destination(
 			name: name,
+			streetAddress: streetAddress,
 			city: city,
 			state: state == "None" ? nil : state,
 			country: country,

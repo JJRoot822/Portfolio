@@ -58,6 +58,16 @@ struct DestinationDetailView: View {
 					.accessibilityElement(children: .combine)
 					
 					HStack {
+						Text("Street Address")
+						
+						Spacer()
+						
+						Text(destination.streetAddress)
+							.foregroundStyle(.secondary)
+					}
+					.accessibilityElement(children: .combine)
+					
+					HStack {
 						Text("Destination Location")
 						
 						Spacer()
@@ -133,7 +143,7 @@ struct DestinationDetailView: View {
 	
 	private func updateLocation() async {
 		do {
-			location = try await locationManager.getLocationFromAddress(name: destination.name, city: destination.city, state: destination.state, country: destination.country, zipCode: destination.zipCode)
+			location = try await locationManager.getLocationFromAddress(streetAddress: destination.streetAddress, city: destination.city, state: destination.state, country: destination.country, zipCode: destination.zipCode)
 			
 			if let location = location {
 				position = MapCameraPosition.region(MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: 1.5, longitudeDelta: 1.5)))

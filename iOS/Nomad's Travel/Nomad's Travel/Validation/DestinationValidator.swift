@@ -12,6 +12,10 @@ class DestinationValidator {
 		return Validator.exists(name)
 	}
 	
+	static func isValidAddress(_ streetAddress: String) -> Bool {
+		return Validator.exists(streetAddress)
+	}
+	
 	static func isValidZipCode(_ zipCode: String) -> Bool {
 		return Validator.exists(zipCode) && Validator.isNumeric(zipCode) && Validator.isValidLength(string: zipCode, length: 5)
 	}
@@ -24,8 +28,9 @@ class DestinationValidator {
 		return Validator.exists(city)
 	}
 	
-	static func isValidDestination(name: String, city: String, country: String, zipCode: String) -> Bool {
+	static func isValidDestination(name: String, streetAddress: String, city: String, country: String, zipCode: String) -> Bool {
 		return isValidName(name) &&
+			   isValidAddress(streetAddress) &&
 			   isValidCity(city) &&
 			   isValidCountry(country) &&
 			   isValidZipCode(zipCode)

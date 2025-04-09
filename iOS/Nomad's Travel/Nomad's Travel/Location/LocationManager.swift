@@ -17,13 +17,13 @@ class LocationManager: ObservableObject {
 		self.manager = CLLocationManager()
 	}
 	
-	func getLocationFromAddress(name: String, city: String, state: String?, country: String, zipCode: String) async throws -> CLLocation? {
+	func getLocationFromAddress(streetAddress: String, city: String, state: String?, country: String, zipCode: String) async throws -> CLLocation? {
 		let coder = CLGeocoder()
 		
 		if let state = state {
-			return try await coder.geocodeAddressString("\(name) \(city), \(state) \(zipCode) \(country)")[0].location
+			return try await coder.geocodeAddressString("\(streetAddress) \(city), \(state) \(zipCode) \(country)")[0].location
 		} else {
-			return try await coder.geocodeAddressString("\(name) \(city), \(country) \(zipCode)")[0].location
+			return try await coder.geocodeAddressString("\(streetAddress) \(city), \(country) \(zipCode)")[0].location
 		}
 	}
 }

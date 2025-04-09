@@ -13,6 +13,7 @@ class DestinationFormData {
 	var destination: Destination?
 	
 	var name: String
+	var streetAddress: String
 	var city: String
 	var state: String
 	var country: String
@@ -29,6 +30,7 @@ class DestinationFormData {
 		self.destination = nil
 		
 		self.name = ""
+		self.streetAddress = ""
 		self.city = ""
 		self.state = ""
 		self.zipCode = ""
@@ -46,6 +48,7 @@ class DestinationFormData {
 		self.destination = destination
 		
 		self.name = destination.name
+		self.streetAddress = destination.streetAddress
 		self.city = destination.city
 		self.country = destination.country
 		self.zipCode = destination.zipCode
@@ -71,12 +74,13 @@ class DestinationFormData {
 	}
 	
 	func isValidDestination() -> Bool {
-		return DestinationValidator.isValidDestination(name: name, city: city, country: country, zipCode: zipCode)
+		return DestinationValidator.isValidDestination(name: name, streetAddress: streetAddress, city: city, country: country, zipCode: zipCode)
 	}
 	
 	func save(context: ModelContext) {
 		if let destination = destination {
 			destination.name = name
+			destination.streetAddress = streetAddress
 			destination.city = city
 			destination.state = state == "None" ? nil : state
 			destination.country = country
@@ -91,6 +95,7 @@ class DestinationFormData {
 		} else {
 			let destination = Destination(
 				name: name,
+				streetAddress: streetAddress,
 				city: city,
 				state: state == "None" ? nil : state,
 				country: country,

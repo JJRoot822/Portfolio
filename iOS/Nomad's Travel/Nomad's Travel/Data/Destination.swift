@@ -11,8 +11,9 @@ import CoreLocation
 
 @Model
 class Destination {
-	var id: UUID
+	var destinationId: UUID
 	var name: String
+	var streetAddress: String
 	var city: String
 	var state: String?
 	var country: String
@@ -28,6 +29,7 @@ class Destination {
 	init(
 		id: UUID = UUID(),
 		name: String,
+		streetAddress: String,
 		city: String,
 		state: String?,
 		country: String,
@@ -40,8 +42,9 @@ class Destination {
 		lastModifiedAt: Date = .now,
 		tags: [Tag]
 	) {
-		self.id = id
+		self.destinationId = id
 		self.name = name
+		self.streetAddress = streetAddress
 		self.city = city
 		self.state = state
 		self.country = country
@@ -53,9 +56,5 @@ class Destination {
 		self.createdAt = createdAt
 		self.lastModifiedAt = lastModifiedAt
 		self.tags = tags
-	}
-	
-	func getCoordinates(_ manager: LocationManager) async throws -> CLLocationCoordinate2D? {
-		return try await manager.getLocationFromAddress(name: name, city: city, state: state, country: country, zipCode: zipCode)?.coordinate
 	}
 }

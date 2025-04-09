@@ -22,7 +22,10 @@ struct AddDestinationView: View {
 					TextField("Name", text: $destinationData.name)
 						.focused($focusedField, equals: DestinationField.name)
 						.accessibilityLabel(Text(destinationData.name.isEmpty ? "" : "Name"))
-					
+
+					TextField("Street Address", text: $destinationData.streetAddress)
+						.focused($focusedField, equals: DestinationField.address)
+						.accessibilityLabel(Text(destinationData.streetAddress.isEmpty ? "" : "Street Address"))
 					TextField("City", text: $destinationData.city)
 						.focused($focusedField, equals: DestinationField.city)
 						.accessibilityLabel(Text(destinationData.city.isEmpty ? "" : "City"))
