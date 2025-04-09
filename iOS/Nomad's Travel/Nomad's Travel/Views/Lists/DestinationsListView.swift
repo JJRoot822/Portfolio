@@ -93,7 +93,11 @@ struct DestinationsListView: View {
 	var body: some View {
 		List {
 			ForEach(filteredDestinations, id: \.id) { destination in
-				DestinationCellView(destination: destination)
+				if tag == nil {
+					DestinationCellView(destination: destination)
+				} else {
+					TaggedDestinationCellView(destination: destination, tag: tag!)
+				}
 			}
 		}
 	}

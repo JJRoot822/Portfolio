@@ -34,6 +34,9 @@ class Constants {
 	static let updateTagErrorTitle = "Failed to Update Tag"
 	static let updateTagErrorMessage = "Something went wrong when trying to update the specified tag. Please try again later."
 
+	static let removeTagFromDestinationErrorTitle = "Failed to Remove Tag"
+	static let removeTagFromDestinationErrorMessage = "Something went wrong when trying to remove the specified tag from the specified destination. Please try again later."
+	
 	static let deleteTagErrorTitle = "Failed to Delete Tag"
 	static let deleteTagErrorMessage = "Something went wrong when trying to delete the specified tag. Please try again later."
 
