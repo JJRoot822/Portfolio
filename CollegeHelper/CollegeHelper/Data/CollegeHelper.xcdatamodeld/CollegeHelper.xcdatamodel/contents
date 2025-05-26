@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23788" systemVersion="24F5042g" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Assignment" representedClassName="Assignment" syncable="YES" codeGenerationType="class">
+        <attribute name="dateAssigned" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="dateAssignedTimeZone" optional="YES" attributeType="String"/>
+        <attribute name="details" optional="YES" attributeType="String"/>
+        <attribute name="dueDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="dueDateTimeZone" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="pointsEarned" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="pointsPossible" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="status" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AssignmentCategory" inverseName="assignments" inverseEntity="AssignmentCategory"/>
+    </entity>
+    <entity name="AssignmentCategory" representedClassName="AssignmentCategory" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="weight" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="assignments" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Assignment" inverseName="category" inverseEntity="Assignment"/>
+        <relationship name="course" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Course" inverseName="categories" inverseEntity="Course"/>
+    </entity>
+    <entity name="Course" representedClassName="Course" syncable="YES" codeGenerationType="class">
+        <attribute name="courseNumber" optional="YES" attributeType="String"/>
+        <attribute name="courseType" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="credits" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="instructor" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="categories" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="AssignmentCategory" inverseName="course" inverseEntity="AssignmentCategory"/>
+        <relationship name="sessions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CourseSession" inverseName="course" inverseEntity="CourseSession"/>
+    </entity>
+    <entity name="CourseSession" representedClassName="CourseSession" syncable="YES" codeGenerationType="class">
+        <attribute name="day" optional="YES" attributeType="String"/>
+        <attribute name="endTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="endTimeZone" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="meetingLocation" optional="YES" attributeType="String"/>
+        <attribute name="startTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="startTimeZone" optional="YES" attributeType="String"/>
+        <relationship name="course" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Course" inverseName="sessions" inverseEntity="Course"/>
+    </entity>
+</model>

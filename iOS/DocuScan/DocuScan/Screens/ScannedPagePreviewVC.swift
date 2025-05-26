@@ -1,5 +1,5 @@
 //
-//  ScannedPagePreview.swift
+//  ScannedPagePreviewVC.swift
 //  DocuScan
 //
 //  Created by Joshua Root on 5/17/25.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class ScannedPagePreview: UIViewController {
+class ScannedPagePreviewVC: UIViewController {
 	var previewHostingController: UIHostingController<ScanPagePreviewView>!
 	
 	var result: TextRecognitionResult

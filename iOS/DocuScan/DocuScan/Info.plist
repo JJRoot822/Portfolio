@@ -19,5 +19,7 @@
 			</array>
 		</dict>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>We need to use the camera to scan documents that we can extract text from.</string>
 </dict>
 </plist>
